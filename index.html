@@ -786,12 +786,21 @@ footer{padding:18px 0 10px;}
 body.qz-open{overflow:hidden;}
 .qz-close{
   position:fixed;top:12px;right:12px;z-index:9;
-  border:0;background:rgba(21,35,59,.09);color:var(--ink-2);
-  width:36px;height:36px;border-radius:50%;font-size:19px;line-height:1;cursor:pointer;
+  border:1px solid var(--line);background:#fff;color:var(--ink);
+  padding:9px 15px 9px 12px;border-radius:999px;
+  font-size:13.5px;font-weight:600;line-height:1;cursor:pointer;
+  box-shadow:0 2px 12px rgba(11,19,33,.22);
 }
-#qzRoot.stage .qz-close{background:rgba(255,255,255,.14);color:#F3F6FA;}
+.qz-close:active{transform:translateY(1px);}
 .qz-close[hidden]{display:none;}
-.qz-close:focus-visible{outline:2px solid var(--g4);outline-offset:2px;}
+.qz-close:focus-visible{outline:3px solid var(--g4);outline-offset:2px;}
+/* 화면 아래쪽에도 같은 출구 — 큰 화면 한 손 조작용 */
+.qz-exit{
+  width:100%;margin-top:10px;padding:14px;border:1px solid var(--line);
+  border-radius:12px;background:#fff;color:var(--ink-2);
+  font-size:15px;font-weight:600;cursor:pointer;
+}
+.qz-exit:focus-visible{outline:3px solid var(--g4);outline-offset:2px;}
 @media print{ #qzRoot,.qz-entry{display:none !important;} }
 /* 본문에서 퀴즈 존으로 들어가는 자리 */
 .qz-entry{
@@ -1202,7 +1211,7 @@ body.qz-open{overflow:hidden;}
 
 
 <div id="qzRoot" hidden aria-hidden="true">
-<button class="qz-close" id="qzClose" type="button" aria-label="퀴즈 닫기">×</button>
+<button class="qz-close" id="qzClose" type="button">← 안내로 돌아가기</button>
 <!-- ══ 대기 ══ -->
 <section class="screen qz-on" id="scLobby">
   <div class="lobby-head">
@@ -1235,6 +1244,7 @@ body.qz-open{overflow:hidden;}
     </div>
 
     <button class="big" id="startBtn">시작하기</button>
+    <button class="qz-exit" id="qzLater" type="button">퀴즈는 나중에 풀기</button>
     <p class="qz-note">한 번만 응시할 수 있습니다. 중간에 화면이 꺼져도 이어서 진행됩니다.</p>
     <p class="qz-credit">만든이 2026 최창훈</p>
   </div>
@@ -1293,6 +1303,7 @@ body.qz-open{overflow:hidden;}
     <button class="big" id="saveBtn" type="button">이미지로 저장</button>
     <button class="big ghost" id="sendBtn" type="button" hidden>결과 제출하기</button>
     <button class="big ghost" id="shareBtn" type="button" hidden>공유해서 보내기</button>
+    <button class="qz-exit" id="qzBackHome" type="button">안내 화면으로 돌아가기</button>
     <p class="qz-note" id="doneNote"></p>
     <p class="qz-credit">만든이 2026 최창훈</p>
   </div>
@@ -4485,15 +4496,23 @@ function closeZone(){
   root.classList.remove('stage');
   document.body.classList.remove('qz-open');
 }
-document.getElementById('qzOpen').addEventListener('click', openZone);
-$('qzClose').addEventListener('click', () => {
-  if(quiz && quiz.stage === 'play'){
-    if(!confirm('퀴즈가 진행 중입니다. 닫아도 이어서 풀 수 있습니다. 닫을까요?')) return;
-  }
-  closeZone();
+document.getElementById('qzOpen').addEventListener('click', () => {
+  openZone();
+  try{ history.pushState({qz:1}, '', '#quiz'); }catch(e){}
 });
+$('qzLater').addEventListener('click', leaveZone);
+$('qzBackHome').addEventListener('click', leaveZone);
+
+/* 휴대전화 뒤로가기로도 빠져나올 수 있게 합니다 */
+window.addEventListener('popstate', () => { if(!root.hidden) closeZone(); });
+
+function leaveZone(){
+  if(location.hash === '#quiz'){ history.back(); return; }
+  closeZone();
+}
+$('qzClose').addEventListener('click', leaveZone);
 document.addEventListener('keydown', e => {
-  if(e.key === 'Escape' && !root.hidden && (!quiz || quiz.stage !== 'play')) closeZone();
+  if(e.key === 'Escape' && !root.hidden && (!quiz || quiz.stage !== 'play')) leaveZone();
 });
 /* QR로 바로 들어오는 경우 */
 if(params.get('quiz') === '1') openZone();
