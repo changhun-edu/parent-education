@@ -1,0 +1,4504 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>학부모 법정 의무교육 · 16개 항목</title>
+<meta name="description" content="학부모가 매년 이수해야 하는 법정 의무교육 16개 항목을 5개 묶음으로 정리한 안내 페이지입니다." />
+<meta name="color-scheme" content="light" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ─────────────────────────────────────────────
+   학부모 법정 의무교육 안내 · 단일 HTML
+   배포: GitHub Pages 등 정적 호스팅
+   학교별 링크 예: index.html?school=행복초등학교&code=A1234
+   ───────────────────────────────────────────── */
+:root{
+  --ink:#15233B;
+  --ink-2:#3B4A63;
+  --mute:#79839A;
+  --paper:#EDF0F4;
+  --card:#FFFFFF;
+  --line:#DCE1E9;
+  --line-soft:#EAEEF3;
+
+  --g1:#B8433C;   /* 폭력 예방 */
+  --g2:#2C7A69;   /* 마음 건강 */
+  --g3:#A9631F;   /* 중독 예방 */
+  --g4:#3F52A3;   /* 존중과 평등 */
+  --g5:#6A4A86;   /* 학교와의 관계 */
+
+  --stage:#0F1A2C;        /* 퀴즈 진행 중 배경 */
+  --gc:var(--g4);
+
+  --wrap:640px;
+  --pad:20px;
+  --radius:14px;
+  --shadow:0 1px 2px rgba(21,35,59,.05), 0 8px 24px rgba(21,35,59,.05);
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,system-ui,'Apple SD Gothic Neo','Noto Sans KR','Malgun Gothic','맑은 고딕',sans-serif;
+  font-size:16px;
+  line-height:1.68;
+  word-break:keep-all;
+  overflow-wrap:anywhere;
+  padding-bottom:16px;
+}
+/* 모든 영역이 공유하는 단일 컨테이너 */
+.wrap{
+  width:100%;
+  max-width:var(--wrap);
+  margin:0 auto;
+  padding-left:var(--pad);
+  padding-right:var(--pad);
+}
+h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.01em;}
+p{margin:0;}
+button{font:inherit;color:inherit;}
+a{color:inherit;}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-variant-numeric:tabular-nums;letter-spacing:.02em;}
+.serif{font-family:'Gowun Batang',serif;}
+
+/* ── 헤더 ───────────────────────────── */
+header.masthead{
+  background:var(--ink);
+  color:#F3F6FA;
+  padding:26px 0 22px;
+  position:relative;
+}
+header.masthead::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:3px;
+  background:linear-gradient(90deg,var(--g1) 0 25%,var(--g2) 25% 37.5%,var(--g3) 37.5% 56.25%,var(--g4) 56.25% 81.25%,var(--g5) 81.25% 100%);
+}
+.eyebrow{
+  font-size:13px;color:#A9BCD8;margin-bottom:12px;letter-spacing:0;
+}
+h1.title{
+  font-family:'Gowun Batang',serif;
+  font-size:25px;line-height:1.36;font-weight:700;letter-spacing:-.02em;
+}
+h1.title em{font-style:normal;color:#F0C36B;}
+h1.title button{
+  display:block;width:100%;text-align:left;background:none;border:0;padding:0;
+  font:inherit;color:inherit;cursor:pointer;letter-spacing:inherit;
+}
+h1.title button:focus-visible{outline:2px solid #F0C36B;outline-offset:4px;border-radius:4px;}
+.subtitle{margin-top:10px;font-size:15px;color:#B6C6DD;line-height:1.6;}
+.lede{margin-top:12px;font-size:14.5px;color:#B6C6DD;line-height:1.7;}
+.trust{margin-top:10px;font-size:12.5px;color:#8FA3C2;line-height:1.6;}
+.head-top{display:flex;gap:16px;align-items:flex-start;}
+.head-main{flex:1;min-width:0;position:relative;padding-left:15px;}
+.head-main::before{
+  content:"";position:absolute;left:0;top:2px;bottom:2px;width:4px;border-radius:2px;
+  background:linear-gradient(180deg,
+    var(--g1) 0 25%, var(--g2) 25% 37.5%, var(--g3) 37.5% 56.25%,
+    var(--g4) 56.25% 81.25%, var(--g5) 81.25% 100%);
+}
+.gauge{position:relative;flex:none;width:84px;height:84px;margin-top:6px;}
+.gauge svg{width:84px;height:84px;transform:rotate(-90deg);}
+.gauge circle{fill:none;stroke-width:7;stroke-linecap:round;}
+.g-bg{stroke:#2A3B58;}
+.g-fg{stroke:#F0C36B;stroke-dasharray:226;stroke-dashoffset:226;transition:stroke-dashoffset .4s ease;}
+.g-num{
+  position:absolute;inset:0;display:grid;place-content:center;text-align:center;line-height:1.15;
+}
+.g-num b{display:block;font-size:22px;font-weight:700;color:#F3F6FA;}
+.g-num span{font-size:11.5px;color:#8FA3C2;}
+.savebadge{
+  display:inline-flex;align-items:center;gap:7px;margin-top:18px;
+  background:#22334F;border:1px solid #33456380;border-radius:999px;
+  padding:7px 14px;font-size:12.5px;color:#A9BCD8;line-height:1.4;
+}
+.savebadge b{color:#F3F6FA;font-weight:600;}
+.savebadge span{color:#F0C36B;}
+.termnote{
+  margin-top:12px;font-size:13px;color:#F0C36B;line-height:1.6;
+  border-left:2px solid #F0C36B;padding-left:10px;
+}
+.trust a{color:#C9D8EC;}
+
+/* ── 진행 스트립(시그니처) ───────────── */
+.tracker{margin-top:18px;}
+.tracker-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-size:12.5px;color:#A9BCD8;margin-bottom:9px;
+}
+.tracker-head b{color:#F3F6FA;font-size:14px;}
+.ticks{display:flex;gap:3px;}
+.tick{
+  flex:1;height:9px;border-radius:2px;background:#2A3B58;
+  transition:background .25s ease, transform .25s ease;
+}
+.tick.on{background:var(--tc,#F0C36B);transform:scaleY(1.45);}
+
+/* ── 상단 고정바 ────────────────────── */
+.stickybar{
+  position:sticky;top:0;z-index:40;
+  background:rgba(21,35,59,.96);
+  backdrop-filter:saturate(160%) blur(8px);
+  color:#F3F6FA;
+  transform:translateY(-100%);
+  transition:transform .22s ease;
+  border-bottom:1px solid #2A3B58;
+}
+.stickybar.show{transform:translateY(0);}
+.stickybar .wrap{display:flex;align-items:center;gap:12px;padding-top:10px;padding-bottom:10px;}
+.stickybar .count{flex:1;font-size:12.5px;color:#A9BCD8;white-space:nowrap;}
+.nextbtn{
+  flex:none;border:1px solid #3A4C6B;background:#22334F;color:#F3F6FA;
+  border-radius:9px;padding:8px 13px;font-size:13px;font-weight:600;cursor:pointer;
+}
+.nextbtn:disabled{opacity:.5;cursor:default;}
+.nextbtn:focus-visible{outline:2px solid #F0C36B;outline-offset:2px;}
+.stickybar .count b{color:#F3F6FA;}
+
+/* ── 본문 ───────────────────────────── */
+main{padding-top:26px;}
+.intro{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  margin-bottom:22px;box-shadow:var(--shadow);overflow:hidden;
+}
+.intro summary{
+  padding:14px 16px;cursor:pointer;font-size:14px;font-weight:600;color:var(--ink-2);
+  list-style:none;display:flex;justify-content:space-between;align-items:center;
+}
+.intro summary::-webkit-details-marker{display:none;}
+.intro summary::after{content:"＋";color:var(--mute);font-size:13px;}
+.intro[open] summary::after{content:"－";}
+.intro-body{padding:0 16px 16px;}
+.intro p{font-size:14.5px;color:var(--ink-2);}
+.intro p + p{margin-top:10px;}
+.intro strong{font-weight:600;color:var(--ink);}
+
+.section-label{
+  display:flex;align-items:center;gap:10px;
+  font-size:12px;letter-spacing:.14em;color:var(--mute);margin:0 0 12px;
+}
+.section-label::after{content:"";flex:1;height:1px;background:var(--line);}
+
+/* ── 묶음 카드 ──────────────────────── */
+.group{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  margin-bottom:14px;
+  overflow:hidden;
+  border-left:5px solid var(--gc);
+}
+.group-head{
+  width:100%;display:block;text-align:left;background:none;border:0;
+  padding:18px 18px 16px;cursor:pointer;
+}
+.group-head:focus-visible{outline:2px solid var(--gc);outline-offset:-4px;}
+.group-meta{
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  font-size:11.5px;color:var(--mute);margin-bottom:8px;
+}
+.group-no{
+  font-size:11px;letter-spacing:.1em;color:var(--gc);font-weight:600;
+}
+.dot{width:3px;height:3px;border-radius:50%;background:var(--line);flex:none;}
+.group-title{
+  font-family:'Gowun Batang',serif;font-size:21px;line-height:1.4;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.group-title .chev{
+  flex:none;width:22px;height:22px;border-radius:50%;
+  border:1px solid var(--line);display:grid;place-items:center;
+  color:var(--mute);font-size:11px;transition:transform .25s ease;
+}
+.group[open] .chev,.group.open .chev{transform:rotate(180deg);}
+.group-sub{margin-top:6px;font-size:13.5px;color:var(--ink-2);}
+.group-progress{display:flex;gap:4px;margin-top:14px;}
+.gp{height:6px;flex:1;max-width:34px;border-radius:2px;background:var(--line-soft);transition:background .2s;}
+.gp.on{background:var(--gc);}
+
+.group-body{display:none;padding:0 18px 8px;}
+.group.open .group-body{display:block;}
+
+/* ── 개별 항목 ──────────────────────── */
+.item{border-top:1px solid var(--line-soft);}
+.item-head{
+  width:100%;display:flex;gap:12px;align-items:flex-start;
+  background:none;border:0;padding:15px 0;text-align:left;cursor:pointer;
+}
+.item-head:focus-visible{outline:2px solid var(--gc);outline-offset:2px;}
+.item-mark{
+  flex:none;width:23px;height:23px;border-radius:50%;
+  border:1.5px solid var(--line);background:#fff;margin-top:3px;
+  display:grid;place-items:center;font-size:11.5px;font-weight:600;color:var(--mute);line-height:1;
+  transition:background .2s,border-color .2s,color .2s;
+}
+.item.done .item-mark{background:var(--gc);border-color:var(--gc);color:#fff;}
+.item-mark.is-extra{border-style:dashed;}
+.item-headtext{flex:1;min-width:0;}
+.item-title{font-size:16px;font-weight:600;line-height:1.45;}
+.item-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;}
+.tag{
+  font-size:11px;padding:2px 7px;border-radius:5px;
+  background:var(--line-soft);color:var(--mute);
+}
+.tag.freq{color:var(--gc);background:color-mix(in srgb,var(--gc) 10%,transparent);}
+.item-open{flex:none;color:var(--mute);font-size:12px;margin-top:4px;}
+
+.item-body{display:none;padding:2px 0 20px 38px;}
+.item.open .item-body{display:block;}
+.lead{font-size:14.5px;color:var(--ink-2);margin-bottom:14px;}
+.block{margin-bottom:14px;}
+.block h4{
+  font-size:12px;letter-spacing:.06em;color:var(--gc);font-weight:600;margin:0 0 7px;
+}
+.block ul{margin:0;padding-left:16px;}
+.block li{font-size:14px;color:var(--ink-2);margin-bottom:5px;line-height:1.62;}
+.block li::marker{color:var(--line);}
+.law{
+  font-size:11.5px;color:var(--mute);border-top:1px dashed var(--line);
+  padding-top:10px;margin-top:4px;
+}
+.help{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 14px;}
+.help a{
+  font-size:12.5px;text-decoration:none;padding:6px 10px;border-radius:8px;
+  border:1px solid var(--line);color:var(--ink-2);background:#fff;
+}
+.help a b{font-weight:600;color:var(--gc);margin-left:5px;}
+.help a:active{background:var(--line-soft);}
+
+.check{
+  display:flex;align-items:center;gap:9px;cursor:pointer;
+  border:1px solid var(--line);border-radius:10px;padding:11px 13px;
+  font-size:14px;color:var(--ink-2);background:#fff;width:100%;text-align:left;
+}
+.check:focus-visible{outline:2px solid var(--gc);outline-offset:2px;}
+.check .box{
+  flex:none;width:19px;height:19px;border-radius:5px;border:1.5px solid var(--line);
+  display:grid;place-items:center;font-size:11px;color:#fff;
+}
+.item.done .check{border-color:var(--gc);color:var(--gc);font-weight:600;}
+.item.done .check .box{background:var(--gc);border-color:var(--gc);}
+
+/* ── 이수 확인 ──────────────────────── */
+.finish{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px 18px;box-shadow:var(--shadow);margin-top:26px;
+}
+.finish h2{font-family:'Gowun Batang',serif;font-size:20px;margin-bottom:6px;}
+.finish p.desc{font-size:14px;color:var(--ink-2);margin-bottom:16px;}
+.field{margin-bottom:12px;}
+.field label{display:block;font-size:12.5px;color:var(--mute);margin-bottom:5px;}
+.field input{
+  width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;
+  font-size:15px;font-family:inherit;background:#fff;color:var(--ink);
+}
+.field input:focus{outline:2px solid var(--g4);outline-offset:-1px;border-color:transparent;}
+.row{display:flex;gap:10px;}
+.row .field{flex:1;}
+.submit{
+  width:100%;padding:14px;border:0;border-radius:11px;background:var(--ink);color:#fff;
+  font-size:15px;font-weight:600;cursor:pointer;margin-top:4px;
+}
+.submit:disabled{background:#B7BFCC;cursor:not-allowed;}
+.submit:focus-visible{outline:3px solid var(--g4);outline-offset:2px;}
+.note{font-size:12px;color:var(--mute);margin-top:10px;line-height:1.6;}
+
+/* ── 목차 ──────────────────────────── */
+.toc-head{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.toc-title{
+  flex:1;font-size:12px;letter-spacing:.14em;color:var(--mute);font-weight:600;
+}
+.tool-icons{display:flex;gap:7px;}
+.tool-icons .gear{width:40px;height:38px;font-size:16px;}
+.toc{
+  list-style:none;margin:0;padding:2px 0;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+}
+.toc li + li{border-top:1px solid var(--line-soft);}
+.toc button{
+  width:100%;display:flex;align-items:center;gap:11px;text-align:left;
+  background:none;border:0;padding:11px 12px;cursor:pointer;border-radius:8px;
+}
+.toc button:focus-visible{outline:2px solid var(--g4);outline-offset:-2px;}
+.tocmark{
+  flex:none;width:21px;height:21px;border-radius:50%;border:1.5px solid var(--line);
+  display:grid;place-items:center;font-size:11px;font-weight:600;color:var(--mute);line-height:1;
+}
+.toc li.done .tocmark{background:var(--tc);border-color:var(--tc);color:#fff;}
+.toc .tt{flex:1;font-size:14.5px;color:var(--ink);line-height:1.4;}
+.toc .tf{display:block;font-size:11.5px;color:var(--mute);margin-top:2px;}
+.toc li.done .tt{color:var(--mute);}
+.saveinfo{margin-top:12px;font-size:12px;color:#8FA3C2;line-height:1.6;}
+
+/* ── 검색 ──────────────────────────── */
+.search{position:relative;margin-bottom:10px;}
+.search input{
+  width:100%;padding:13px 40px 13px 14px;border:1px solid var(--line);
+  border-radius:11px;font-size:15px;font-family:inherit;background:#fff;color:var(--ink);
+}
+.search input:focus{outline:2px solid var(--g4);outline-offset:-1px;border-color:transparent;}
+.search .clear{
+  position:absolute;right:6px;top:50%;transform:translateY(-50%);
+  border:0;background:none;font-size:19px;color:var(--mute);cursor:pointer;padding:6px 9px;
+}
+.search-info{font-size:12.5px;color:var(--mute);margin:-2px 0 12px;display:none;}
+.search-info.on{display:block;}
+.group.hidden,.item.hidden{display:none;}
+mark.hl{background:#FBE49A;color:inherit;border-radius:3px;padding:0 1px;}
+
+/* ── 질문형 제목 ───────────────────── */
+.item-formal{display:block;font-size:12px;color:var(--mute);margin-top:3px;line-height:1.4;}
+
+/* ── 완료 바 ───────────────────────── */
+.donebar{
+  position:fixed;left:0;right:0;bottom:0;z-index:55;
+  background:var(--ink);color:#fff;transform:translateY(110%);
+  transition:transform .25s ease;padding-bottom:env(safe-area-inset-bottom);
+}
+.donebar.show{transform:none;}
+.donebar .wrap{display:flex;align-items:center;gap:12px;padding-top:12px;padding-bottom:12px;}
+.donebar p{flex:1;font-size:13.5px;color:#B6C6DD;line-height:1.45;}
+.donebar p b{display:block;color:#fff;font-size:15px;font-weight:600;}
+.donebar button{
+  flex:none;border:0;border-radius:10px;background:#F0C36B;color:#15233B;
+  padding:11px 16px;font-size:14px;font-weight:700;cursor:pointer;
+}
+
+/* ── 진단 이력 ─────────────────────── */
+.qprev{
+  font-size:12.5px;color:var(--mute);background:#fff;border:1px dashed var(--line);
+  border-radius:8px;padding:8px 10px;margin-bottom:10px;
+}
+
+/* ── 요약 / 자세히 보기 ────────────── */
+.key{margin:0 0 14px;padding:0;list-style:none;}
+.key li{
+  position:relative;padding-left:18px;margin-bottom:9px;
+  font-size:15.5px;line-height:1.62;color:var(--ink);font-weight:500;
+}
+.key li::before{
+  content:"";position:absolute;left:0;top:9px;
+  width:7px;height:7px;border-radius:2px;background:var(--gc);
+}
+.endmark{height:1px;}
+.checkhint{
+  font-size:13px;color:var(--mute);text-align:center;
+  border:1px dashed var(--line);border-radius:10px;padding:12px;background:var(--line-soft);
+}
+
+/* ── 사례 · 설명 · 갈래 ────────────── */
+.story{
+  font-size:15px;line-height:1.68;color:var(--ink);
+  border-left:3px solid var(--gc);padding:2px 0 2px 13px;margin-bottom:18px;
+}
+.bintro{font-size:14px;color:var(--ink-2);line-height:1.66;margin:-2px 0 9px;}
+.part{
+  display:flex;align-items:center;gap:9px;
+  font-size:12px;letter-spacing:.1em;color:var(--gc);font-weight:600;
+  margin:22px 0 12px;
+}
+.part::after{content:"";flex:1;height:1px;background:var(--line-soft);}
+.block:first-child .part,.figure + .block .part{margin-top:0;}
+.figure{margin:0 0 18px;}
+.figure svg{width:100%;height:auto;display:block;}
+
+/* ── 성격별 상자 ───────────────────── */
+.boxed{border-radius:12px;padding:14px 15px;border:1px solid;}
+.boxed h4{
+  display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;
+  letter-spacing:0;margin:0 0 9px;
+}
+.btag{
+  flex:none;font-size:10.5px;font-weight:700;letter-spacing:.04em;
+  padding:2px 7px;border-radius:5px;color:#fff;
+}
+.boxed .bintro{margin:-3px 0 9px;}
+.boxed ul{margin:0;padding-left:17px;}
+.boxed li{font-size:14px;line-height:1.62;margin-bottom:6px;}
+.boxed li:last-child{margin-bottom:0;}
+
+.boxed.do{background:#F1F7F4;border-color:#CFE2DA;}
+.boxed.do h4{color:#25604F;}
+.boxed.do .btag{background:#2C7A69;}
+.boxed.do li{color:#2E5348;}
+.boxed.do li::marker{color:#2C7A69;}
+
+.boxed.alert{background:#FCF2F1;border-color:#EBD5D3;}
+.boxed.alert h4{color:#8C3B36;}
+.boxed.alert .btag{background:#B8433C;}
+.boxed.alert li{color:#6E3B37;}
+.boxed.alert li::marker{color:#B8433C;}
+
+.boxed.aid{background:#F2F4FB;border-color:#D6DCF0;}
+.boxed.aid h4{color:#2F3E86;}
+.boxed.aid .btag{background:#3F52A3;}
+.boxed.aid li{color:#3A4570;}
+.boxed.aid li::marker{color:#3F52A3;}
+
+.boxed.stat{background:#FBF4EC;border-color:#EBDCC8;}
+.boxed.stat h4{color:#8A5518;}
+.boxed.stat .btag{background:#A9631F;}
+.boxed.stat li{color:#5F4526;font-size:14.5px;}
+.boxed.stat li::marker{color:#A9631F;}
+
+/* ── 갈래 접기 ─────────────────────── */
+.partbox{
+  border:1px solid var(--line);border-radius:10px;
+  margin-bottom:12px;background:#fff;overflow:hidden;
+}
+.partbox summary{
+  display:flex;align-items:center;gap:9px;list-style:none;cursor:pointer;
+  padding:14px 14px;font-size:16px;font-weight:700;color:var(--ink);letter-spacing:-.01em;
+  background:var(--line-soft);
+}
+.partbox summary::before{
+  content:"";flex:none;width:7px;height:7px;border-radius:50%;
+  background:var(--gc);opacity:.75;
+}
+.partbox summary::-webkit-details-marker{display:none;}
+.partbox summary::after{content:"＋";margin-left:auto;color:var(--mute);font-size:13px;font-weight:400;}
+.partbox[open] summary::after{content:"－";}
+.partbox[open] summary{border-bottom:1px solid var(--line);}
+.partbody{padding:14px 14px 4px;}
+
+/* ── 자주 묻는 질문 ────────────────── */
+.faq{border:1px solid var(--line);border-radius:11px;overflow:hidden;}
+.fq + .fq{border-top:1px solid var(--line-soft);}
+.fq summary{
+  padding:12px 13px;cursor:pointer;font-size:14px;color:var(--ink);list-style:none;
+  display:flex;justify-content:space-between;gap:10px;align-items:center;
+}
+.fq summary::-webkit-details-marker{display:none;}
+.fq summary::after{content:"＋";color:var(--mute);font-size:12px;flex:none;}
+.fq[open] summary{font-weight:600;}
+.fq[open] summary::after{content:"－";}
+.fq p{padding:0 13px 13px;font-size:13.5px;color:var(--ink-2);line-height:1.62;}
+
+/* ── 자료 링크 ─────────────────────── */
+.links{display:flex;flex-direction:column;gap:8px;}
+.lnk{
+  display:block;border:1px solid var(--line);border-radius:11px;padding:12px 13px;
+  text-decoration:none;background:#fff;
+}
+.lnk .ln{display:block;font-size:14.5px;font-weight:600;color:var(--gc);}
+.lnk .ln::after{content:" ↗";font-size:11px;color:var(--mute);}
+.lnk .ld{display:block;font-size:12.5px;color:var(--ink-2);margin-top:3px;line-height:1.5;}
+.lnk:active{background:var(--line-soft);}
+
+/* ── 상황 선택 ─────────────────────── */
+.branch{border:1px solid var(--line);border-radius:11px;overflow:hidden;}
+.btabs{display:flex;background:var(--line-soft);gap:1px;}
+.btab{
+  flex:1;border:0;background:var(--line-soft);color:var(--mute);
+  padding:11px 8px;font-size:12.5px;cursor:pointer;line-height:1.35;
+}
+.btab[aria-selected="true"]{background:#fff;color:var(--gc);font-weight:700;}
+.btab:focus-visible{outline:2px solid var(--gc);outline-offset:-2px;}
+/* .block ul 의 padding-left 를 덮어쓰지 않도록 선택자를 한 단계 더 구체적으로 둡니다 */
+.branch .bpanel{margin:0;padding:15px 18px 15px 32px;background:#fff;}
+.branch .bpanel li{font-size:14px;color:var(--ink-2);line-height:1.62;margin-bottom:9px;padding-left:2px;}
+.branch .bpanel li:last-child{margin-bottom:0;}
+/* 같은 이유로 신호 점검 목록도 자체 여백을 지키게 합니다 */
+.block ul.signs{padding-left:0;}
+
+/* ── O/X 해설 ──────────────────────── */
+.qwhy{font-size:12.5px;line-height:1.55;margin-top:8px;padding:8px 10px;border-radius:8px;}
+.qwhy.ok{background:#F0F6F3;color:#25604F;}
+.qwhy.no{background:#FBF1F0;color:#8C3B36;}
+
+/* ── 표 ────────────────────────────── */
+.tbl{width:100%;border-collapse:collapse;font-size:13.5px;}
+.tbl th,.tbl td{text-align:left;vertical-align:top;padding:9px 10px;line-height:1.55;}
+.tbl thead th{
+  font-size:11px;letter-spacing:.06em;color:var(--mute);font-weight:600;
+  border-bottom:1px solid var(--line);padding-bottom:7px;
+}
+.tbl tbody tr{border-bottom:1px solid var(--line-soft);}
+.tbl tbody tr:last-child{border-bottom:0;}
+.tbl tbody th{
+  width:34%;color:var(--ink);font-weight:600;padding-left:0;
+}
+.tbl tbody td{color:var(--ink-2);padding-right:0;}
+
+/* ── 대비 카드 ─────────────────────── */
+.pairs{display:flex;flex-direction:column;gap:10px;}
+.pair{border:1px solid var(--line);border-radius:11px;overflow:hidden;}
+.pair p{font-size:14px;line-height:1.55;padding:10px 12px;display:flex;gap:9px;align-items:flex-start;}
+.pair p span{flex:none;font-weight:700;font-size:13px;}
+.pair .bad{background:#FBF1F0;color:#8C3B36;}
+.pair .bad span{color:#B8433C;}
+.pair .good{background:#F0F6F3;color:#25604F;border-top:1px solid var(--line-soft);}
+.pair .good span{color:#2C7A69;}
+
+/* ── 좌우 비교 ─────────────────────── */
+.versus{display:flex;flex-direction:column;gap:10px;}
+.vs-col{border:1px solid var(--line);border-radius:11px;padding:12px 14px;}
+.vs-col h5{font-size:13px;margin:0 0 8px;display:flex;align-items:center;gap:7px;}
+.vs-col h5::before{font-size:12px;font-weight:700;}
+.vs-col.no{background:#FBF1F0;border-color:#EBD5D3;}
+.vs-col.no h5{color:#8C3B36;}
+.vs-col.no h5::before{content:"✕";color:#B8433C;}
+.vs-col.yes{background:#F0F6F3;border-color:#CFE2DA;}
+.vs-col.yes h5{color:#25604F;}
+.vs-col.yes h5::before{content:"✓";color:#2C7A69;}
+.vs-col ul{margin:0;padding-left:16px;}
+.vs-col li{font-size:13.5px;line-height:1.55;margin-bottom:5px;color:var(--ink-2);}
+@media (min-width:520px){
+  .versus{flex-direction:row;}
+  .vs-col{flex:1;}
+}
+
+/* ── 눌러서 확인하는 점검표 ────────── */
+.checklist{border:1px solid var(--line);border-radius:11px;padding:10px;background:#fff;}
+.cl-hint{font-size:12px;color:var(--mute);margin:2px 4px 8px;}
+.ck{
+  width:100%;display:flex;gap:10px;align-items:flex-start;text-align:left;
+  background:none;border:0;border-radius:8px;padding:9px 8px;cursor:pointer;
+  font-size:14px;color:var(--ink-2);line-height:1.55;
+}
+.ck + .ck{border-top:1px solid var(--line-soft);}
+.ck:focus-visible{outline:2px solid var(--gc);outline-offset:-2px;}
+.ckbox{
+  flex:none;width:18px;height:18px;margin-top:1px;border-radius:5px;
+  border:1.5px solid var(--line);display:grid;place-items:center;
+  font-size:11px;color:#fff;transition:background .15s,border-color .15s;
+}
+.ck[aria-pressed="true"]{color:var(--ink);font-weight:600;}
+.ck[aria-pressed="true"] .ckbox{background:var(--gc);border-color:var(--gc);}
+.ck[aria-pressed="true"] .ckbox::after{content:"✓";font-weight:700;}
+.cl-result{
+  margin:8px 4px 4px;padding:11px 12px;border-radius:9px;font-size:13.5px;line-height:1.6;
+  background:var(--line-soft);color:var(--ink-2);
+}
+.cl-result.low{background:#FBF4EC;color:#7A5320;}
+.cl-result.high{background:#FBF1F0;color:#8C3B36;font-weight:600;}
+
+/* ── 신호 점검 목록 ────────────────── */
+.signs{list-style:none;margin:0;padding:0;}
+.signs li{
+  position:relative;padding-left:23px;font-size:14px;color:var(--ink-2);
+  margin-bottom:7px;line-height:1.6;
+}
+.signs li::before{
+  content:"";position:absolute;left:0;top:4px;width:13px;height:13px;
+  border:1.5px solid var(--gc);border-radius:3px;opacity:.55;
+}
+
+/* ── 학년별 안내 · 오늘 해볼 것 ────── */
+.grades{
+  border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);
+  padding:12px 0;margin:16px 0 14px;
+}
+.grades p{font-size:13.5px;color:var(--ink-2);line-height:1.6;}
+.grades p + p{margin-top:8px;}
+.grades b{
+  display:inline-block;font-size:11px;font-weight:700;color:var(--gc);
+  background:color-mix(in srgb,var(--gc) 10%,transparent);
+  border-radius:5px;padding:2px 7px;margin-right:7px;
+}
+.act{
+  background:var(--ink);color:#fff;border-radius:12px;padding:15px 16px;margin-top:14px;
+}
+.act h4{font-size:11.5px;letter-spacing:.1em;color:#8FA3C2;margin:0 0 6px;font-weight:600;}
+.act p{font-size:15px;line-height:1.6;}
+
+/* ── 절차(단계) ────────────────────── */
+.steps{counter-reset:st;list-style:none;margin:0;padding:2px 0 0 32px;position:relative;}
+.steps::before{
+  content:"";position:absolute;left:9.5px;top:12px;bottom:14px;width:1px;background:var(--line);
+}
+.steps li{position:relative;font-size:14px;color:var(--ink-2);margin-bottom:12px;line-height:1.6;}
+.steps li:last-child{margin-bottom:4px;}
+.steps li::before{
+  counter-increment:st;content:counter(st);
+  position:absolute;left:-32px;top:2px;width:20px;height:19px;border-radius:5px;
+  background:color-mix(in srgb,var(--gc) 13%,#fff);color:var(--gc);
+  font-size:11.5px;font-weight:700;
+  display:grid;place-items:center;font-variant-numeric:tabular-nums;
+}
+
+/* ── 법령 접기 ─────────────────────── */
+.lawbox{
+  border:1px solid var(--line);border-radius:10px;background:#fff;margin-bottom:14px;overflow:hidden;
+}
+.lawbox summary{
+  padding:12px 13px;cursor:pointer;font-size:13.5px;color:var(--ink-2);
+  display:flex;justify-content:space-between;align-items:center;gap:10px;list-style:none;
+}
+.lawbox summary::-webkit-details-marker{display:none;}
+.lawbox summary::after{content:"＋";color:var(--mute);font-size:12px;}
+.lawbox[open] summary::after{content:"－";}
+.lawbox summary span{font-size:11.5px;color:var(--mute);margin-left:auto;}
+.lawbox[open] summary{border-bottom:1px solid var(--line-soft);}
+.lawbox ul{margin:0;padding:12px 16px 14px 32px;}
+.lawbox li{font-size:13.5px;color:var(--mute);margin-bottom:6px;line-height:1.6;}
+
+/* ── 자가진단 ───────────────────────── */
+.quiz{
+  border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:14px;
+  background:color-mix(in srgb,var(--gc) 4%,#fff);
+}
+.quiz h5{margin:0 0 3px;font-size:14.5px;font-weight:600;}
+.quiz .qnote{font-size:12.5px;color:var(--mute);margin-bottom:12px;}
+.qitem{padding:10px 0;border-top:1px solid var(--line-soft);}
+.qitem:first-of-type{border-top:0;}
+.qitem p{font-size:14px;color:var(--ink-2);margin-bottom:8px;line-height:1.55;}
+.qitem p b{color:var(--gc);font-weight:600;margin-right:5px;}
+.opts{display:flex;gap:5px;flex-wrap:wrap;}
+.opt{
+  flex:1;min-width:64px;border:1px solid var(--line);background:#fff;border-radius:8px;
+  padding:8px 4px;font-size:12.5px;color:var(--ink-2);cursor:pointer;line-height:1.3;
+}
+.opt[aria-pressed="true"]{background:var(--gc);border-color:var(--gc);color:#fff;font-weight:600;}
+.opt:focus-visible{outline:2px solid var(--gc);outline-offset:1px;}
+.qresult{
+  margin-top:12px;padding:13px;border-radius:10px;background:#fff;
+  border:1px solid var(--gc);
+}
+.qresult .rl{font-size:15px;font-weight:700;color:var(--gc);margin-bottom:5px;}
+.qresult .rs{font-size:12.5px;color:var(--mute);margin-bottom:7px;}
+.qresult .rt{font-size:14px;color:var(--ink-2);line-height:1.6;}
+.qreset{
+  margin-top:9px;border:0;background:none;color:var(--mute);font-size:12.5px;
+  text-decoration:underline;cursor:pointer;padding:4px;
+}
+
+/* ── 도구 막대 ──────────────────────── */
+.toolbar{margin-bottom:24px;}
+.tool-row{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px;}
+.tool-label{font-size:12px;color:var(--mute);align-self:center;margin-right:2px;}
+.chip{
+  border:1px solid var(--line);background:#fff;border-radius:999px;
+  padding:8px 13px;font-size:13px;color:var(--ink-2);cursor:pointer;
+}
+.chip:focus-visible{outline:2px solid var(--g4);outline-offset:2px;}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff;font-weight:600;}
+.chip.jump{border-style:dashed;color:var(--ink);}
+
+.search-row{display:flex;gap:8px;align-items:stretch;margin-bottom:10px;}
+.search-row .search{flex:1;margin-bottom:0;}
+.gear{
+  flex:none;width:46px;border:1px solid var(--line);background:#fff;border-radius:11px;
+  font-size:17px;color:var(--ink-2);cursor:pointer;
+}
+#callsBtn{color:var(--g1);border-color:color-mix(in srgb,var(--g1) 35%,var(--line));}
+.gear:focus-visible{outline:2px solid var(--g4);outline-offset:2px;}
+#setSheet .tool-row{margin-bottom:14px;}
+.toast{
+  position:fixed;left:50%;bottom:96px;transform:translate(-50%,10px);
+  background:var(--ink);color:#fff;font-size:13.5px;padding:11px 16px;border-radius:999px;
+  z-index:70;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;
+  max-width:calc(100% - 40px);text-align:center;
+}
+.toast.show{opacity:1;transform:translate(-50%,0);}
+
+/* ── 도움 전화 버튼 ─────────────────── */
+.calls{display:flex;flex-direction:column;gap:8px;}
+.call{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  border:1px solid var(--line);border-radius:11px;padding:13px 14px;
+  background:#fff;text-decoration:none;color:var(--ink);
+}
+.call .cw{min-width:0;}
+.call .cn{font-size:15px;font-weight:600;}
+.call .cd{font-size:12.5px;color:var(--mute);margin-top:2px;line-height:1.45;}
+.call .ct{flex:none;font-size:16px;font-weight:700;color:var(--g1);}
+.call:active{background:var(--line-soft);}
+
+html[data-fs="lg"]{font-size:118%;}
+html[data-fs="lg"] .key li{font-size:16.5px;}
+
+/* ── 이수증 ────────────────────────── */
+.sheet{
+  position:fixed;inset:0;z-index:100;display:none;
+  background:rgba(11,19,33,.62);
+  align-items:flex-end;justify-content:center;
+  padding:0;
+}
+.sheet.open{display:flex;}
+.sheet-inner{
+  width:100%;max-width:var(--wrap);background:var(--paper);
+  border-radius:18px 18px 0 0;max-height:94vh;overflow-y:auto;
+  padding:18px var(--pad) calc(18px + env(safe-area-inset-bottom));
+  animation:rise .26s ease;
+}
+@keyframes rise{from{transform:translateY(24px);opacity:.4;}to{transform:none;opacity:1;}}
+.sheet-head{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:14px;
+}
+.sheet-head h3{font-family:'Gowun Batang',serif;font-size:18px;}
+.sheet-close{
+  border:0;background:none;font-size:22px;color:var(--mute);
+  line-height:1;padding:4px 6px;cursor:pointer;border-radius:8px;
+}
+.sheet-close:focus-visible{outline:2px solid var(--g4);}
+#certPreview{
+  width:100%;display:block;border-radius:12px;
+  border:1px solid var(--line);background:#fff;box-shadow:var(--shadow);
+}
+.sheet-actions{display:flex;flex-direction:column;gap:8px;margin-top:14px;}
+.sheet-actions button{
+  width:100%;padding:14px;border-radius:11px;font-size:15px;font-weight:600;cursor:pointer;
+}
+.btn-primary{border:0;background:var(--ink);color:#fff;}
+.btn-secondary{border:1px solid var(--line);background:#fff;color:var(--ink-2);font-weight:500;}
+.sheet .note{margin-top:12px;}
+
+body.donebar-on{padding-bottom:88px;}
+footer{padding:18px 0 10px;}
+.credit{
+  text-align:right;font-size:10.5px;color:var(--mute);opacity:.35;letter-spacing:.02em;
+}
+
+@media (max-width:520px){
+  .item-body{padding-left:0;}
+}
+@media (max-width:380px){
+  h1.title{font-size:23px;}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important;animation:none !important;}
+}
+@media print{
+  .stickybar,.check,.finish,.tracker,.chev,.item-open{display:none !important;}
+  body{background:#fff;padding:0;}
+  .group,.intro{box-shadow:none;page-break-inside:avoid;}
+  .group-body,.item-body,.lawbox ul{display:block !important;}
+  .checkhint,.endmark{display:none !important;}
+  header.masthead{background:#fff;color:#15233B;}
+  .lede,.school,.eyebrow{color:#555;}
+}
+
+/* ═══ 퀴즈 존 ═══════════════════════════ */
+#qzRoot{
+  position:fixed;inset:0;z-index:400;overflow-y:auto;overscroll-behavior:contain;
+  background:var(--paper);color:var(--ink);
+  padding-bottom:calc(20px + env(safe-area-inset-bottom));
+  transition:background .35s ease;
+}
+#qzRoot[hidden]{display:none;}
+#qzRoot.stage{background:var(--stage);color:#EEF3FA;}
+body.qz-open{overflow:hidden;}
+.qz-close{
+  position:fixed;top:12px;right:12px;z-index:9;
+  border:0;background:rgba(21,35,59,.09);color:var(--ink-2);
+  width:36px;height:36px;border-radius:50%;font-size:19px;line-height:1;cursor:pointer;
+}
+#qzRoot.stage .qz-close{background:rgba(255,255,255,.14);color:#F3F6FA;}
+.qz-close[hidden]{display:none;}
+.qz-close:focus-visible{outline:2px solid var(--g4);outline-offset:2px;}
+@media print{ #qzRoot,.qz-entry{display:none !important;} }
+/* 본문에서 퀴즈 존으로 들어가는 자리 */
+.qz-entry{
+  background:var(--ink);color:#fff;border-radius:var(--radius);
+  padding:18px 20px 20px;margin:18px 0 4px;position:relative;overflow:hidden;
+}
+.qz-entry::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:3px;
+  background:linear-gradient(90deg,var(--g1) 0 20%,var(--g2) 20% 40%,var(--g3) 40% 60%,var(--g4) 60% 80%,var(--g5) 80% 100%);
+}
+.qz-entry .lb{font-size:11px;letter-spacing:.1em;color:#8FA3C2;margin-bottom:7px;}
+.qz-entry h2{font-family:'Gowun Batang',serif;font-size:20px;margin-bottom:7px;}
+.qz-entry p{font-size:13.5px;color:#B9C9E0;line-height:1.6;margin-bottom:14px;}
+.qz-entry button{
+  width:100%;padding:14px;border:0;border-radius:11px;background:#fff;color:var(--ink);
+  font-size:15px;font-weight:700;cursor:pointer;
+}
+.qz-entry button:active{transform:translateY(1px);}
+/* ── 대기 화면 ───────────────────────── */
+.lobby-head{
+  background:var(--ink);color:#F3F6FA;padding:30px 0 26px;position:relative;margin-bottom:22px;
+}
+.lobby-head::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:3px;
+  background:linear-gradient(90deg,var(--g1) 0 20%,var(--g2) 20% 40%,var(--g3) 40% 60%,var(--g4) 60% 80%,var(--g5) 80% 100%);
+}
+.qz-eyebrow{font-size:12.5px;color:#A9BCD8;margin-bottom:10px;letter-spacing:.02em;}
+.lobby-head h1{font-family:'Gowun Batang',serif;font-size:27px;line-height:1.34;}
+.lobby-head h1 em{font-style:normal;color:#F0C87A;}
+.lobby-head .sub{font-size:14px;color:#B9C9E0;margin-top:10px;}
+
+.rules{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 18px;box-shadow:var(--shadow);margin-bottom:18px;
+}
+.rules h2{font-size:12px;letter-spacing:.06em;color:var(--g4);margin-bottom:11px;}
+.rule{display:flex;gap:11px;align-items:flex-start;padding:7px 0;}
+.rule + .rule{border-top:1px solid var(--line-soft);}
+.rule .n{
+  flex:none;width:22px;height:22px;border-radius:6px;margin-top:2px;
+  background:color-mix(in srgb,var(--g4) 12%,#fff);color:var(--g4);
+  font-size:11.5px;font-weight:700;display:flex;align-items:center;justify-content:center;
+}
+.rule p{font-size:14px;color:var(--ink-2);line-height:1.58;}
+.rule b{color:var(--ink);}
+
+.form{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 18px 18px;box-shadow:var(--shadow);margin-bottom:16px;
+}
+.form h2{font-size:12px;letter-spacing:.06em;color:var(--mute);margin-bottom:12px;}
+.qz-row{display:flex;gap:10px;}
+.qz-field{flex:1;margin-bottom:11px;}
+.qz-field label{display:block;font-size:12.5px;color:var(--mute);margin-bottom:5px;}
+.qz-field input{
+  width:100%;padding:12px 13px;border:1px solid var(--line);border-radius:10px;
+  font-size:16px;background:#fff;color:var(--ink);
+}
+.qz-field input:focus{outline:2px solid var(--g4);outline-offset:-1px;border-color:transparent;}
+.hint{font-size:12px;color:var(--mute);line-height:1.5;margin-top:2px;}
+
+.big{
+  width:100%;padding:16px;border:0;border-radius:12px;background:var(--ink);color:#fff;
+  font-size:16px;font-weight:700;cursor:pointer;box-shadow:var(--shadow);
+}
+.big:disabled{background:var(--line);color:var(--mute);cursor:not-allowed;box-shadow:none;}
+.big:active:not(:disabled){transform:translateY(1px);}
+.big.ghost{background:#fff;color:var(--ink-2);border:1px solid var(--line);font-weight:600;}
+.big + .big{margin-top:9px;}
+.big:focus-visible{outline:3px solid var(--g4);outline-offset:2px;}
+
+/* ── 카운트다운 ─────────────────────── */
+#countdown{
+  position:fixed;inset:0;z-index:200;display:none;
+  background:var(--stage);color:#fff;align-items:center;justify-content:center;flex-direction:column;
+}
+#countdown.qz-on{display:flex;}
+#cdNum{font-size:96px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums;animation:pop .4s ease;}
+#countdown p{margin-top:14px;color:#8FA3C2;font-size:14px;}
+@keyframes pop{from{transform:scale(.7);opacity:0;}to{transform:none;opacity:1;}}
+
+/* ── 진행 화면 ───────────────────────── */
+.playbar{padding:16px 0 0;}
+.dots{display:flex;gap:4px;margin-bottom:14px;}
+.qz-dot{flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,.14);}
+.qz-dot.past{background:rgba(255,255,255,.42);}
+.qz-dot.now{background:var(--gc);}
+
+.meter{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:6px;}
+.meter .qno{font-size:12.5px;color:#8FA3C2;letter-spacing:.04em;}
+/* 시그니처 — 지금 답하면 받는 점수가 눈앞에서 줄어듭니다 */
+.worth{text-align:right;line-height:1;}
+.worth b{font-size:38px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.02em;color:#fff;}
+.worth span{display:block;font-size:11px;color:#8FA3C2;margin-top:5px;letter-spacing:.06em;}
+.timebar{height:5px;border-radius:3px;background:rgba(255,255,255,.14);overflow:hidden;margin-bottom:22px;}
+.timebar i{display:block;height:100%;width:100%;background:var(--gc);transform-origin:left center;}
+.timebar.qz-low i{background:var(--g1);}
+
+.tagline{
+  display:inline-block;font-size:11px;letter-spacing:.06em;font-weight:600;
+  color:var(--gc);background:rgba(255,255,255,.08);border-radius:6px;padding:4px 9px;margin-bottom:12px;
+}
+.stem{font-family:'Gowun Batang',serif;font-size:22px;line-height:1.44;color:#fff;margin-bottom:20px;}
+
+.qz-opts{display:flex;flex-direction:column;gap:9px;}
+.qz-opt{
+  display:flex;gap:12px;align-items:flex-start;text-align:left;width:100%;
+  padding:14px 15px;border-radius:12px;border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.05);color:#EEF3FA;font-size:15.5px;line-height:1.5;cursor:pointer;
+  transition:background .12s ease,border-color .12s ease;
+}
+.qz-opt .ltr{
+  flex:none;width:23px;height:23px;border-radius:7px;margin-top:1px;
+  background:rgba(255,255,255,.13);color:#C6D4E8;
+  font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;
+}
+.qz-opt:active,.qz-opt.picked{background:var(--gc);border-color:var(--gc);color:#fff;}
+.qz-opt.picked .ltr{background:rgba(255,255,255,.28);color:#fff;}
+.qz-opt:focus-visible{outline:3px solid #fff;outline-offset:2px;}
+.skip{
+  margin-top:18px;width:100%;background:none;border:0;color:#6F819E;font-size:13px;
+  padding:8px;cursor:pointer;text-decoration:underline;text-underline-offset:3px;
+}
+
+/* ── 결과 ────────────────────────────── */
+.score-card{
+  background:var(--ink);color:#fff;border-radius:16px;padding:26px 22px 22px;
+  margin:22px 0 16px;position:relative;overflow:hidden;
+}
+.score-card::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:4px;
+  background:linear-gradient(90deg,var(--g1) 0 20%,var(--g2) 20% 40%,var(--g3) 40% 60%,var(--g4) 60% 80%,var(--g5) 80% 100%);
+}
+.score-card .lbl{font-size:11.5px;letter-spacing:.1em;color:#8FA3C2;}
+.score-card .pts{font-size:58px;font-weight:700;line-height:1.05;font-variant-numeric:tabular-nums;letter-spacing:-.03em;margin:4px 0 2px;}
+.score-card .pts small{font-size:20px;font-weight:500;color:#A9BCD8;margin-left:4px;}
+.facts{display:flex;gap:0;margin-top:18px;border-top:1px solid rgba(255,255,255,.14);padding-top:15px;}
+.fact{flex:1;}
+.fact + .fact{border-left:1px solid rgba(255,255,255,.14);padding-left:14px;}
+.fact .k{font-size:11px;color:#8FA3C2;letter-spacing:.04em;}
+.fact .v{font-size:19px;font-weight:700;font-variant-numeric:tabular-nums;margin-top:3px;}
+
+.sec-label{
+  font-size:11.5px;letter-spacing:.08em;color:var(--mute);
+  margin:24px 0 10px;padding-bottom:7px;border-bottom:1px solid var(--line);
+}
+.rev{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:14px 16px;margin-bottom:10px;box-shadow:var(--shadow);
+}
+.rev.wrong{border-left:3px solid var(--g1);}
+.rev.right{border-left:3px solid var(--g2);}
+.rev .top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:7px;}
+.rev .mark{font-size:12px;font-weight:700;flex:none;}
+.rev.wrong .mark{color:var(--g1);}
+.rev.right .mark{color:var(--g2);}
+.rev .qs{font-size:15px;font-weight:600;line-height:1.5;}
+.rev .ans{font-size:13.5px;color:var(--ink-2);margin-top:6px;}
+.rev .ans b{color:var(--g2);}
+.rev .mine{color:var(--g1);}
+.rev .why{
+  font-size:13px;color:var(--ink-2);line-height:1.6;margin-top:9px;
+  background:var(--line-soft);border-radius:9px;padding:10px 12px;
+}
+.rev .src{font-size:11.5px;color:var(--mute);margin-top:8px;}
+
+/* ── 예측전 ──────────────────────────── */
+/* ── 회복 라운드 ─────────────────────── */
+.rev.saved{border-left:3px solid var(--g2);background:color-mix(in srgb,var(--g2) 4%,#fff);}
+.rev.saved .mark{color:var(--g2);}
+.rev .again{
+  font-size:12.5px;color:var(--g2);font-weight:600;margin-top:8px;
+}
+.bonus{
+  display:inline-block;font-size:12px;font-weight:700;color:var(--g2);
+  background:color-mix(in srgb,var(--g2) 12%,#fff);border-radius:6px;padding:3px 9px;margin-left:7px;
+}
+
+.notice{
+  background:color-mix(in srgb,var(--g3) 8%,#fff);border:1px solid color-mix(in srgb,var(--g3) 26%,#fff);
+  border-radius:11px;padding:13px 15px;font-size:13.5px;color:#7A5320;line-height:1.6;margin-bottom:14px;
+}
+.qz-note{font-size:12.5px;color:var(--mute);line-height:1.6;margin-top:12px;}
+#cardPreview{
+  width:100%;display:block;border-radius:12px;border:1px solid var(--line);
+  background:#fff;box-shadow:var(--shadow);margin-bottom:14px;
+}
+.qz-credit{text-align:right;font-size:10.5px;color:var(--mute);opacity:.4;padding:22px 0 12px;}
+
+.qz-toast{
+  position:fixed;left:50%;bottom:26px;transform:translate(-50%,14px);
+  background:var(--ink);color:#fff;font-size:13.5px;padding:11px 17px;border-radius:999px;
+  opacity:0;pointer-events:none;transition:opacity .22s ease,transform .22s ease;z-index:300;
+  box-shadow:0 8px 26px rgba(11,19,33,.3);
+}
+.qz-toast.qz-on{opacity:1;transform:translate(-50%,0);}
+
+@media (max-width:380px){
+  .stem{font-size:20px;}
+  .worth b{font-size:32px;}
+  .score-card .pts{font-size:48px;}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important;animation:none !important;}
+}
+
+</style>
+</head>
+<body>
+
+<div class="stickybar" id="stickybar">
+  <div class="wrap">
+    <div class="count">확인 <b id="miniCount">0</b> / 16</div>
+    <button class="nextbtn" id="nextBtn" type="button">다음 미확인 항목 →</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="head-top">
+      <div class="head-main">
+        <div class="eyebrow" id="topline"></div>
+        <h1 class="title serif"><button type="button" id="homeBtn">학부모 <em>법정 의무교육</em></button></h1>
+        <p class="subtitle">우리 아이를 위해 알아 둘 16가지를 정리했습니다.</p>
+        <p class="trust" id="trust"></p>
+      </div>
+      <div class="gauge" role="status" aria-live="polite" aria-label="확인한 항목">
+        <svg viewBox="0 0 84 84" aria-hidden="true">
+          <circle class="g-bg" cx="42" cy="42" r="36"></circle>
+          <circle class="g-fg" id="gaugeArc" cx="42" cy="42" r="36"></circle>
+        </svg>
+        <div class="g-num"><b id="mainCount">0</b><span>/ 16</span></div>
+      </div>
+    </div>
+    <p class="savebadge"><span aria-hidden="true">⌾</span> <b>자동 저장</b> 중간에 닫아도 이어서 보실 수 있어요</p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <details class="intro">
+      <summary>처음이신가요? 읽는 방법 안내</summary>
+      <div class="intro-body">
+        <p>법으로 정해진 16개 항목을 주제가 맞닿는 5개 묶음으로 묶었습니다. 항목을 열면 사례와 요약이 먼저 나오고, 법령이 정한 전체 내용이 이어집니다.</p>
+        <p><strong>끝까지 읽으시면 확인 버튼이 나타납니다.</strong> 확인한 항목은 저장되니 나눠서 보셔도 됩니다.</p>
+        <p><strong>세 항목에는 자가진단이 있습니다.</strong> 스마트폰 과의존, 도박 문제, 우리 가족 인권 지수는 문항에 답하면 결과가 바로 나오고, 그 항목은 확인한 것으로 기록됩니다.</p>
+        <p>법적 근거와 실시 기준은 각 항목 안에 그대로 있어, 묶어 읽어도 항목별로 따로 기록됩니다.</p>
+      </div>
+    </details>
+
+    <div class="toolbar">
+      <div class="toc-head">
+        <h2 class="toc-title">5개 묶음 · 16개 항목</h2>
+        <div class="tool-icons">
+          <button class="gear" id="tocBtn" type="button" aria-label="목차 보기">≡</button>
+          <button class="gear" id="qBtn" type="button" aria-label="검색" aria-expanded="false">⌕</button>
+          <button class="gear" id="callsBtn" type="button" aria-label="도움 전화 보기">☎</button>
+          <button class="gear" id="setBtn" type="button" aria-label="보기 설정">⚙</button>
+        </div>
+      </div>
+      <div class="search-row" id="searchRow" hidden>
+        <div class="search">
+          <input id="q" type="search" placeholder="찾고 싶은 내용을 입력하세요 (예: 수두, 딥페이크)" autocomplete="off" />
+          <button class="clear" id="qClear" type="button" aria-label="검색어 지우기" hidden>×</button>
+        </div>
+      </div>
+      <p class="search-info" id="qInfo" role="status" aria-live="polite"></p>
+    </div>
+    <div id="groups"></div>
+
+    <div class="section-label">참고 안내 · 법정 항목 외</div>
+    <div id="extras"></div>
+
+
+    <section class="qz-entry" id="qzEntry">
+      <div class="lb">학교설명회</div>
+      <h2>학부모 퀴즈</h2>
+      <p>열 문제, 삼 분. 현장에서 함께 푸는 퀴즈입니다. 다 풀면 해당 항목이 확인 처리됩니다.</p>
+      <button type="button" id="qzOpen">퀴즈 시작하기</button>
+    </section>
+
+    <section class="finish" id="finish">
+      <h2>이수증 만들기</h2>
+      <p class="desc">16개 항목을 모두 확인하면 이수증이 만들어집니다. 이미지로 저장한 뒤 학교가 안내한 방법으로 제출해 주세요.</p>
+      <button class="submit" id="openFormBtn" disabled>16개 항목을 모두 확인하면 열립니다</button>
+    </section>
+  </div>
+</main>
+
+<div class="sheet" id="formSheet" role="dialog" aria-modal="true" aria-labelledby="formTitle">
+  <div class="sheet-inner">
+    <div class="sheet-head">
+      <h3 id="formTitle">이수증에 넣을 정보</h3>
+      <button class="sheet-close" data-close="formSheet" type="button" aria-label="닫기">×</button>
+    </div>
+      <div class="row">
+        <div class="field">
+          <label for="grade">학년</label>
+          <input id="grade" inputmode="numeric" placeholder="예: 3" />
+        </div>
+        <div class="field">
+          <label for="classNo">반</label>
+          <input id="classNo" inputmode="numeric" placeholder="예: 5" />
+        </div>
+      </div>
+      <div class="field">
+        <label for="student">학생 이름</label>
+        <input id="student" placeholder="예: 김민준" autocomplete="off" />
+      </div>
+      <div class="field">
+        <label for="guardian">보호자 이름</label>
+        <input id="guardian" placeholder="예: 김보호" autocomplete="off" />
+      </div>
+      <label class="check" style="margin-bottom:12px" for="maskChk">
+        <input type="checkbox" id="maskChk" style="width:18px;height:18px;accent-color:var(--ink)" />
+        <span>이수증에 이름을 가려서 표시 (예: 김○준)</span>
+      </label>
+      <button class="submit" id="submitBtn">이수증 만들기</button>
+      <p class="note">입력한 이름은 이수증을 만드는 데에만 쓰이며 어디에도 전송되지 않습니다. 이수증은 사용하시는 기기 안에서 만들어집니다.</p>
+  </div>
+</div>
+
+<div class="donebar" id="doneBar">
+  <div class="wrap">
+    <p><b>16개 항목을 모두 확인했습니다</b>이수증을 만들어 학교에 제출해 주세요.</p>
+    <button id="doneGo" type="button">이수증 만들기</button>
+  </div>
+</div>
+
+<div class="sheet" id="tocSheet" role="dialog" aria-modal="true" aria-labelledby="tocTitle">
+  <div class="sheet-inner">
+    <div class="sheet-head">
+      <h3 id="tocTitle">전체 16개 항목</h3>
+      <button class="sheet-close" data-close="tocSheet" type="button" aria-label="닫기">×</button>
+    </div>
+    <ol class="toc" id="toc"></ol>
+    <p class="note">항목을 누르면 해당 위치로 이동합니다. 확인을 마친 항목은 번호가 채워집니다.</p>
+  </div>
+</div>
+
+<div class="sheet" id="setSheet" role="dialog" aria-modal="true" aria-labelledby="setTitle">
+  <div class="sheet-inner">
+    <div class="sheet-head">
+      <h3 id="setTitle">보기 설정</h3>
+      <button class="sheet-close" data-close="setSheet" type="button" aria-label="닫기">×</button>
+    </div>
+    <div class="tool-row">
+      <span class="tool-label">바로가기</span>
+      <button class="chip jump" data-jump="A" type="button">등교중지 기간</button>
+      <button class="chip jump" data-jump="B" type="button">미세먼지 결석</button>
+      <button class="chip jump" data-jump="calls" type="button">신고·상담 전화</button>
+    </div>
+    <div class="tool-row">
+      <span class="tool-label">자녀 학년</span>
+      <button class="chip" data-filter="all" aria-pressed="true" type="button">전체</button>
+      <button class="chip" data-filter="low" aria-pressed="false" type="button">1~3학년</button>
+      <button class="chip" data-filter="high" aria-pressed="false" type="button">4~6학년</button>
+    </div>
+    <div class="tool-row">
+      <span class="tool-label">글자 크기</span>
+      <button class="chip" id="fsBtn" aria-pressed="false" type="button">크게</button>
+    </div>
+    <p class="note">자녀 학년을 고르면 학년에 맞는 묶음이 위로 올라옵니다. 항목이 빠지지는 않습니다.</p>
+  </div>
+</div>
+
+<div class="sheet" id="callSheet" role="dialog" aria-modal="true" aria-labelledby="callTitle">
+  <div class="sheet-inner">
+    <div class="sheet-head">
+      <h3 id="callTitle">지금 도움이 필요하면</h3>
+      <button class="sheet-close" data-close="callSheet" type="button" aria-label="닫기">×</button>
+    </div>
+    <div class="calls">
+      <a class="call" href="tel:112"><span class="cw"><span class="cn">경찰</span><span class="cd">아동학대·가정폭력·디지털 성범죄 등 긴급 상황</span></span><span class="ct">112</span></a>
+      <a class="call" href="tel:117"><span class="cw"><span class="cn">학교폭력 신고</span><span class="cd">문자 신고는 #117</span></span><span class="ct">117</span></a>
+      <a class="call" href="tel:109"><span class="cw"><span class="cn">자살예방 상담</span><span class="cd">마음이 힘들 때, 24시간</span></span><span class="ct">109</span></a>
+      <a class="call" href="tel:1388"><span class="cw"><span class="cn">청소년 상담</span><span class="cd">고민·위기·도박 문제까지</span></span><span class="ct">1388</span></a>
+      <a class="call" href="tel:1366"><span class="cw"><span class="cn">여성긴급전화</span><span class="cd">가정폭력·성폭력, 365일 24시간</span></span><span class="ct">1366</span></a>
+      <a class="call" href="tel:1336"><span class="cw"><span class="cn">도박문제 헬프라인</span><span class="cd">선별검사와 상담</span></span><span class="ct">1336</span></a>
+      <a class="call" href="tel:15990075"><span class="cw"><span class="cn">스마트쉼센터</span><span class="cd">스마트폰 과의존 무료 상담</span></span><span class="ct">1599-0075</span></a>
+      <a class="call" href="tel:18990893"><span class="cw"><span class="cn">마약퇴치운동본부</span><span class="cd">약물 오남용 상담</span></span><span class="ct">1899-0893</span></a>
+    </div>
+    <p class="note">번호를 누르면 바로 전화가 걸립니다. 위급한 상황이라면 망설이지 말고 112에 연락하세요.</p>
+  </div>
+</div>
+
+<div class="sheet" id="certSheet" role="dialog" aria-modal="true" aria-labelledby="certTitle">
+  <div class="sheet-inner">
+    <div class="sheet-head">
+      <h3 id="certTitle">이수증이 만들어졌습니다</h3>
+      <button class="sheet-close" id="certClose" type="button" aria-label="닫기">×</button>
+    </div>
+    <img id="certPreview" alt="학부모 법정 의무교육 이수증" />
+    <div class="sheet-actions">
+      <button class="btn-primary" id="certSave" type="button">이미지로 저장</button>
+      <button class="btn-secondary" id="certShare" type="button" hidden>공유해서 보내기</button>
+      <button class="btn-secondary" id="certBack" type="button">정보 다시 입력</button>
+    </div>
+    <p class="note">저장이 되지 않으면 위 이미지를 길게 눌러 <b>사진에 저장</b>을 선택해 주세요. 저장한 이수증은 학교가 안내한 방법(알림장 앱·문자·담임 제출)으로 보내시면 됩니다.<br><b>확인번호</b>는 학교가 제출을 확인하거나 현장 행사에서 추첨할 때 쓰입니다.<br>이수증 아래에 긴급 도움 전화가 함께 인쇄되어 있으니, 사진첩에 남겨 두시면 필요할 때 쓰실 수 있습니다.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p class="credit">만든이 2026 최창훈</p>
+  </div>
+</footer>
+
+
+<div id="qzRoot" hidden aria-hidden="true">
+<button class="qz-close" id="qzClose" type="button" aria-label="퀴즈 닫기">×</button>
+<!-- ══ 대기 ══ -->
+<section class="screen qz-on" id="scLobby">
+  <div class="lobby-head">
+    <div class="wrap">
+      <div class="qz-eyebrow" id="lobbyTop">학교설명회</div>
+      <h1 class="serif">학부모 <em>퀴즈</em></h1>
+      <p class="sub">열 문제, 삼 분. 정답이 먼저고 속도는 그다음입니다.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="rules">
+      <h2>진행 방법</h2>
+      <div class="rule"><span class="n">1</span><p><b>문항당 15초</b>입니다. 답을 고르면 바로 다음 문제로 넘어가고, 되돌아갈 수 없습니다.</p></div>
+      <div class="rule"><span class="n">2</span><p>점수는 <b>정답 100점 + 남은 시간 1초당 5점</b>입니다. 틀리면 0점이라, 찍어서 빨리 넘기면 손해입니다.</p></div>
+      <div class="rule"><span class="n">3</span><p>끝나면 <b>틀린 문제의 해설</b>이 나옵니다. 이어서 진행자와 함께 봅니다.</p></div>
+      <div class="rule"><span class="n">4</span><p>틀린 문제는 <b>한 번 더 풀 기회</b>가 있습니다. 해설을 읽고 다시 맞히면 50점을 회복합니다.</p></div>
+    </div>
+
+    <div class="form">
+      <h2>참가자 정보</h2>
+      <div class="qz-row">
+        <div class="qz-field"><label for="qzGrade">학년</label><input id="qzGrade" inputmode="numeric" placeholder="예: 3" /></div>
+        <div class="qz-field"><label for="qzClassNo">반</label><input id="qzClassNo" inputmode="numeric" placeholder="예: 5" /></div>
+      </div>
+      <div class="qz-field">
+        <label for="who">보호자 이름</label>
+        <input id="who" placeholder="예: 김보호" autocomplete="off" />
+        <p class="hint">시상과 본인 확인에만 씁니다. 순위판에는 김○호처럼 가려서 표시됩니다.</p>
+      </div>
+    </div>
+
+    <button class="big" id="startBtn">시작하기</button>
+    <p class="qz-note">한 번만 응시할 수 있습니다. 중간에 화면이 꺼져도 이어서 진행됩니다.</p>
+    <p class="qz-credit">만든이 2026 최창훈</p>
+  </div>
+</section>
+
+<!-- ══ 진행 ══ -->
+<section class="screen" id="scPlay">
+  <div class="wrap playbar">
+    <div class="dots" id="dots" aria-hidden="true"></div>
+    <div class="meter">
+      <div class="qno" id="qno">1 / 10</div>
+      <div class="worth"><b id="worth">175</b><span id="worthLabel">지금 답하면</span></div>
+    </div>
+    <div class="timebar" id="timebar"><i id="timefill"></i></div>
+
+    <div class="tagline" id="tagline"></div>
+    <h2 class="stem" id="stem"></h2>
+    <div class="qz-opts" id="opts" role="group" aria-labelledby="stem"></div>
+    <button class="skip" id="skipBtn" type="button">모르겠습니다 · 넘기기</button>
+  </div>
+</section>
+
+<!-- ══ 1라운드 결과 · 해설 ══ -->
+<section class="screen" id="scReview">
+  <div class="wrap">
+    <div class="score-card">
+      <div class="lbl">지금까지 점수<span class="bonus" id="recovered" hidden></span></div>
+      <div class="pts"><span id="totalPts">0</span><small>점</small></div>
+      <div class="facts">
+        <div class="fact"><div class="k">맞힌 문제</div><div class="v" id="fCorrect">0 / 10</div></div>
+        <div class="fact"><div class="k">걸린 시간</div><div class="v" id="fTime">0초</div></div>
+        <div class="fact"><div class="k">참가번호</div><div class="v mono" id="fSerial">—</div></div>
+      </div>
+    </div>
+
+    <div class="notice" id="reviewNotice">진행자가 전체 해설을 함께 봅니다. 아래는 내가 틀린 문제입니다.</div>
+
+    <div class="sec-label" id="wrongLabel">다시 볼 문제</div>
+    <div id="wrongList"></div>
+
+    <button class="big ghost" id="allBtn" type="button">맞힌 문제도 모두 보기</button>
+    <div id="rightList" hidden></div>
+
+    <div class="sec-label" id="nextLabel">다음 순서</div>
+    <button class="big" id="qzNextBtn" type="button">확인증 받기</button>
+    <p class="qz-note" id="nextNote">진행자 안내에 맞춰 눌러 주세요.</p>
+    <p class="qz-credit">만든이 2026 최창훈</p>
+  </div>
+</section>
+
+<!-- ══ 최종 ══ -->
+<section class="screen" id="scDone">
+  <div class="wrap">
+    <div class="sec-label" style="margin-top:24px">참가 확인증</div>
+    <img id="cardPreview" alt="학부모 퀴즈 참가 확인증" />
+    <button class="big" id="saveBtn" type="button">이미지로 저장</button>
+    <button class="big ghost" id="sendBtn" type="button" hidden>결과 제출하기</button>
+    <button class="big ghost" id="shareBtn" type="button" hidden>공유해서 보내기</button>
+    <p class="qz-note" id="doneNote"></p>
+    <p class="qz-credit">만든이 2026 최창훈</p>
+  </div>
+</section>
+
+<div id="countdown"><div id="cdNum">3</div><p>시작합니다</p></div>
+<div class="qz-toast" id="toast" role="status" aria-live="polite"></div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════
+   학교 관리자 설정 영역
+   학교별 링크로 배포하면 학교명·연도가 자동으로 표시되고,
+   이수증에도 그대로 인쇄됩니다.
+     index.html?school=행복초등학교&code=A1234&term=1
+   학기가 바뀌면 term=2 로 보내 주세요. 확인 기록이 새로 시작되고
+   이수증에도 학기가 표시됩니다. term 값이 없으면 접속한 달로 판단합니다.
+   code 값은 이수증 확인번호에 반영되어 학교별 구분에 쓰입니다.
+   ═══════════════════════════════════════════ */
+
+const GROUPS = [
+{
+  no:'묶음 1', accent:'var(--g1)', season:'3월 · 9월',
+  title:'폭력에서 아이를 지키기',
+  sub:'학교 안팎에서 벌어지는 폭력의 형태와, 부모가 가장 먼저 할 일.',
+  items:[
+    {
+      q:'우리 아이가 학교폭력을 겪는다면',
+      story:'아이가 며칠째 학교 가기를 미룹니다. 몸에 멍이 있는데 넘어졌다고만 합니다. 어디서부터 물어봐야 할까요?',
+      act:'오늘 저녁, "요즘 단톡방에서 불편했던 일 있었어?"라고 한 번만 물어보세요.',
+      low:'"놀렸다"는 말로 표현합니다. 사소해 보여도 한 번 더 되물어 주세요.',
+      high:'단체 대화방에서 벌어집니다. 메신저와 게임 대화를 함께 살펴보세요.',
+      quiz:{
+        id:'bully', kind:'yesno',
+        title:'우리 아이 학교폭력 징후 점검',
+        note:'최근 한 달을 떠올리며 답해 주세요.',
+        questions:[
+          '학교 가기를 싫어하거나 두려워한다',
+          '몸에 상처나 멍이 자주 보인다',
+          '용돈을 자주 더 달라고 하거나 통신요금이 늘었다',
+          '부모가 휴대전화를 보는 것을 극도로 싫어한다',
+          'SNS 글이나 사진 분위기가 갑자기 어두워졌다',
+          '친구 이야기를 하지 않고 혼자 있으려 한다'
+        ],
+        results:[
+          {max:0, label:'지금은 특별한 신호가 보이지 않습니다', tip:'평소처럼 학교생활 이야기를 자주 나눠 주세요.'},
+          {max:2, label:'관심이 필요합니다', tip:'추궁하지 말고 "요즘 어때?"처럼 열린 질문으로 시작해 보세요.'},
+          {max:6, label:'담임 선생님과 상담을 권합니다', tip:'혼자 판단하지 마시고 학교와 함께 확인해 보세요. 117로 상담할 수도 있습니다.'}
+        ]
+      },
+      no:1, title:'학교폭력 예방교육', freq:'연 2회(학기당 1회)',
+      law:'학교폭력예방 및 대책에 관한 법률 제15조 제2항, 제17조 제2항',
+      lead:'때리는 일만 학교폭력이 아닙니다. 학교 안팎에서 학생을 대상으로 벌어져 신체·정신·재산에 피해를 주는 모든 행위가 학교폭력이며, 사소해 보이는 괴롭힘도 포함됩니다.',
+      key:[
+        '때리는 일만이 아니라 놀림·따돌림·강요·사이버 괴롭힘도 학교폭력입니다',
+        '신고하면 24시간 안에 분리 조치, 14일 안에 자체해결 여부 결정이 이뤄집니다',
+        '피해든 가해든 첫걸음은 담임 선생님께 알리고 아이를 탓하지 않는 것입니다. 아래 6문항으로 징후를 점검해 보세요'
+      ],
+      blocks:[
+        {part:'무엇이 학교폭력인가', intro:'법이 정한 학교폭력은 폭행에 한정되지 않습니다. 아래 일곱 가지가 모두 해당합니다.', h:'학교폭력의 일곱 가지 모습', type:'table', cols:['유형','이런 일들'], items:[
+          '신체폭력 — 때리기, 나오지 못하게 가두기, 강제로 데려가기, 장난을 빙자한 꼬집기와 밀치기',
+          '언어폭력 — 여러 사람 앞에서 모욕하거나 명예를 훼손하는 말, 겁을 주는 문자',
+          '사이버폭력 — 단체 대화방에 초대해 나가지 못하게 하기, 게시글·댓글로 비난하기, 동의 없이 촬영해 퍼뜨리기',
+          '금품갈취 — 돌려줄 생각 없이 돈을 요구하거나 물건을 빌린 뒤 돌려주지 않기',
+          '강요 — 심부름, 게임 대행, 와이파이 셔틀, 과제 대행처럼 원치 않는 행동을 시키기',
+          '따돌림 — 반복적으로 피하고 놀리며, 다른 친구와 어울리지 못하게 막기',
+          '성폭력 — 성적인 말과 행동으로 굴욕감이나 수치심을 느끼게 하기'
+        ]},
+        {h:'따돌림과 사이버 따돌림', type:'table', cols:['구분','뜻'], items:[
+          '따돌림 — 2명 이상이 특정 학생에게 지속적·반복적으로 신체적·심리적 공격을 가하는 일체의 행위',
+          '사이버 따돌림 — 정보통신기기로 반복해 심리적 공격을 하거나, 개인정보·허위사실을 퍼뜨려 고통을 주는 행위',
+        ]},
+        {part:'학교는 이렇게 처리합니다', type:'fig', h:'사안은 이렇게 처리됩니다', svg:`<svg viewBox="0 0 600 430" role="img" aria-label="학교폭력 사안 처리 흐름">
+  <g font-family="sans-serif">
+    <rect x="0" y="0" width="600" height="70" rx="12" fill="var(--line-soft)"/>
+    <circle cx="34" cy="35" r="16" fill="var(--mute)" opacity=".22"/>
+    <text x="34" y="42" font-size="21" font-weight="700" fill="var(--ink-2)" text-anchor="middle">1</text>
+    <text x="64" y="32" font-size="25" font-weight="700" fill="var(--ink)">신고 접수</text>
+    <text x="64" y="57" font-size="19" fill="var(--mute)">피해학생 의사를 확인해 24시간 안에 분리</text>
+
+    <rect x="0" y="94" width="600" height="70" rx="12" fill="var(--line-soft)"/>
+    <circle cx="34" cy="129" r="16" fill="var(--mute)" opacity=".22"/>
+    <text x="34" y="136" font-size="21" font-weight="700" fill="var(--ink-2)" text-anchor="middle">2</text>
+    <text x="64" y="126" font-size="25" font-weight="700" fill="var(--ink)">사안 조사</text>
+    <text x="64" y="151" font-size="19" fill="var(--mute)">전담 조사관이 사실 확인과 증거 수집</text>
+
+    <rect x="0" y="188" width="600" height="70" rx="12" fill="var(--line-soft)"/>
+    <circle cx="34" cy="223" r="16" fill="var(--mute)" opacity=".22"/>
+    <text x="34" y="230" font-size="21" font-weight="700" fill="var(--ink-2)" text-anchor="middle">3</text>
+    <text x="64" y="220" font-size="25" font-weight="700" fill="var(--ink)">전담기구 심의</text>
+    <text x="64" y="245" font-size="19" fill="var(--mute)">접수 후 14일 이내 자체해결 여부 결정</text>
+
+    <text x="0" y="298" font-size="19" fill="var(--mute)">심의 결과에 따라 둘 중 하나로</text>
+
+    <rect x="0" y="314" width="600" height="52" rx="12" fill="var(--gc)" opacity=".18"/>
+    <text x="24" y="346" font-size="23" font-weight="700" fill="var(--ink)">학교장 자체해결</text>
+
+    <rect x="0" y="378" width="600" height="52" rx="12" fill="var(--gc)"/>
+    <text x="24" y="410" font-size="23" font-weight="700" fill="#fff">교육지원청 심의위원회</text>
+  </g>
+  <g stroke="var(--line)" stroke-width="3" fill="none">
+    <path d="M34 70 V94"/><path d="M34 164 V188"/>
+  </g>
+</svg>`},
+        {h:'함께 알아 두실 것', items:[
+          '심의위원회 개최 요청 기한은 7일까지 연기될 수 있습니다',
+          '사안조사는 되도록 수업시간 외에 하고, 부득이하게 수업 중 진행하면 별도의 학습 기회를 제공합니다',
+          '처리 전 과정에서 관계회복 프로그램을 신청할 수 있습니다',
+          '가해자가 학생이 아니어도 필요하면 피해 학생을 보호하는 조치를 할 수 있습니다'
+        ]},
+        {part:'우리 아이에게서 살필 것', h:'가해 학생에게서 보이는 신호', type:'check', at:2,
+         msg0:'지금은 눈에 띄는 신호가 없습니다.',
+         msgLow:'한두 가지는 성장기의 변화일 수 있습니다. 다그치기보다 먼저 이야기를 들어 보세요.',
+         msgHigh:'여러 신호가 함께 보입니다. 담임 선생님과 학교에서의 모습을 확인해 보세요.', items:[
+          '부모와 대화가 적고 반항하거나 화를 잘 냅니다',
+          '귀가 시간이 늦고 불규칙하며 친구 관계를 지나치게 중요시합니다',
+          '다른 학생을 때리거나 동물을 괴롭히는 모습을 보입니다',
+          '자신의 문제 행동에 이유와 핑계가 많습니다',
+          'SNS에서 특정인을 비난하거나 사생활을 퍼뜨립니다'
+        ]},
+        {type:'branch', h:'우리 아이의 상황을 골라 보세요', intro:'해당하는 쪽만 펼쳐서 보시면 됩니다.', options:[
+          {label:'피해를 입은 것 같아요', items:[
+            '아이를 탓하지 않습니다. 원인은 아이에게 있지 않습니다',
+            '부끄러워 숨기거나 축소하지 않습니다',
+            '부모가 절망하면 아이는 더 움츠러듭니다. 침착하게 대합니다',
+            '담임 선생님에게 먼저 알립니다',
+            '문자·대화 화면·음성·진단서 등 증거를 남겨 둡니다',
+            '직접 찾아가 보복하지 않습니다'
+          ]},
+          {label:'가해했다고 연락받았어요', items:[
+            '부인하는 것은 또 다른 가해입니다',
+            '피해 학생에게서 원인을 찾지 않습니다',
+            '"애들은 싸우면서 큰다"고 정당화하지 않습니다',
+            '아이·친구·교사에게 정확한 경위를 확인합니다',
+            '아이와 함께 진심으로 사과하고 회복을 돕습니다',
+            '전문가 상담과 봉사활동은 아이가 성장할 기회가 됩니다'
+          ]},
+          {label:'아직 잘 모르겠어요', items:[
+            '아이의 말을 끊지 않고 끝까지 듣습니다',
+            '한쪽 이야기만으로 단정하지 않습니다',
+            '담임 선생님께 학교에서의 모습을 확인합니다',
+            '문자·대화 화면처럼 증거가 될 만한 것은 지우지 않고 둡니다',
+            '"무슨 일이 있어도 네 편이야"라고 먼저 말해 줍니다'
+          ]}
+        ]},
+        {h:'사이버폭력을 알게 되었을 때', type:'alert', items:[
+          '감정적으로 반응하지 않고 침착하게 대응합니다',
+          '"절대 네 잘못이 아니야"라고 말해 주고 끝까지 지켜줄 것이라는 믿음을 줍니다',
+          '피해 내용을 구체적으로 파악하고 화면을 저장해 증거를 확보합니다',
+          '가해자를 직접 만나 보복하지 않고 담임 선생님이나 기관에 도움을 요청합니다',
+          '처리 과정을 끝까지 함께 확인합니다'
+        ]},
+        {part:'가정에서 할 일', h:'가정에서의 인성교육 — 격려하는 여덟 가지 방법', type:'do', items:[
+          '아이가 할 수 있는 것에 초점을 둡니다. 부모의 자신감이 아이에게 전해집니다',
+          '결과보다 참여한 과정 자체를 인정해 줍니다',
+          '실수를 두려워하지 않게 합니다. 실수는 도전했다는 증거입니다',
+          '책임을 맡깁니다. 책임을 주는 것은 "네가 할 수 있다고 믿는다"는 뜻입니다',
+          '아이의 수준에 맞는 현실적이고 긍정적인 기대를 합니다',
+          '잘못한 행동보다 잘한 행동을 먼저 알아봐 줍니다',
+          '삶을 긍정적으로 바라보는 태도를 길러 줍니다',
+          '좋아하는 영역에서 성공을 맛보게 해 줍니다'
+        ]},
+        {h:'학교문화 책임규약', items:[
+          '학생·교사·학부모가 학교폭력에 대한 내용과 책임, 생활지도에 대한 이해와 준수를 함께 확인하는 약속입니다',
+          '학교마다 별도 안내장으로 안내됩니다'
+        ]}
+      ],
+      help:[{n:'학교폭력 신고',t:'117'},{n:'경찰',t:'112'},{n:'청소년상담',t:'1388'},{n:'안전Dream',u:'https://www.safe182.go.kr'},{n:'학부모On누리',u:'https://www.parents.go.kr'}]
+    },
+    {
+      q:'집 안에서 벌어지는 폭력',
+      story:'부부 싸움을 하던 중 아이가 문틈으로 보고 있었습니다. 아이에게는 아무 일도 없었다고 말했습니다. 정말 아무 일도 아니었을까요?',
+      act:'아이 앞에서 배우자에게 부드러운 말투를 쓰는 것을 하루만 의식해 보세요.',
+      low:'무슨 일인지 몰라도 집안 분위기를 온몸으로 느낍니다.',
+      high:'부모를 편들거나 중재하려다 더 깊이 다칩니다.',
+      no:4, title:'가정폭력 예방교육', freq:'연 1회 이상(1시간 이상)',
+      law:'가정폭력방지 및 피해자보호 등에 관한 법률 제4조의3',
+      lead:'가정폭력은 가족 구성원 사이의 신체적·정신적·재산상 피해를 주는 행위입니다. 다른 범죄보다 죄의식이 낮게 여겨지지만, 가출과 가정 파탄, 폭력성의 대물림으로 이어지는 명백한 범죄입니다.',
+      key:[
+        '가족 사이의 폭력도 범죄이며, 아이가 보는 것만으로 정서학대가 됩니다',
+        '때리는 것 외에 폭언, 생활비 통제, 방치도 가정폭력입니다',
+        '긴급하면 112, 상담과 기관 연계는 1366(24시간)'
+      ],
+      blocks:[
+        {intro:'가정폭력은 신체적 폭력만을 뜻하지 않습니다.', h:'다섯 가지 형태', type:'table', cols:['형태','해당하는 행위'], items:[
+          '신체적 폭력 — 때리는 행위뿐 아니라 물건을 던지거나 목·어깨를 움켜잡는 행위, 가재도구를 부수는 행위',
+          '정서적 학대 — 폭언·무시·모욕, 때리려는 위협, 대화 거부, 고립시키고 의심하는 행위',
+          '경제적 위협 — 생활비를 주지 않거나 지출을 일일이 보고하게 하는 행위, 동의 없이 재산을 처분하는 행위',
+          '성적인 폭력 — 원치 않는 성관계 요구, 동의 없는 신체 접촉',
+          '방임 — 끼니를 주지 않거나 아파도 병원에 데려가지 않고 위험한 상황에 방치하는 행위'
+        ]},
+        {h:'아이에게 미치는 영향', items:[
+          '아이가 가정폭력을 목격하게 하는 것만으로도 아동복지법상 정서학대에 해당합니다',
+          '폭력을 보고 자란 아이는 갈등을 폭력으로 푸는 방식을 배우게 됩니다',
+          '아이 앞에서 부부가 정중한 말을 쓰는 것이 가장 기본적인 예방입니다'
+        ]},
+        {h:'도움을 받는 방법', type:'aid', items:[
+          '긴급한 상황이면 먼저 112에 신고합니다',
+          '여성긴급전화 1366은 365일 24시간 상담과 기관 연계를 지원합니다',
+          '응급조치·병원 후송·친인척 연락·소송 대리까지 연결됩니다',
+          '법률 상담은 대한법률구조공단 132, 범죄 피해 지원은 범죄피해자지원센터 1577-1295를 이용할 수 있습니다'
+        ]}
+      ],
+      help:[{n:'여성긴급전화',t:'1366'},{n:'경찰',t:'112'},{n:'법률구조',t:'132'},{n:'범죄피해자지원',t:'1577-1295'}]
+    },
+    {
+      q:'내 몸을 지키는 법, 딥페이크까지',
+      story:'아이가 반 친구 사진이 이상하게 합성된 걸 봤다고 합니다. "그냥 장난이래요"라고 덧붙입니다. 장난으로 넘겨도 될까요?',
+      act:'"기분 나쁜 접촉은 누구한테든 싫다고 말해도 돼"라고 오늘 한 번 말해 주세요.',
+      low:'몸의 경계를 배우는 시기입니다. "싫다고 말해도 돼"부터 시작하세요.',
+      high:'합성과 유포가 실제로 벌어지는 나이입니다.',
+      no:5, title:'성폭력 예방교육 (성희롱·딥페이크 등 디지털 성범죄 포함)', freq:'연 1회 이상(1시간 이상)',
+      law:'양성평등기본법 제31조, 성폭력방지 및 피해자보호 등에 관한 법률 제5조, 성폭력범죄의 처벌 등에 관한 특례법 제14조',
+      lead:'성폭력은 상대의 뜻에 반해 성을 매개로 가하는 모든 행위로, 성추행과 성폭행뿐 아니라 성적 자기결정권을 침해하는 모든 행위를 포함합니다. 촬영·유포·합성 같은 디지털 성범죄도 여기에 들어갑니다.',
+      key:[
+        '내 몸의 주인은 나. 기분 나쁜 접촉은 상대가 누구든 거절해도 된다고 알려 주세요',
+        '친구 얼굴을 합성해 돌려보는 것만으로 범죄이고, 가지고만 있어도 처벌됩니다',
+        '피해가 생기면 아이를 탓하지 말고 증거를 지킨 뒤 112·1366으로 연락하세요'
+      ],
+      blocks:[
+        {part:'기본 성교육', intro:'성교육을 미루는 사이, 아이는 다른 곳에서 먼저 배웁니다.', h:'왜 지금 성교육인가', items:[
+          '아이들의 신체 성장은 빨라졌는데, 성에 대한 정보는 왜곡된 경로로 먼저 도착합니다',
+          '어린이가 피해자가 되는 사건과 아동이 가해자가 되는 사건이 함께 늘고 있습니다',
+          '음란물에 노출되는 시기가 이르고 빈도도 잦습니다',
+          '호기심이 묵살되면 왜곡된 성 태도가 자리 잡습니다. 자연스럽게, 그리고 즉시 정직하게 알려 주세요'
+        ]},
+        {h:'성적 자기결정권이란', items:[
+          '자신의 판단으로 책임 있게 성적 결정을 할 권리',
+          '원하지 않는 접촉을 거부하고 내 몸을 보호할 권리',
+          '성에 대한 올바른 정보와 지식을 제공받을 권리',
+          '성폭력 피해를 입지 않을 권리'
+        ]},
+        {h:'집에서 이렇게 알려 주세요', type:'do', items:[
+          '내 몸의 주인은 나. 기분 나쁜 접촉은 상대가 부모나 선생님이라도 거절해도 됩니다',
+          '다만 대부분의 어른은 좋은 사람이라는 사실도 함께 말해 줍니다',
+          '무엇이든 물어볼 수 있는 분위기를 만듭니다. 호기심을 막으면 왜곡된 정보로 갑니다',
+          '상대의 거절은 거절 그대로 받아들이도록 가르칩니다',
+          '자신의 생각을 분명하게 표현하는 연습을 함께 합니다',
+          '음란물을 보고 가해자가 되지 않도록 지도하고, 미디어의 성적 표현이 왜곡될 수 있음을 알려 줍니다',
+          '부모가 서로 존중하는 모습을 보여 주는 것이 가장 좋은 성교육입니다'
+        ]},
+        {h:'성희롱도 성폭력입니다', items:[
+          '지위를 이용해 성적 언동으로 굴욕감이나 혐오감을 느끼게 하거나, 이를 거부했다고 불이익을 주는 행위',
+          '언어적 성희롱 — 외모 평가, 성적인 비유 (가장 많이 나타나는 형태)',
+          '신체적 성희롱 — 원치 않는 신체 접촉',
+          '시각적 성희롱 — 음란한 사진을 보여주거나 신체를 노출하는 행위',
+          '판단 기준은 피해자의 사정과 함께, 일반적인 피해자 입장에서 불쾌감을 느낄 만했는지입니다',
+          '피해를 입으면 명확히 거부 의사를 밝히고, 날짜·장소·목격자·대화 내용을 기록해 둡니다'
+        ]},
+        {part:'디지털 성범죄', h:'딥페이크는 놀이가 아니라 범죄입니다', type:'alert', items:[
+          '지인의 얼굴을 합성해 만들고 돌려보는 것만으로 처벌 대상입니다',
+          '허위 영상물 반포는 5년 이하 징역 또는 5천만원 이하 벌금이며, 영리 목적이면 7년 이하 징역으로 가중됩니다',
+          '아동·청소년 성착취물은 내려받아 가지고만 있어도 1년 이상의 유기징역에 처해질 수 있습니다',
+          '불법 촬영물을 구입·저장·소지하는 행위도 3년 이하 징역 또는 3천만원 이하 벌금 대상입니다',
+          '피해 영상물을 내려받거나 보는 것 자체가 피해를 넓히는 2차 가해입니다',
+          '한 번 퍼지면 되돌릴 수 없고, 피해자에게 오래 남습니다'
+        ]},
+        {h:'일상에서 지킬 예방 수칙', type:'do', items:[
+          '다른 사람에게 성적인 행동을 강제하거나 강요하지 않습니다',
+          '성적인 농담이나 불필요한 신체 접촉은 하지 않습니다',
+          '사소한 행동이라도 상대가 싫다고 하거나 싫은 표정을 지으면 그만둡니다',
+          '신체적 특징을 놀리는 등 불쾌감을 주는 말을 쓰지 않습니다',
+          '신체 노출이나 성적인 행동을 찍어 올리지 않고, 남에게 강요하거나 퍼뜨리지 않습니다'
+        ]},
+        {h:'자녀와 함께 지킬 일곱 가지', type:'do', items:[
+          '나와 다른 사람의 개인정보를 인터넷에 올리거나 보내지 않기',
+          '모르는 사람이 보낸 문자·사진·링크는 누르지 않기',
+          '허락 없이 사진이나 영상을 찍지도, 보내지도, 보지도 않기',
+          '다른 사람의 사진과 영상을 함부로 합성하지 않기',
+          '퍼뜨리겠다고 협박하지 않기',
+          '개인정보를 묻거나 만나자고 하면 어른에게 알리기',
+          '인터넷에서 내 사진이나 영상을 발견하면 바로 알리기'
+        ]},
+        {h:'디지털 세상, 부모의 다섯 가지 태도', type:'do', items:[
+          '가장 좋은 대응은 예방입니다. 평소의 정서적 연결과 평등한 대화가 바탕이 됩니다',
+          '무조건 "하지 마"가 아니라 중립적인 태도로 디지털 세상을 함께 이해합니다',
+          '합성물을 만들고 공유하는 일이 범죄임을 분명히 알려 줍니다',
+          '자녀의 디지털 발자국을 관리합니다. 사진·영상 공유를 줄이고 촬영 시 위치정보를 끕니다',
+          '정보의 출처를 확인하고 비판적으로 검토하는 연습을 함께 합니다'
+        ]},
+        {type:'fig', h:'이렇게 접근합니다', svg:`<svg viewBox="0 0 600 168" role="img" aria-label="온라인 그루밍의 진행 방향">
+  <defs><linearGradient id="gm" x1="0" x2="1">
+    <stop offset="0" stop-color="var(--gc)" stop-opacity=".25"/>
+    <stop offset="1" stop-color="var(--gc)" stop-opacity="1"/>
+  </linearGradient></defs>
+  <text x="0" y="24" font-size="19" fill="var(--mute)">6단계에 걸쳐 서서히 진행됩니다</text>
+  <rect x="0" y="44" width="600" height="34" rx="17" fill="url(#gm)"/>
+  <g font-size="22" font-weight="700" font-family="sans-serif">
+    <text x="0" y="118" fill="var(--ink)">친절하게 접근</text>
+    <text x="300" y="118" text-anchor="middle" fill="var(--ink)">고립시켜 의존</text>
+    <text x="600" y="118" text-anchor="end" fill="var(--gc)">협박과 요구</text>
+  </g>
+  <text x="0" y="152" font-size="19" fill="var(--mute)">아이는 중간부터 스스로 피해임을 알아차리기 어렵습니다</text>
+</svg>`},
+        {h:'환심형 성범죄(온라인 그루밍) 6단계', type:'steps', items:[
+          '접근해 대화하며 친밀한 관계를 만듭니다',
+          '외로움·관심사 같은 약한 지점을 파악해 신뢰를 쌓습니다',
+          '선물을 주고 고민을 들어주며 욕구를 채워 줍니다',
+          '보호자에게서 떼어놓고 의존하게 만든 뒤 성적 자료를 요구합니다',
+          '유포하겠다며 협박해 순응하게 만듭니다',
+          '추가 촬영과 직접 만남을 요구합니다'
+        ]},
+        {h:'왜 알아차리기 어려운가', items:[
+          '피해자가 스스로 성범죄임을 인지하지 못하는 경우가 많습니다',
+          '알아차려도 가해자에 대한 정서적 의존이 높아 신고하기 어렵습니다',
+          '아이가 먼저 말하기 어려운 구조라, 부모가 평소에 물어봐 주셔야 합니다'
+        ]},
+        {part:'피해가 생겼을 때', h:'피해가 생겼다면', type:'alert', items:[
+          '침착한 모습을 보이고, 아이의 잘못이 아니라고 분명히 말해 줍니다',
+          '추궁하듯 반복해 묻거나 대답을 강요하지 않습니다',
+          '병원 진료 전까지 씻거나 옷을 갈아입지 않고, 입었던 옷은 종이봉투에 각각 보관합니다',
+          '기억나는 상황과 가해자에 대한 내용을 자세히 기록해 둡니다',
+          'SNS를 비공개로 바꾸고 개인정보가 담긴 게시물을 정리합니다',
+          '혼자 해결하려 하지 말고 112와 전문기관을 통해 의료·상담·법률 지원을 받습니다'
+        ]},
+        {h:'피해자를 위한 지원 체계', type:'aid', items:[
+          '신고와 동시에 피해자 보호 조치가 시작됩니다',
+          '해바라기센터에는 여성경찰관·상담사·간호사가 24시간 상주합니다',
+          '진술 조사와 증거 채취, 산부인과·정신과 진료, 심리치료가 한곳에서 연계됩니다',
+          '무료 법률 구조와 소송 대리도 지원받을 수 있습니다',
+          '이후 보호시설과 치유·회복 프로그램까지 이어집니다'
+        ]}
+      ],
+      help:[{n:'경찰',t:'112'},{n:'해바라기센터',t:'1899-3075'},{n:'디지털성범죄피해자지원센터',t:'02-735-8994'},{n:'여성긴급전화',t:'1366'},{n:'성범죄자 알림e',u:'https://www.sexoffender.go.kr'}]
+    },
+    {
+      q:'아이를 노리는 성착취',
+      story:'게임에서 만난 사람이 아이에게 기프티콘을 보냈습니다. 고민을 들어주는 좋은 형이라고 합니다. 무엇부터 확인해야 할까요?',
+      act:'아이의 온라인 친구 중에 실제로 만난 적 없는 사람이 누구인지 물어보세요.',
+      low:'낯선 사람의 친절을 의심하지 못합니다.',
+      high:'게임과 SNS에서 접근받는 일이 흔합니다.',
+      no:6, title:'성매매 예방교육', freq:'연 1회 이상(1시간 이상)',
+      law:'성매매방지 및 피해자보호 등에 관한 법률 제5조',
+      lead:'성매매는 불특정인을 상대로 대가를 주고받기로 하고 성행위를 하거나 그 상대가 되는 것입니다. 아동·청소년이 관련되면 그 자체로 성착취 범죄입니다.',
+      key:[
+        '아동·청소년이 관련되면 그 자체로 성착취 범죄입니다',
+        '온라인에서 환심을 사 접근하는 그루밍이 가장 흔한 경로입니다',
+        '피해를 입은 아이는 처벌 대상이 아니라 보호 대상입니다'
+      ],
+      blocks:[
+        {h:'아동·청소년 성착취에 해당하는 일', type:'law', items:[
+          '아동·청소년을 대상으로 한 강간·강제추행 또는 그 예비·음모',
+          '아동·청소년 성착취물을 만들거나 퍼뜨리는 경우',
+          '아동·청소년의 성을 사거나 이를 유인·권유·강요하는 경우',
+          '성적 수치심이나 혐오감을 주는 대화를 반복적으로 이어가거나 참여시키는 경우',
+          '온라인에서 환심을 사 접근하는 경우(온라인 그루밍)'
+        ]},
+        {intro:'성매매 예방은 아이를 가르치기 이전에 어른이 만드는 환경의 문제입니다.', h:'어른이 할 수 있는 일', type:'do', items:[
+          '향락·접대 문화를 당연하게 여기지 않습니다',
+          '인터넷에서 성매매를 알선하거나 구매하는 글을 발견하면 신고합니다',
+          '아이 주변의 유해환경과 유흥업소에 관심을 갖습니다',
+          '청소년 유해환경 감시·신고 활동에 참여합니다'
+        ]},
+        {h:'꼭 알려 주세요', type:'alert', items:[
+          '성매매에 이용된 아동·청소년은 처벌 대상이 아니라 보호 대상입니다',
+          '겁이 나서 숨기면 더 큰 피해로 이어집니다. 어른에게 말하는 것이 가장 안전합니다',
+          '성착취 피해 아동·청소년 지원센터에서 상담·의료·법률 지원을 받을 수 있습니다'
+        ]}
+      ],
+      help:[{n:'경찰',t:'112'},{n:'여성긴급전화',t:'1366'},{n:'청소년상담',t:'1388'}]
+    }
+  ]
+},
+{
+  no:'묶음 2', accent:'var(--g2)', season:'4월 · 10월',
+  title:'아이의 마음 건강',
+  sub:'신호를 알아차리는 법과, 알아차린 다음에 건네는 말.',
+  items:[
+    {
+      q:'아이가 힘들어 보일 때',
+      story:'평소 밝던 아이가 요즘 방에서 나오지 않습니다. "다 귀찮아"라는 말이 부쩍 늘었습니다. 그냥 사춘기일까요?',
+      act:'아이의 표정을 보고 느낀 그대로 말해 보세요. "요새 좀 지쳐 보이더라."',
+      low:'마음이 힘들 때 배가 아프다는 식으로 몸의 증상을 말하기도 합니다.',
+      high:'말수가 줄고 방문을 닫는 것으로 신호를 보냅니다.',
+      no:2, title:'사회정서교육 (생명존중 및 자살예방)', freq:'연 2회 이상',
+      law:'학교보건법 제2조의2, 자살예방 및 생명존중문화 조성을 위한 법률 제17조',
+      lead:'문제를 막는 교육에서 마음의 힘을 기르는 교육으로 바뀌고 있습니다. 아이의 어려움은 갑자기 생기지 않습니다. 유전적·심리적·환경적 요인이 얽혀 오랜 시간에 걸쳐 쌓이고, 대개 신호가 먼저 옵니다.',
+      key:[
+        '아이의 어려움은 대개 말과 행동, 정서의 변화로 먼저 드러납니다',
+        '"혹시 그런 생각을 해 본 적 있니?"라고 직접 물어도 괜찮습니다. 묻는다고 위험해지지 않습니다',
+        '판단하지 말고 끝까지 들은 뒤, 109·1388로 함께 도움을 청하세요'
+      ],
+      blocks:[
+        {intro:'아래 요인이 겹칠수록 위험이 커집니다. 하나만 보고 판단하지는 마세요.', h:'위험을 높이는 요인', items:[
+          '가족 갈등, 가족 구조의 변화, 경제적 어려움',
+          '따돌림이나 학교폭력에 노출된 경험',
+          '낮은 자존감과 우울, 약한 심리적 내성',
+          '학업·진로에서 오는 과도한 스트레스',
+          '이전의 시도 경험, 가족 중 비슷한 일을 겪은 경우'
+        ]},
+        {h:'눈여겨볼 신호 · 말', type:'check', at:2,
+         msg0:'해당하는 말은 들으신 적이 없습니다.',
+         msgLow:'한 번이라도 들으셨다면 흘려보내지 마세요. 오늘 직접 물어봐 주세요.',
+         msgHigh:'여러 신호가 함께 보입니다. 아이에게 직접 물어보셔도 괜찮고, 109로 상담하실 수 있습니다.', items:[
+          '죽음이나 이별을 암시하는 말을 자주 합니다',
+          '자기를 낮추는 말, "아무것도 달라지지 않는다"는 말을 합니다',
+          '일기·메모·SNS에 죽음과 관련된 표현이 보입니다',
+          '죽음에 관심을 보이거나 농담처럼 이야기합니다'
+        ]},
+        {h:'눈여겨볼 신호 · 행동과 정서', type:'check', at:3,
+         msg0:'해당하는 변화는 보이지 않습니다.',
+         msgLow:'한두 가지는 일시적인 변화일 수 있습니다. 며칠 더 지켜봐 주세요.',
+         msgHigh:'여러 변화가 함께 보입니다. 혼자 판단하지 마시고 109나 담임 선생님께 상담해 보세요.', items:[
+          '잠과 식사가 눈에 띄게 변합니다(너무 많이 자거나 못 자고, 덜 먹거나 과식)',
+          '아끼던 물건이나 상장을 주변에 나눠 주거나 정리합니다',
+          '외모에 무관심해지고 집중력이 떨어집니다',
+          '갑작스러운 행동 변화나 자해 행동이 나타납니다',
+          '무기력·죄책감·짜증이 늘고, 즐기던 일에 흥미를 잃으며 사람을 피합니다'
+        ]},
+        {h:'이렇게 말을 건네 주세요', items:[
+          '"요새 표정이 어두워 보이는데, 걱정되는 일이 있니?"처럼 관찰한 모습부터 말합니다',
+          '"혹시 그런 생각을 해 본 적 있니?"라고 직접 물어도 괜찮습니다. 묻는다고 위험해지지 않습니다',
+          '놀라더라도 끝까지 듣습니다. 언제부터, 왜 그런지 구체적으로 물어봅니다',
+          '"그건 나쁜 생각이야", "별거 아니야" 대신 "그만큼 힘들었구나"라고 답합니다',
+          '"말해 줘서 고마워. 함께 방법을 찾아보자"로 마무리하고 전문가와 연결합니다'
+        ]},
+        {type:'pair', h:'말 한마디가 다릅니다', items:[
+          '"그건 나쁜 생각이야"||"그만큼 힘들었구나"',
+          '"별거 아니야, 다 그래"||"언제부터 그런 생각이 들었어?"',
+          '놀라서 화를 냅니다||말해 줘서 고맙다고 합니다',
+          '혼자 해결하려 합니다||함께 방법을 찾자고 말합니다'
+        ]},
+        {h:'평소에 지킬 일곱 가지', type:'do', items:[
+          '진심 어린 사랑으로 대합니다',
+          '아이의 장점과 강점을 자주 짚어 줍니다',
+          '대화에서 충분한 이야기를 듣습니다',
+          '말을 경청하고 정서적으로 지지합니다',
+          '지도할 때 자존심을 상하게 하거나 모욕감을 주지 않습니다',
+          '담임 선생님이나 아이의 친구에게 도움을 구합니다',
+          '위험이 높다고 느껴지면 주저하지 말고 전문가에게 의뢰합니다'
+        ]}
+      ],
+      help:[{n:'자살예방 상담',t:'109'},{n:'청소년상담',t:'1388'},{n:'생명의전화',t:'1588-9191'},{n:'Wee 프로젝트',u:'https://www.wee.go.kr'}]
+    },
+    {
+      q:'훈육과 학대, 어디까지가 훈육일까',
+      story:'숙제를 안 한 아이에게 소리를 질렀습니다. 그 순간 아이가 움찔했습니다. 훈육이었을까요, 다른 무엇이었을까요?',
+      act:'화가 났던 순간을 하나 떠올려, 다음에는 어떻게 말할지 미리 정해 두세요.',
+      low:'부모의 말투가 곧 세상의 기준이 되는 시기입니다.',
+      high:'형제나 친구와 비교하는 말에 특히 크게 상처받습니다.',
+      quiz:{
+        id:'parenting', kind:'yesno',
+        title:'긍정양육 자가점검',
+        note:'평소 모습을 떠올리며 솔직하게 답해 주세요.',
+        questions:[
+          '아이마다 기질과 발달 속도가 다르다는 것을 이해하고 있다',
+          '훈육할 때 체벌 대신 다른 방법을 쓴다',
+          '화가 났을 때 잠시 멈추고 말할 수 있다',
+          '아이와 함께 있을 때 온전히 집중한다',
+          '아이의 감정을 먼저 들어 준다',
+          '약속과 규칙을 일관되게 지킨다',
+          '내가 실수했을 때 아이에게 사과한다',
+          '힘들 때 주변이나 전문가에게 도움을 청한다'
+        ],
+        results:[
+          {max:3, label:'하나씩 시작해 보세요', tip:'오늘은 아이의 말을 끝까지 듣는 것 하나만 해보셔도 좋습니다.'},
+          {max:6, label:'잘하고 계십니다', tip:'아니오라고 답한 항목 중 하나만 골라 이번 주에 바꿔 보세요.'},
+          {max:8, label:'든든한 양육을 하고 계십니다', tip:'지금처럼 일관되게 대해 주세요.'}
+        ]
+      },
+      no:3, title:'아동학대 예방교육', freq:'연 1회 이상',
+      law:'아동복지법 제26조의2, 같은 법 시행령 제26조의2',
+      lead:'훈육과 학대의 경계는 아이의 건강과 발달에 해가 되는지에 있습니다. 만 18세 미만 아동에게 가해지는 신체적·정신적·성적 폭력과 가혹행위, 그리고 유기와 방임이 모두 학대입니다.',
+      key:[
+        '때리는 것만이 아니라 비교·모욕·방치도 학대입니다',
+        '체벌과 훈육은 다릅니다. 부모의 스트레스를 푸는 방법을 따로 마련하세요',
+        '의심되면 112로 신고할 수 있습니다. 아래 8문항으로 우리 집 양육을 점검해 보세요'
+      ],
+      blocks:[
+        {type:'fig', h:'네 가지 유형 한눈에', svg:`<svg viewBox="0 0 600 300" role="img" aria-label="아동학대 네 가지 유형">
+  <g font-family="sans-serif">
+    <rect x="0" y="0" width="290" height="134" rx="12" fill="var(--gc)" opacity=".1"/>
+    <text x="20" y="42" font-size="24" font-weight="700" fill="var(--ink)">신체학대</text>
+    <text x="20" y="76" font-size="18" fill="var(--ink-2)">때리기, 도구로 위협하기,</text>
+    <text x="20" y="104" font-size="18" fill="var(--ink-2)">다치도록 내버려 두기</text>
+
+    <rect x="310" y="0" width="290" height="134" rx="12" fill="var(--gc)" opacity=".1"/>
+    <text x="330" y="42" font-size="24" font-weight="700" fill="var(--ink)">정서학대</text>
+    <text x="330" y="76" font-size="18" fill="var(--ink-2)">비교·차별, 내쫓기,</text>
+    <text x="330" y="104" font-size="18" fill="var(--ink-2)">가정폭력을 보게 하기</text>
+
+    <rect x="0" y="156" width="290" height="134" rx="12" fill="var(--gc)" opacity=".1"/>
+    <text x="20" y="198" font-size="24" font-weight="700" fill="var(--ink)">성학대</text>
+    <text x="20" y="232" font-size="18" fill="var(--ink-2)">아동을 대상으로 하는</text>
+    <text x="20" y="260" font-size="18" fill="var(--ink-2)">모든 성적 행위와 노출</text>
+
+    <rect x="310" y="156" width="290" height="134" rx="12" fill="var(--gc)" opacity=".1"/>
+    <text x="330" y="198" font-size="24" font-weight="700" fill="var(--ink)">방임·유기</text>
+    <text x="330" y="232" font-size="18" fill="var(--ink-2)">의식주·교육·치료를</text>
+    <text x="330" y="260" font-size="18" fill="var(--ink-2)">하지 않거나 버리기</text>
+  </g>
+</svg>`},
+        {intro:'학대는 때리는 것만이 아닙니다. 법은 네 가지로 나눕니다.', h:'네 가지 유형', type:'table', cols:['유형','해당하는 행위'], items:[
+          '신체학대 — 우발적 사고가 아닌 상황에서 신체에 손상을 입히거나 그렇게 되도록 두는 모든 행위',
+          '정서학대 — 잠 안 재우기, 내쫓기, 비교·차별, 가정폭력을 목격하게 하기',
+          '성학대 — 아동을 대상으로 하는 모든 성적 행위와 성적 노출',
+          '방임·유기 — 의식주·교육·치료를 제공하지 않거나 아이를 버리는 행위'
+        ]},
+        {h:'예방을 위한 네 가지', type:'do', items:[
+          '연령에 맞는 발달을 이해합니다. 능력을 넘어선 기대가 학대의 출발점이 되기도 합니다',
+          '체벌과 훈육을 혼동하지 않습니다',
+          '부모 자신의 스트레스를 푸는 방법을 따로 마련합니다. 욕구불만이 아이에게 향하기 쉽습니다',
+          '잘못한 행동에는 심한 처벌보다 관심과 일관된 태도로 대합니다'
+        ]},
+        {h:'긍정양육 아홉 가지 실천', type:'do', items:[
+          '자녀 알기 — 아이마다 기질과 발달 속도가 다릅니다',
+          '나 돌아보기 — 부모로서 나의 특성과 고칠 점을 살핍니다',
+          '관점 바꾸기 — 문제 행동이라 여긴 것이 정말 고쳐야 할 일인지 봅니다',
+          '같이 성장하기 — 아이의 성장에 맞춰 부모의 역할도 바꿉니다',
+          '온전히 집중하기 — 함께 있는 시간에는 아이에게만 집중합니다',
+          '경청하고 공감하기 — 의사 표현을 적극적으로 들어 줍니다',
+          '일관성 유지하기 — 함께 정한 약속과 규칙을 일관되게 지킵니다',
+          '실수 인정하기 — 부모도 실수할 수 있음을 인정하고 사과합니다',
+          '함께 키우기 — 어려울 때는 주변과 전문가에게 도움을 청합니다'
+        ]},
+        {h:'신고는 이렇게', type:'aid', items:[
+          '학대가 의심되면 즉시 112로 신고합니다',
+          '아이의 이름·성별·나이·주소, 학대가 의심되는 사람의 정보를 알려 줍니다',
+          '정보를 다 몰라도 신고할 수 있습니다',
+          '신고자의 신분은 아동학대처벌법과 공익신고자보호법으로 보호됩니다'
+        ]},
+        {h:'처벌은 이렇게 정해져 있습니다', type:'law', items:[
+          '성적 학대와 아동 매매 — 10년 이하의 징역 또는 1억원 이하의 벌금',
+          '신체학대·정서학대·방임 — 5년 이하의 징역 또는 5천만원 이하의 벌금',
+          '가정폭력에 아동을 노출시키는 행위도 정서학대에 포함됩니다'
+        ]}
+      ],
+      help:[{n:'아동학대 신고',t:'112'},{n:'보건복지상담',t:'129'},{n:'아동권리보장원',u:'https://www.ncrc.or.kr'}]
+    }
+  ]
+},
+{
+  no:'묶음 3', accent:'var(--g3)', season:'5월',
+  title:'중독과 과의존 막기',
+  sub:'도박·스마트폰·담배와 약물. 시작 연령이 낮을수록 위험합니다.',
+  items:[
+    {
+      q:'스마트폰 속 도박, 우리 아이는 괜찮을까',
+      story:'아이가 용돈을 미리 달라고 조릅니다. 관심 없던 축구 경기 결과에 유난히 예민합니다. 무슨 일일까요?',
+      act:'용돈 사용 내역을 아이와 함께 한 번 살펴보세요. 추궁이 아니라 함께 보는 겁니다.',
+      low:'스마트폰이 없어도 친구 폰으로 접합니다. 이르다고 보기 어렵습니다.',
+      high:'또래 사이에서 실제 돈이 오갑니다.',
+      no:7, title:'학생 도박 예방교육', freq:'연 1회 이상(1시간)',
+      law:'시·도 교육청 학생 도박 예방 교육 조례',
+      lead:'도박은 돈이나 가치 있는 물건을 걸고 불확실한 결과에 내기하는 행위입니다. 청소년은 성인보다 중독 위험이 높고, 시작 나이가 어릴수록 문제로 이어질 확률이 커집니다.',
+      key:[
+        '청소년 도박은 친구가 보낸 링크 하나로 시작되고, 공짜 포인트로 유인합니다',
+        '돈거래가 잦아지고 스포츠 경기 결과에 예민해지면 살펴봐야 합니다',
+        '부모가 가장 마지막에 압니다. 아래 6문항으로 지금 점검해 보세요'
+      ],
+      quiz:{
+        id:'gambling', kind:'yesno',
+        title:'청소년 도박 문제 자가점검',
+        note:'아이와 함께, 또는 평소 모습을 떠올리며 답해 주세요.',
+        questions:[
+          '돈내기 게임 때문에 단체활동이나 연습에 빠진 적이 있나요?',
+          '함께 하는 친구들과 어울리느라 다른 약속을 어긴 적이 있나요?',
+          '돈내기 게임을 하려고 미리 계획을 세운 적이 있나요?',
+          '돈내기 게임 때문에 기분이 나빴던 적이 있나요?',
+          '잃은 돈을 되찾으려고 다시 한 적이 있나요?',
+          '가족이나 선생님에게 숨긴 적이 있나요?'
+        ],
+        results:[
+          {max:0, label:'지금은 특별한 신호가 보이지 않습니다', tip:'앞으로도 용돈 사용과 친구 관계를 자연스럽게 살펴봐 주세요.'},
+          {max:2, label:'관심이 필요합니다', tip:'혼내기보다 먼저 이야기를 들어 주세요. 한국도박문제예방치유원의 무료 선별검사를 함께 해 보시길 권합니다.'},
+          {max:6, label:'전문기관 상담을 권합니다', tip:'헬프라인 1336으로 상담할 수 있습니다. 빚을 대신 갚아 주기 전에 상담부터 받는 것이 좋습니다.'}
+        ]
+      },
+      blocks:[
+        {intro:'청소년 도박은 드문 사건이 아닙니다.', h:'숫자로 보면', type:'stat', items:[
+          '청소년의 돈내기 게임 경험률 28.34%, 그중 위험군 4.9%, 문제군 1.5%',
+          '약 14만 명의 청소년이 도박 문제를 겪는 것으로 추정됩니다',
+          '청소년의 문제성 도박 비율은 성인의 약 3배로 나타났습니다',
+          '(한국도박문제관리센터 2018년 통계)'
+        ]},
+        {h:'이런 변화가 보이면', type:'check', at:3,
+         msg0:'지금은 특별한 변화가 보이지 않습니다.',
+         msgLow:'용돈 사용 내역을 아이와 함께 한 번 살펴보세요.',
+         msgHigh:'여러 변화가 함께 보입니다. 헬프라인 1336에서 무료로 상담하실 수 있습니다.', items:[
+          '친구들과 돈거래가 잦아지거나 빚이 있고, 돈이 많다고 자랑합니다',
+          '여럿이 모여 스마트폰을 함께 들여다보는 일이 잦고, 도박 관련 은어를 씁니다',
+          '스포츠 경기 결과에 지나치게 민감합니다',
+          '금전 문제로 친구·선후배와 갈등이 생기고 혼자 있으려 합니다',
+          '아르바이트에 집착하고, 거짓말로 조퇴·결석이 늘며 성적이 떨어집니다',
+          '고가의 옷·시계·가방이 갑자기 늘었습니다'
+        ]},
+        {h:'어떻게 시작될까요', items:[
+          '친구끼리 놀이처럼 사이트 링크를 주고받으며 시작됩니다',
+          '"돈을 땄다"는 친구의 자랑이 계기가 되는 경우가 많습니다',
+          '공짜 포인트를 먼저 주는 방식으로 접근합니다',
+          '빚을 갚으려다 다른 범죄에 연루되거나 피해자가 되기도 합니다',
+          '아이들은 부모에게 알리지 말라고 합니다. 부모가 가장 마지막에 아는 경우가 많습니다'
+        ]},
+        {h:'도움 받기', type:'aid', items:[
+          '한국도박문제예방치유원 홈페이지에서 무료 선별검사를 할 수 있습니다',
+          '헬프라인 1336은 전화·문자·온라인 상담을 지원합니다',
+          '심각하다면 전문기관의 치료와 상담으로 연결합니다'
+        ]}
+      ],
+      help:[{n:'도박문제 헬프라인',t:'1336'},{n:'청소년상담',t:'1388'},{n:'한국도박문제예방치유원',u:'https://www.kcgp.or.kr'}]
+    },
+    {
+      q:'스마트폰을 놓지 않는 아이',
+      story:'저녁 내내 아이가 스마트폰을 놓지 않습니다. 뺏으려 하면 소리를 지릅니다. 어디까지가 보통일까요?',
+      act:'가족 모두가 스마트폰을 내려놓는 시간을 하루 30분만 정해 보세요.',
+      low:'사용 시간보다 규칙을 만드는 연습이 먼저입니다.',
+      high:'규칙은 함께 정해야 지켜집니다.',
+      fig:`<svg viewBox="0 0 600 176" role="img" aria-label="스마트폰 과의존 점수 구간">
+  <text x="0" y="24" font-size="19" fill="var(--mute)">9문항 합계 점수</text>
+  <rect x="0" y="42" width="268" height="34" rx="6" fill="var(--gc)" opacity=".22"/>
+  <rect x="274" y="42" width="130" height="34" rx="6" fill="var(--gc)" opacity=".5"/>
+  <rect x="410" y="42" width="190" height="34" rx="6" fill="var(--gc)"/>
+  <g font-family="sans-serif" font-size="21" font-weight="700">
+    <text x="0" y="106" fill="var(--ink)">일반 사용자군</text>
+    <text x="274" y="106" fill="var(--ink)">잠재적 위험군</text>
+    <text x="410" y="106" fill="var(--ink)">고위험군</text>
+  </g>
+  <g font-size="19" fill="var(--mute)">
+    <text x="0" y="134">23점 이하</text>
+    <text x="274" y="134">24~27점</text>
+    <text x="410" y="134">28~36점</text>
+  </g>
+  <text x="0" y="168" font-size="18" fill="var(--mute)">진단이 아니라 스스로 하는 점검 결과입니다</text>
+</svg>`,
+      no:11, title:'인터넷·게임·스마트폰 과의존 예방교육', freq:'연 1회 이상(2시간 이상)',
+      law:'지능정보화 기본법 제54조',
+      lead:'과의존은 스마트폰이 생활에서 가장 중요한 활동이 되고(현저성), 스스로 조절하기 어려워지며(조절력 감소), 나쁜 결과를 겪으면서도 계속 쓰게 되는(문제적 결과) 상태입니다.',
+      key:[
+        '뺏는 것보다 아이가 스스로 규칙을 정하게 하는 편이 오래 갑니다',
+        '보호자도 아이와 있을 때 내려놓는 것이 시작입니다',
+        '아래 9문항으로 우리 아이의 과의존 정도를 확인해 보세요'
+      ],
+      quiz:{
+        id:'smartphone', kind:'scale4',
+        title:'우리 아이 스마트폰 과의존 자가점검',
+        note:'보호자용 9문항입니다. 결과는 진단이 아니라 스스로 하는 점검입니다.',
+        reverse:[0,1,2],
+        options:['전혀 그렇지 않다','그렇지 않다','그렇다','매우 그렇다'],
+        questions:[
+          '스마트폰 이용에 대한 부모의 지도를 잘 따른다',
+          '정해진 이용 시간에 맞춰 잘 마무리한다',
+          '빼앗지 않아도 스스로 그만둔다',
+          '항상 스마트폰을 가지고 놀고 싶어 한다',
+          '다른 어떤 것보다 스마트폰을 좋아한다',
+          '하루에도 수시로 이용하려 한다',
+          '스마트폰 때문에 아이와 자주 다툰다',
+          '다른 놀이나 학습에 지장이 있다',
+          '시력이나 자세가 나빠지고 있다'
+        ],
+        results:[
+          {max:23, label:'일반 사용자군', tip:'건전하게 활용하도록 보호자의 꾸준한 점검이 필요합니다.'},
+          {max:27, label:'잠재적 위험군', tip:'과몰입 주의가 필요합니다. 학교와 스마트쉼센터가 제공하는 활용 지침을 따라 보세요.'},
+          {max:36, label:'고위험군', tip:'스마트쉼센터(1599-0075)나 전문 치료기관의 상담을 권합니다. 무료로 이용할 수 있습니다.'}
+        ]
+      },
+      blocks:[
+        {intro:'과의존은 사용 시간이 아니라 조절 능력의 문제입니다.', h:'무엇이 문제인가', items:[
+          '수면 방해, 시력 저하, 거북목 같은 신체 변화',
+          '우울·불안·자존감 저하 같은 정서 변화',
+          '가까운 사람과의 직접 소통이 줄면서 생기는 관계 문제'
+        ]},
+        {h:'집에서 함께 실천하기', type:'do', items:[
+          '보호자도 아이와 있을 때 과하게 쓰지 않습니다',
+          '스마트폰 없이 할 수 있는 놀이를 알려 줍니다',
+          '뺏는 대신 아이가 스스로 규칙을 정하게 하고 함께 지킵니다',
+          '가족이 함께하는 시간을 고정해 둡니다',
+          '쓰지 않는 앱은 정리하고, 이동 중이나 위험한 곳에서는 멈추게 합니다',
+          '독서·운동·취미 시간을 늘려 갑니다'
+        ]},
+        {h:'자녀와 나눌 여섯 가지 대화 주제', type:'do', items:[
+          '우리 가족의 스마트폰 사용 환경 점검하기 — 빼앗기보다 스스로 끄도록 격려하고 규칙을 함께 만듭니다',
+          '온라인에서 나를 표현하기 — 사진 한 장으로 나이·가족관계·위치까지 알려질 수 있음을 알려 줍니다',
+          '장난이 아닌 온라인 괴롭힘 이해하기 — 장난으로 한 행동이 누군가에게는 큰 상처가 됩니다',
+          '온라인으로 만나는 친구 — 실제로 만나야 한다면 먼저 의논하고 상대·시간·장소를 상세히 알리게 합니다',
+          '정보의 바다에서 올바른 정보 고르기 — 부모부터 확인 없이 공유하지 않았는지 돌아봅니다',
+          '꿈과 진로를 위한 디지털 활용 — 막기만 하지 않고 도움이 되는 쓰임을 함께 찾습니다'
+        ]},
+        {h:'상담은 무료입니다', type:'aid', items:[
+          '전화 상담 1599-0075 (평일 9~22시, 토요일 9~18시)',
+          '스마트쉼센터 홈페이지 게시판 상담(비공개)',
+          '센터 방문 상담과 가정 방문 상담(연 6회 내외)도 신청할 수 있습니다'
+        ]},
+        {h:'정보통신윤리도 함께 알려 주세요', type:'do', items:[
+          '얼굴을 보고 할 수 없는 말은 화면에서도 하지 않습니다',
+          '다른 사람의 사진·글·창작물을 허락 없이 가져다 쓰지 않습니다',
+          '아이디와 비밀번호, 가족의 정보는 누구에게도 알려주지 않습니다',
+          '확인되지 않은 정보를 퍼뜨리지 않습니다',
+          '무료나 이벤트를 내세워 링크를 누르거나 앱을 설치하라고 하면 먼저 어른과 상의합니다'
+        ]}
+      ],
+      help:[{n:'스마트쉼센터',t:'1599-0075'},{n:'스마트쉼센터 홈페이지',u:'https://www.iapc.or.kr'}]
+    },
+    {
+      q:'담배와 약물, 부모가 할 일',
+      story:'아이 옷에서 낯선 냄새가 났습니다. 친구 것이라고 합니다. 어떻게 이야기를 시작해야 할까요?',
+      act:'담배나 약에 대해 궁금했던 적이 있는지 물어보세요. 혼내지 않는다고 먼저 약속하고요.',
+      low:'간접흡연과 어른의 모습 자체가 교육입니다.',
+      high:'또래의 권유를 거절하는 연습이 필요합니다.',
+      no:15, title:'흡연 및 유해약물(마약 포함) 예방교육', freq:'연 1회 이상',
+      law:'국민건강증진법 제8조, 학교보건법 제9조, 청소년보호법 제5조, 아동복지법 제31조',
+      lead:'흡연을 막는 데는 부모의 역할이 가장 큽니다. 부모가 담배를 피우는 가정의 청소년일수록 흡연율이 높게 나타납니다.',
+      key:[
+        '부모가 피우는 가정의 자녀일수록 흡연율이 높게 나타납니다',
+        '전자담배도 담배입니다. 금연 치료제가 아니며 유해물질이 들어 있습니다',
+        '식욕억제제와 진통제가 "공부 잘하는 약"으로 둔갑해 또래끼리 거래됩니다'
+      ],
+      blocks:[
+        {intro:'청소년 흡연은 단순한 호기심의 문제가 아닙니다.', h:'청소년 흡연의 특징', items:[
+          '흡연을 시작하는 연령이 점점 낮아지고 있습니다',
+          '가족 중 흡연자가 있으면 자녀의 흡연율이 올라갑니다',
+          '흡연하는 친구와 어울리는 시간이 길수록 흡연율이 높아집니다',
+          '불안이 높고 자존감·자기통제력이 낮을수록 흡연율이 높습니다',
+          '부모가 거부적·통제적이라고 느끼거나 관심이 낮다고 느낄수록 흡연율이 올라갑니다'
+        ]},
+        {h:'가정에서의 지도', type:'do', items:[
+          '피우신다면 금연하는 모습을 보여 주는 것이 가장 강한 교육입니다',
+          '아이에게 담배 심부름을 시키지 않습니다',
+          '아이가 있는 공간에서 피우지 않습니다. 옷·가구·집먼지에 붙은 물질이 몇 달간 다시 배출됩니다',
+          '적발하듯 다그치지 말고 대화로 시작합니다',
+          '학교는 경계 30m 이내까지 금연구역이며 방문하는 학부모도 지켜야 합니다'
+        ]},
+        {h:'담배에 대해 알아 둘 것', type:'table', cols:['성분','무엇을 하나'], items:[
+          '니코틴 — 중독을 일으키고 혈관을 수축시켜 고혈압·심장병을 유발합니다',
+          '타르 — 폐암을 일으키는 발암물질입니다',
+          '일산화탄소 — 산소 공급을 막아 기억력과 집중력을 떨어뜨립니다',
+          '그 밖에 아세톤, 비소 같은 독성 물질이 들어 있습니다',
+          '청소년기에 시작하면 성인기 흡연으로 이어지고 니코틴 의존이 커집니다'
+        ]},
+        {h:'전자담배에 대한 세 가지 오해', type:'table', sep:' → ', cols:['오해','사실'], items:[
+          '금연 치료제다 → 아닙니다. 안전성과 효과가 입증된 바 없습니다',
+          '유해물질이 없다 → 아닙니다. 발암물질과 독성화학물질이 검출됩니다',
+          '금연구역에서 피워도 된다 → 아닙니다. 담배로 규정되어 과태료가 부과되며, 청소년 사용은 불법입니다'
+        ]},
+        {type:'table', cols:['구분','무엇인가'], intro:'중추신경계에 영향을 주고 의존성·내성·금단증상이 있어 법으로 규제되는 물질을 마약류라 합니다.', h:'마약류란 무엇인가', items:[
+          '마약 — 양귀비, 아편, 코카인처럼 중독을 일으키는 물질',
+          '향정신성의약품 — 오용·남용하면 인체에 심각한 위해를 줄 수 있는 의약품',
+          '대마 — 대마의 잎과 가는 줄기, 꽃에서 얻은 물질'
+        ]},
+        {h:'청소년 마약이 가까워졌습니다', type:'alert', items:[
+          '마약류로 지정된 물질은 임시마약류를 포함해 470종이 넘습니다',
+          '식욕억제제·마약성 진통제·ADHD 치료제가 오남용되는 사례가 있습니다',
+          '"공부 잘하는 약", "살 빠지는 약"으로 둔갑해 또래끼리 거래됩니다',
+          'SNS와 포털 광고로 쉽게 노출되며, 처방전 없이 구매하면 처벌 대상입니다',
+          '사용뿐 아니라 운반·판매·알선·소지 모두 처벌되고, 가짜 약이어도 처벌될 수 있습니다',
+          '호기심으로 한 번 접해도 끊기 어렵고, 청소년은 적은 양으로도 뇌 손상이 심각합니다'
+        ]},
+        {h:'마약류가 몸에 남기는 것', items:[
+          '중독되면 의존성과 내성이 생기고 금단증상과 반사회적 행동이 나타납니다',
+          '신경조직망이 손상되어 정상적인 생활이 어려워집니다',
+          '기억력이 떨어지고 집중력·판단력에 장애가 생깁니다',
+          '뇌·간·심장 등 여러 기관이 손상될 수 있습니다',
+          '환각 상태에서 강도·살인 같은 강력범죄로 이어지기도 합니다'
+        ]},
+        {h:'숫자로 보면', type:'stat', items:[
+          '처벌받은 19세 이하 청소년이 2021년 450명 — 2017년보다 278.2% 늘었습니다',
+          '마약 범죄는 제보나 발각이 없으면 드러나지 않는 경우가 많습니다',
+          '(법무부 법교육 자료)'
+        ]},
+        {h:'항생제도 함부로 쓰면 안 됩니다', items:[
+          '항생제는 감기약이 아닙니다. 세균성 질환에만 효과가 있습니다',
+          '의사가 처방한 경우에만 사용합니다',
+          '의사에게 항생제 처방을 요구하지 않습니다',
+          '처방받은 방법과 기간을 지켜 끝까지 복용합니다',
+          '손 씻기와 예방접종 같은 감염 예방 수칙을 함께 지킵니다'
+        ]}
+      ],
+      help:[{n:'마약퇴치운동본부',t:'1899-0893'},{n:'마약류 상담',t:'1342'},{n:'금연상담',t:'1544-9030'},{n:'금연길라잡이',u:'https://www.nosmokeguide.go.kr'}]
+    }
+  ]
+},
+{
+  no:'묶음 4', accent:'var(--g4)', season:'6월',
+  title:'다름을 존중하는 법',
+  sub:'평등·문화·인권·장애. 가정의 말투가 아이의 기준이 됩니다.',
+  items:[
+    {
+      q:'"남자라서, 여자라서"라는 말',
+      story:'아들이 울자 "사내자식이"라는 말이 저도 모르게 나왔습니다. 흔히 쓰는 말인데, 아이는 어떻게 들었을까요?',
+      act:'"남자니까", "여자니까"라는 말을 하루 동안 몇 번 쓰는지 세어 보세요.',
+      low:'역할 놀이와 색깔 선택에서 성 고정관념을 배웁니다.',
+      high:'외모 평가에 민감해지는 시기입니다.',
+      no:10, title:'양성평등교육', freq:'연 1회 이상',
+      law:'교육기본법 제17조의2, 양성평등기본법 제7조·제9조·제18조',
+      lead:'양성평등은 남녀가 똑같다는 주장이 아니라, 성별 때문에 차별받지 않는다는 뜻입니다. 성별 차이로 개성이나 능력을 펼치지 못하는 일을 줄이자는 것입니다.',
+      key:[
+        '양성평등은 남녀가 같다는 주장이 아니라, 성별 때문에 차별받지 않는다는 뜻입니다',
+        '"남자라서", "여자라서"라는 말이 아이의 기준이 됩니다',
+        '집안일을 함께 나누는 부모의 모습이 가장 효과적인 교육입니다'
+      ],
+      blocks:[
+        {intro:'차이를 인정하는 것과 차별하는 것은 다릅니다.', h:'성차이와 성차별', type:'table', cols:['구분','뜻'], items:[
+          '성차이 — 남성과 여성의 신체적·생물학적·심리적 차이',
+          '성차별 — 성별을 이유로 다른 기회를 주거나 자원 접근을 제한하고 불이익을 주는 것',
+          '성고정관념 — 능력·특성·역할을 성별에 따라 고정해 생각하는 것'
+        ]},
+        {type:'pair', h:'무심코 나오는 말, 이렇게 바꿔 보세요', items:[
+          '"사내자식이 그런 걸로 우니?"||"속상했구나, 무슨 일이야?"',
+          '"너는 우리 집안의 대들보야"||"네가 하고 싶은 일을 찾아보자"',
+          '"여자니까 예쁘게 말해라"||"네 생각을 분명하게 말해도 돼"',
+          '"설거지는 동생 시켜라"||"오늘은 같이 나눠서 하자"'
+        ]},
+        {h:'집에서 실천하기', type:'do', items:[
+          '"남자라서", "여자라서"라는 말을 쓰지 않습니다',
+          '집안일의 가치를 존중하고 가족이 팀처럼 나눠 맡습니다',
+          '다른 사람의 외모를 평가하지 않습니다. 외모 평가는 자기 몸에 대한 자신감도 무너뜨립니다',
+          '평등한 부부의 모습 자체가 가장 효과적인 교육입니다'
+        ]}
+      ],
+      help:[]
+    },
+    {
+      q:'교실 안의 다른 문화',
+      story:'아이가 "우리 반에 말이 서툰 친구가 있어"라고 합니다. 무심코 "어느 나라 애야?"라고 물었습니다. 어떻게 말해줘야 했을까요?',
+      act:'아이와 함께 다른 나라의 음식이나 노래를 하나 찾아보세요.',
+      low:'다름을 신기해합니다. 편견이 생기기 전에 말해 주면 됩니다.',
+      high:'이미 어디선가 편견을 배웠을 수 있습니다.',
+      no:12, title:'다문화 이해 교육 (상호문화 이해 교육)', freq:'2시간 이상',
+      law:'다문화가족지원법 제5조',
+      lead:'인종·민족·언어·문화가 다른 사람들이 함께 사는 사회에서, 다른 문화를 동등한 가치로 인식하고 편견을 줄이는 교육입니다. 최근에는 "다문화 교육"을 "문화 다양성 이해교육"으로, "다문화 학생"을 "이주배경학생"으로 부릅니다.',
+      key:[
+        '이주배경학생은 이미 전체 학생의 3%입니다. 교실 안 친구들의 이야기입니다',
+        '"다르다"는 것은 "틀리다"가 아닙니다',
+        '부모가 무심코 하는 말이 아이의 편견이 됩니다'
+      ],
+      blocks:[
+        {intro:'우리 반 친구가 어떤 배경인지 알면 말과 태도가 달라집니다.', h:'이주배경학생은 이런 학생들입니다', type:'table', cols:['구분','알아 둘 점'], items:[
+          '국내출생 자녀 — 태어나면서 한국 국민이 됩니다. 일부는 학습에 필요한 어휘와 개념 이해를 어려워합니다',
+          '중도입국 자녀 — 청소년기에 들어온 경우로, 적응과 정체성 혼란, 한국어를 함께 겪습니다',
+          '외국인근로자 가정 자녀 — 한국 아동과 같은 교육권을 가지며, 거주 사실 확인만으로 입학할 수 있습니다'
+        ]},
+        {h:'얼마나 늘었나', type:'stat', items:[
+          '이주배경학생은 2014년 약 4만 7천 명에서 2021년 약 16만 명으로 늘었습니다',
+          '전체 학생 중 비율도 2012년 0.7%에서 2021년 3.0%로 계속 높아지고 있습니다',
+          '아이의 교실에 이미 함께 있는 친구들의 이야기입니다'
+        ]},
+        {h:'가정에서의 실천', type:'do', items:[
+          '다문화 감수성 — 다른 문화를 지닌 사람들과 조화롭게 관계 맺고 소통하는 힘입니다',
+          '부모가 먼저 편견을 내려놓고 동등한 사람이라는 인식을 분명히 합니다',
+          '아이 앞에서 특정 나라나 사람을 비하하는 말을 하지 않습니다',
+          '"다르다"는 것이 "틀리다"가 아님을 알려 줍니다',
+          '다른 나라 문화와 우리 문화의 공통점·차이점을 함께 찾아봅니다',
+          '지역의 다문화 체험이나 축제에 함께 참여해 봅니다',
+          '이웃이 겪는 어려움에 관심을 갖고 아이와 이야기 나눕니다'
+        ]}
+      ],
+      help:[]
+    },
+    {
+      q:'아이에게도 권리가 있습니다',
+      story:'아이가 일기장을 숨깁니다. 걱정이 되어 펼쳐볼까 망설입니다. 어디까지가 보호이고, 어디부터가 침해일까요?',
+      act:'아이의 말을 끊지 않고 끝까지 들어 보세요. 오늘 하루만이라도.',
+      low:'"네 생각을 말해도 돼"라는 말이 곧 인권교육입니다.',
+      high:'사생활을 존중받는지에 민감합니다.',
+      no:13, title:'인권교육', freq:'연 1회 이상',
+      law:'교육기본법 제12조·제13조, 초·중등교육법 제18조의4',
+      lead:'인권은 사람이라는 이유만으로 갖는 권리입니다. 국가나 법이 주어서 생기는 것이 아니라, 사람답게 살기 위해 반드시 필요한 권리입니다.',
+      key:[
+        '인권은 사람이라는 이유만으로 갖는 권리입니다',
+        '아이의 권리에는 다른 사람의 권리를 존중할 책임이 함께 있습니다',
+        '아래 10문항으로 우리 가족의 인권 지수를 확인해 보세요'
+      ],
+      quiz:{
+        id:'rights', kind:'yesno',
+        title:'우리 가족 인권 지수',
+        note:'부모님이 답해 보세요. 예라고 답한 개수로 확인합니다.',
+        questions:[
+          '가족과 함께 하는 일들이 많다',
+          '아무리 바빠도 아이들을 방치하지 않는다',
+          '아이들의 비밀은 지켜 준다',
+          '부모의 감정 상태에 따라 훈육하지 않는다',
+          '아이가 친구들과 어울려 놀 수 있게 한다',
+          '아이들의 의사 표현에 귀를 기울인다',
+          '문화적인 경험을 할 수 있도록 배려한다',
+          '아이들 앞에서 부부가 정중한 말을 쓴다',
+          '공부 외에도 아이가 잘할 수 있는 것이 많다고 생각한다',
+          '"애들이 뭘 알겠어" 대신 아이의 의견을 존중한다'
+        ],
+        results:[
+          {max:3, label:'조금 더 관심이 필요합니다', tip:'오늘 하루, 아이의 말을 끊지 않고 끝까지 들어 주는 것부터 시작해 보세요.'},
+          {max:7, label:'인권 노력이', tip:'이미 많은 것을 하고 계십니다. 아니오라고 답한 항목 하나만 골라 이번 주에 바꿔 보세요.'},
+          {max:10, label:'인권 지킴이', tip:'지금처럼 아이의 목소리에 귀 기울여 주세요.'}
+        ]
+      },
+      blocks:[
+        {intro:'학생인권은 크게 세 가지로 나눠 볼 수 있습니다.', h:'학생인권의 세 가지 축', type:'table', cols:['권리','내용'], items:[
+          '자유권 — 자신과 관련된 일을 스스로 결정하고 행동할 권리',
+          '복지권 — 보호·양육·교육을 받을 권리이며, 이를 보장할 책임은 부모와 국가에 있습니다',
+          '평등권 — 성별·장애·용모·나이·성적·재산·부모의 직업 등으로 합리적 이유 없이 차별받지 않을 권리'
+        ]},
+        {h:'권리에는 경계가 있습니다', items:[
+          '누구도 타인의 권리를 짓밟을 권리는 없습니다(세계인권선언 제30조)',
+          '학생은 자신의 인권과 함께 다른 학생·교사의 인권을 존중하는 법을 배웁니다',
+          '자유와 권리의 다른 이름은 책임과 의무입니다'
+        ]},
+        {h:'가정에서 실천하기', type:'do', items:[
+          '아이를 한 명의 인격을 가진 존재로 대합니다',
+          '비난·욕설·위협·명령, 그리고 비교하는 말을 쓰지 않습니다',
+          '주의 깊게 듣고 "그래", "그랬구나" 같은 반응으로 아이의 말을 인정해 줍니다',
+          '아이가 느끼는 부정적인 감정도 공감하고 있음을 확인시켜 줍니다'
+        ]}
+      ],
+      help:[{n:'인권상담',t:'1331'},{n:'국가인권위원회',u:'https://www.humanrights.go.kr'}]
+    },
+    {
+      q:'장애가 있는 친구와 함께 자라기',
+      story:'아이 반에 특수교육대상 친구가 왔습니다. "내가 도와줘야 해?"라고 아이가 묻습니다. 뭐라고 답해야 할까요?',
+      act:'"도와줄까?"라고 먼저 묻는 것이 왜 중요한지 아이와 이야기해 보세요.',
+      low:'함께 노는 것만으로 충분히 배웁니다.',
+      high:'배려와 동정을 구분할 수 있어야 합니다.',
+      fig:`<svg viewBox="0 0 600 300" role="img" aria-label="평등과 공평의 차이">
+  <g font-family="sans-serif">
+    <text x="0" y="24" font-size="21" font-weight="700" fill="var(--mute)">평등 — 똑같은 발판</text>
+    <text x="320" y="24" font-size="21" font-weight="700" fill="var(--gc)">공평 — 각자에게 맞는 발판</text>
+  </g>
+  <rect x="0" y="96" width="280" height="6" rx="3" fill="var(--line)"/>
+  <rect x="320" y="96" width="280" height="6" rx="3" fill="var(--line)"/>
+  <g fill="var(--ink-2)">
+    <rect x="30" y="214" width="52" height="14" rx="3" fill="var(--line)"/>
+    <rect x="118" y="214" width="52" height="14" rx="3" fill="var(--line)"/>
+    <rect x="206" y="214" width="52" height="14" rx="3" fill="var(--line)"/>
+    <circle cx="56" cy="98" r="13"/><rect x="47" y="112" width="18" height="102" rx="7"/>
+    <circle cx="144" cy="128" r="13"/><rect x="135" y="142" width="18" height="72" rx="7"/>
+    <circle cx="232" cy="158" r="13"/><rect x="223" y="172" width="18" height="42" rx="7"/>
+  </g>
+  <g fill="var(--gc)">
+    <rect x="350" y="214" width="52" height="14" rx="3" opacity=".35"/>
+    <rect x="438" y="184" width="52" height="44" rx="3" opacity=".55"/>
+    <rect x="526" y="154" width="52" height="74" rx="3" opacity=".75"/>
+    <circle cx="376" cy="98" r="13"/><rect x="367" y="112" width="18" height="102" rx="7"/>
+    <circle cx="464" cy="98" r="13"/><rect x="455" y="112" width="18" height="72" rx="7"/>
+    <circle cx="552" cy="98" r="13"/><rect x="543" y="112" width="18" height="42" rx="7"/>
+  </g>
+  <text x="0" y="272" font-size="19" fill="var(--mute)">작은 사람은 여전히 못 봅니다</text>
+  <text x="320" y="272" font-size="19" fill="var(--mute)">모두가 같은 풍경을 봅니다</text>
+</svg>`,
+      no:14, title:'장애인식 개선 교육', freq:'연 1회 이상',
+      law:'교육기본법 제4조, 초·중등교육법 제59조, 장애인복지법 제25조',
+      lead:'통합교육은 특수교육대상 학생이 또래와 함께 배우는 방식입니다. 함께 지내는 경험은 모든 아이에게 다양성을 배우는 시간이 됩니다.',
+      key:[
+        '통합교육은 특수교육대상 학생이 또래와 함께 배우는 방식입니다',
+        '평등이 모두에게 같은 발판이라면, 공평은 각자에게 맞는 발판입니다',
+        '도울 때는 먼저 도움이 필요한지 물어보라고 알려 주세요'
+      ],
+      blocks:[
+        {type:'table', cols:['용어','뜻'], intro:'용어를 정확히 알면 불필요한 오해가 줄어듭니다.', h:'용어부터 정확히', items:[
+          '특수교육 — 교육적 요구에 맞춰 제공하는 교육과 관련 서비스',
+          '특수교육대상자 — 장애인 등록과는 별개입니다. 특수교육대상자가 곧 장애인은 아닙니다',
+          '통합교육 — 일반학교에서 차별 없이 함께 배우는 것 (완전통합·시간제 통합)',
+          '학습도움실 — 통합교육을 위해 일반학교에 두는 학급 (특수학급)'
+        ]},
+        {h:'평등과 공평', items:[
+          '모두에게 똑같은 발판을 주는 것이 평등이라면,',
+          '각자에게 맞는 발판을 주어 모두가 같은 풍경을 보게 하는 것이 공평입니다',
+          '장애인에게 필요한 편의 제공은 특혜가 아니라 같은 기회를 위한 조건입니다'
+        ]},
+        {h:'법이 금지하는 차별', type:'law', items:[
+          '교육 — 장애를 이유로 입학을 거부하거나 전학을 강요할 수 없습니다',
+          '교내외 활동 — 수업·실습·현장견학·수학여행 참여를 제한하거나 배제할 수 없습니다',
+          '이동·교통수단 — 장애를 이유로 이용을 제한하거나 배제할 수 없고, 안전하게 다닐 수 있는 편의를 제공해야 합니다',
+          '정보접근 — 전자정보와 비전자정보를 이용하고 접근하는 데 차별해서는 안 됩니다',
+          '괴롭힘 — 장애를 이유로 따돌리거나 모욕감을 주는 말과 행동을 해서는 안 됩니다',
+          '악의적인 차별로 인정되면 3년 이하의 징역 또는 3천만원 이하의 벌금에 처해질 수 있습니다'
+        ]},
+        {h:'자녀에게 알려 주세요', type:'do', items:[
+          '친구를 부를 때는 이름으로 부릅니다',
+          '돕고 싶을 때는 먼저 도움이 필요한지 물어봅니다. 스스로 할 수 있는 일이 아주 많습니다',
+          '성별·생김새·취미가 다르듯 장애도 사람이 가진 여러 특징 중 하나입니다'
+        ]},
+        {h:'특수교육대상 장애 유형', items:[
+          '시각장애, 청각장애, 지적장애, 지체장애',
+          '정서·행동장애, 자폐성장애, 의사소통장애, 학습장애',
+          '건강장애, 발달지체, 중복장애'
+        ]},
+        {h:'특수교육대상자는 이렇게 정해집니다', type:'steps', items:[
+          '보호자가 학교의 특수교사에게 관련 서류를 내어 의뢰합니다(보호자 동의가 필요합니다)',
+          '교육장 또는 교육감이 특수교육지원센터에 진단·평가를 의뢰합니다',
+          '센터는 의뢰 후 30일 이내에 진단·평가를 실시하고 보고서를 제출합니다',
+          '이 과정에서 보호자가 의견을 말할 기회가 보장됩니다',
+          '특수교육운영위원회 심사를 거쳐 선정과 배치가 결정됩니다',
+          '최종 의견을 통지받은 때부터 2주 이내에 결과를 서면으로 받습니다',
+          '궁금한 점은 학교 학습도움실로 문의하시면 됩니다'
+        ]}
+      ],
+      help:[]
+    }
+  ]
+},
+{
+  no:'묶음 5', accent:'var(--g5)', season:'11월',
+  title:'학교와 건강하게 만나기',
+  sub:'선생님과의 소통, 배움의 속도, 그리고 마음의 표현 방식.',
+  items:[
+    {
+      q:'선생님과 이야기하고 싶을 때',
+      story:'담임 선생님께 꼭 하고 싶은 말이 생겼습니다. 지금 전화해도 될까요? 어떻게 말을 꺼내야 할까요?',
+      act:'학교에 연락할 일이 생기면, 하고 싶은 말을 문장 두 개로 먼저 적어 보세요.',
+      low:'부모가 학교를 대하는 태도가 아이에게 그대로 보입니다.',
+      high:'부모가 대신 나서기 전에 아이의 의견을 먼저 물어야 합니다.',
+      no:8, title:'학교와 잘 소통하는 법 (교육활동 침해 예방 교육)', freq:'연 1회 이상',
+      law:'교원의 지위 향상 및 교육활동 보호를 위한 특별법 제24조 제1항, 같은 법 시행령 제21조',
+      lead:'의견을 말하는 것과 교육활동을 침해하는 것은 다릅니다. 제대로 된 경로로 요청할수록 아이의 문제가 더 빨리 풀립니다.',
+      key:[
+        '상담은 미리 약속을 잡고 근무 시간에, 학교가 정한 공식 창구로 요청하세요',
+        '수업 중 교실 방문, 퇴근 후 반복 연락, 무단 녹음은 침해 행위가 됩니다',
+        '교사와 학부모가 서로 신뢰할수록 우리 아이의 학습권이 보장됩니다'
+      ],
+      blocks:[
+        {type:'branch', intro:'대부분의 갈등은 연락하는 방법에서 시작됩니다. 하시려는 일을 골라 보세요.', h:'무엇을 하고 싶으신가요?', options:[
+          {label:'상담을 요청하려고요', items:[
+            '전화·문자·학교 홈페이지 민원 서비스로 미리 약속을 잡고 근무 시간에 방문합니다',
+            '전화는 자녀의 시간표를 참고해 수업 시간을 피해서 겁니다',
+            '상담주간 외에 방문할 때는 출입자 신분 확인 절차가 있으므로 사전 예약을 권합니다',
+            '선생님이 수업 중이거나 업무 중이면 잠시 기다립니다',
+            '면담을 연기하거나 취소할 때도 미리 연락해 조정합니다',
+            '자녀가 아프거나 문제가 생겼을 때는 바로 담임 선생님께 알립니다'
+          ]},
+          {label:'문제를 제기하려고요', items:[
+            '먼저 사실관계를 확인합니다. 한쪽 이야기만으로 판단하면 오해가 커집니다',
+            '감정이 가라앉은 뒤에 이야기하는 편이 원하는 결과에 더 가깝습니다',
+            '요구사항을 한두 가지로 정리해 전달하면 학교가 실제로 조치할 수 있습니다',
+            '담임 선생님과 먼저 이야기하고, 필요하면 학년부장·교감·학교, 그다음 교육지원청 순으로 진행합니다',
+            '확인되지 않은 내용을 단체 대화방이나 인터넷에 올리지 않습니다'
+          ]}
+        ]},
+        {h:'우리 아이의 학습권도 함께 보호됩니다', items:[
+          '학생의 안전을 위한 제지나 개별 분리 지도 같은 정당한 생활지도는 아동학대에 해당하지 않습니다',
+          '수업 방해가 심각하거나 반복되면, 해당 학생을 잠시 분리해 개별 지도할 수 있습니다',
+          '수업 중 스마트기기 사용은 교원의 허용이 있을 때만 가능하며, 학칙에 따라 소지와 사용을 제한할 수 있습니다',
+          '세심한 관찰과 정해진 절차를 거쳐 전문적인 상담이나 치료를 권할 수 있습니다'
+        ]},
+        {h:'바람직한 학교 참여', type:'do', items:[
+          '학교 참여는 자녀에 대한 관심에서 시작됩니다',
+          '학교와 선생님을 존중하고 협력하는 태도로 참여합니다',
+          '학부모의 권리와 함께 책임도 함께 생각합니다',
+          '평소 자녀와 학교생활에 대해 많이 이야기합니다',
+          '상담과 의견은 학교가 정한 공식 창구(전화·알림장 앱·나이스 학부모서비스)로 전합니다'
+        ]},
+        {h:'교육 3주체의 책무', type:'law', items:[
+          '학생·교원·보호자는 서로의 권리를 존중하고 침해하지 않도록 노력합니다',
+          '학생은 학칙을 지키고 생활지도를 존중하며 따릅니다',
+          '보호자는 교원의 전문적인 판단과 생활지도를 존중하고, 학생이 학칙을 지키도록 지도합니다',
+          '학교장은 소통 증진과 생활지도를 위한 여건을 갖추도록 지원합니다'
+        ]},
+        {h:'이런 행위는 침해가 됩니다', type:'law', items:[
+          '상해·폭행, 협박, 손괴',
+          '명예훼손·모욕 — 사실이 아닌 내용을 퍼뜨리거나 욕설을 하는 경우',
+          '성범죄와 성적 굴욕감을 주는 행위',
+          '불법정보 유통 — 위협하는 문자를 반복적으로 보내는 경우',
+          '공무방해·업무방해 — 수업 중인 교실로 찾아가 항의하는 경우',
+          '목적이 정당하지 않은 민원을 반복해서 제기하는 행위',
+          '교육활동에 반복적으로 부당하게 간섭하는 행위 — 수시로 전화해 수업 상황을 보고하라고 하는 경우',
+          '교원의 영상·음성을 무단으로 촬영·녹음·합성해 배포하는 행위',
+          '교육활동과 무관한 사적인 연락이나 학교 밖 상담을 무리하게 요구하는 행위'
+        ]},
+        {h:'침해 사안은 이렇게 처리됩니다', type:'steps', items:[
+          '초기 대응과 사안 신고 — 필요하면 가해자와 피해 교원을 즉시 분리합니다',
+          '피해 교원 보호조치와 학교의 발생 보고',
+          '교육지원청의 사안 조사와 관련자 면담',
+          '지역교권보호위원회가 침해 인정 여부와 조치를 심의·의결합니다',
+          '양 당사자가 원하면 분쟁 조정을 진행할 수 있습니다',
+          '조치 결과는 서면으로 통보되며, 이의가 있으면 행정심판·행정소송·민사소송으로 다툴 수 있습니다'
+        ]}
+      ],
+      help:[]
+    },
+    {
+      q:'학원 진도, 꼭 앞서가야 할까',
+      story:'옆집 아이는 벌써 다음 학년 과정을 배운다고 합니다. 우리 아이만 뒤처지는 것 같아 불안합니다.',
+      act:'오늘은 진도 대신 "오늘 배운 것 중에 뭐가 제일 어려웠어?"를 물어보세요.',
+      low:'이 시기의 선행은 배움에 대한 흥미를 가장 빨리 꺾습니다.',
+      high:'진도를 빼는 것보다 이해도를 점검하는 편이 성적을 바꿉니다.',
+      no:9, title:'선행학습 예방 교육', freq:'연 1회 이상',
+      law:'공교육 정상화 촉진 및 선행교육 규제에 관한 특별법 제5조 제3항',
+      lead:'법이 금지하는 것은 학교가 교육과정을 앞서 가르치거나, 배운 범위를 넘겨 평가하는 일입니다. 학생이 스스로 하는 공부까지 막는 법은 아닙니다.',
+      key:[
+        '법이 막는 것은 학교의 선행교육이지, 아이가 스스로 하는 공부가 아닙니다',
+        '앞서 배운 아이는 안다고 착각해 수업에서 가장 먼저 흥미를 잃습니다',
+        '진도를 빼는 것보다 복습과 심화가 결국 더 빠른 길입니다'
+      ],
+      blocks:[
+        {h:'선행교육과 선행학습은 다릅니다', type:'law', items:[
+          '선행교육 — 교육 관련 기관이 교육과정에 앞서 편성하거나 제공하는 교육(주체는 학교·기관)',
+          '선행학습 — 학습자가 교육과정에 앞서 하는 학습(주체는 학생)',
+          '법은 기관의 선행교육과, 선행학습을 유발하는 행위를 규제합니다'
+        ]},
+        {h:'평가에서 금지되는 것', type:'law', items:[
+          '학교 진도계획을 앞서서 평가하는 것(배운 범위와 수준을 넘는 출제)',
+          '각종 교내대회에서 앞선 내용을 출제하는 것',
+          '입학예정 학생에게 상급학교 교육과정 내용을 출제해 평가하는 것'
+        ]},
+        {h:'적용되지 않는 경우', type:'law', items:[
+          '영재교육기관의 영재교육, 조기진급·조기졸업 대상자',
+          '체육·예술, 기술·가정, 실과·제2외국어·한문·교양, 전문 교과',
+          '초등학교 1~2학년의 영어 방과후학교 과정(놀이·활동, 음성언어 중심 운영 가능)'
+        ]},
+        {intro:'앞서 배우는 것이 왜 손해가 되는지, 교실에서 실제로 벌어지는 일로 보면 이렇습니다.', h:'과도한 선행학습의 문제', items:[
+          '이미 안다고 여겨 수업에 흥미를 잃고 집중하지 않습니다',
+          '스스로 사고하고 이해하는 과정이 빠지고 자기주도 학습 능력이 떨어집니다',
+          '선행한 학생과 그렇지 않은 학생이 섞이면 교사가 수업을 이끌기 어려워집니다',
+          '사교육비 부담이 커집니다'
+        ]},
+        {h:'자주 하는 오해', type:'table', sep:' → ', cols:['이런 생각','실제로는'], items:[
+          '"진도를 빼야 한다" → 단계적 학문일수록 기초를 다지는 복습과 심화가 먼저입니다',
+          '"혼자 하면 뒤처진다" → 안다는 착각이 흥미를 가장 빨리 떨어뜨립니다',
+          '"어릴수록 빨리 습득한다" → 발달 시기를 넘어선 자극은 오히려 해가 됩니다',
+          '"앞서가면 유리하다" → 아이의 능력과 수준에 맞는 심화학습이 더 중요합니다'
+        ]},
+        {h:'궁금한 점', items:[
+          '학생이 스스로 하는 공부는 금지되지 않습니다',
+          '입학 전 상급학교 교과를 지도하거나 과제를 주는 것은 선행교육에 해당합니다',
+          '초6-중1, 중3-고1을 연계한 교과 캠프 운영도 선행교육에 해당합니다',
+          '방과후학교 교과 프로그램은 심화·보충으로 구성해 자율 참여로 운영할 수 있습니다'
+        ]}
+      ],
+      help:[]
+    },
+    {
+      q:'스승의 날 선물, 괜찮을까',
+      story:'스승의 날이 다가옵니다. 반 학부모 단체방에서 선물 이야기가 오갑니다. 참여해도 괜찮을까요?',
+      act:'아이가 선생님께 하고 싶은 말을 손편지로 써 보게 해주세요.',
+      low:'학기 초 관행에 흔들리기 쉬운 시기입니다.',
+      high:'아이가 어른들 사이의 상황을 눈치챕니다.',
+      quiz:{
+        id:'clean', kind:'ox',
+        title:'이건 되나요? 5문항',
+        note:'가장 헷갈리는 상황만 모았습니다.',
+        options:['괜찮습니다','안 됩니다'],
+        questions:[
+          {t:'스승의 날에 담임 선생님께 5천원짜리 커피 기프티콘을 보냅니다', a:1, why:'상품권과 기프티콘은 금액과 관계없이 허용되지 않습니다.'},
+          {t:'아이가 직접 쓴 손편지를 드립니다', a:0, why:'마음을 담은 편지는 금품이 아니므로 괜찮습니다.'},
+          {t:'상담하러 가면서 선생님 드릴 음료를 사 갑니다', a:1, why:'상담 중 음료를 제공하는 것도 허용되지 않습니다.'},
+          {t:'학급 단체방에서 돈을 모아 반 행사 물품을 사 드립니다', a:1, why:'학교운영위원회 심의를 거치지 않은 모금은 불법찬조금이 됩니다.'},
+          {t:'졸업한 뒤 예전 담임 선생님께 3만원 이하의 식사를 대접합니다', a:0, why:'직무 관련성이 없어졌다면 허용될 수 있습니다. 다만 성적과 관련되면 안 됩니다.'}
+        ],
+        results:[
+          {max:2, label:'헷갈리는 부분이 있습니다', tip:'아래 되는 것과 안 되는 것을 다시 한 번 확인해 주세요.'},
+          {max:4, label:'대체로 알고 계십니다', tip:'상품권과 모금 부분만 다시 짚어 보시면 좋겠습니다.'},
+          {max:5, label:'정확히 알고 계십니다', tip:'헷갈리는 상황이 생기면 학교에 먼저 물어보시면 됩니다.'}
+        ]
+      },
+      no:16, title:'청렴교육 (청탁금지·불법찬조금·촌지 근절)', freq:'연 1회 이상',
+      law:'부정청탁 및 금품등 수수의 금지에 관한 법률 제5조·제19조, 같은 법 시행령',
+      lead:'담임·교과 교사와 학생·학부모 사이에는 직무 관련성이 인정되므로, 원칙적으로 금품을 주고받을 수 없습니다. 위반하면 교직원은 징계와 형사처벌·과태료, 제공한 사람도 처벌 대상이 됩니다.',
+      key:[
+        '담임·교과 교사와는 직무 관련성이 있어 원칙적으로 금품을 주고받을 수 없습니다',
+        '상품권과 기프티콘은 액수와 무관하게 일체 허용되지 않습니다',
+        '가장 좋은 선물은 아이가 직접 쓴 손편지입니다. 아래 5문항으로 헷갈리는 상황을 확인해 보세요'
+      ],
+      blocks:[
+        {type:'versus', intro:'마음을 표현하고 싶은 순간마다 기준이 헷갈립니다. 사례로 보면 분명해집니다.', h:'되는 것과 안 되는 것',
+          left:{h:'허용되지 않습니다', items:[
+            '스승의 날 선물, 결혼식 축의금과 선물',
+            '상담 중에 교사에게 커피나 음료를 사 드리는 것',
+            '상품권·기프티콘 (액수와 무관하게 일체 불가)',
+            '학급 행사 명목으로 돈을 걷어 전달하는 것',
+            '생활기록부를 유리하게 써 달라는 부탁'
+          ]},
+          right:{h:'허용될 수 있습니다', items:[
+            '학생이 직접 쓴 손편지나 카드',
+            '학생 대표가 공개적으로 드리는 카네이션',
+            '직무 관련성이 없어진 뒤의 3만원 이하 음식물',
+            '같은 경우의 5만원 이하 선물 (농수산물은 10만원 이하)',
+            '다만 성적·수행평가와 관련되면 허용되지 않습니다'
+          ]},
+          items:[]
+        },
+        {h:'불법찬조금이란', items:[
+          '학부모회 등이 학교운영위원회 심의 없이 임의로 걷어 쓰는 모든 금품입니다',
+          '학급 비품, 학생 간식, 교직원 선물, 회식비 명목의 모금이 대표적입니다',
+          '자발적이든 아니든 일정 금액을 할당하면 불법찬조금이 됩니다',
+          '운동부 학부모가 차량유지비·간식비를 따로 걷어 쓰는 것도 해당합니다',
+          '학교발전기금은 학교운영위원회 심의와 학교 회계를 반드시 거쳐야 합니다'
+        ]},
+        {h:'신고는 이렇게', type:'aid', items:[
+          '시·도 교육청 홈페이지의 불법찬조금 신고센터와 공익제보센터를 이용할 수 있습니다',
+          '국민권익위원회 청렴포털과 국민신문고로도 신고할 수 있습니다',
+          '신고자의 신분은 보장되며 불이익을 받지 않습니다'
+        ]}
+      ],
+      help:[{n:'청렴포털',u:'https://www.clean.go.kr'},{n:'국민신문고',u:'https://www.epeople.go.kr'}]
+    }
+  ]
+}
+];
+
+/* 법정 16개 항목 외에, 학교가 학기 초에 함께 안내하는 내용 */
+const EXTRAS = {
+  title:'함께 알아 두면 좋은 안내',
+  sub:'법정 16개 항목은 아니지만, 학기 중 자주 찾게 되는 내용입니다.',
+  accent:'#5A6478',
+  items:[
+    {
+      q:'아플 때 며칠 쉬어야 하나요',
+      no:'A', title:'감염병 예방과 등교중지', freq:'참고',
+      law:'학교보건법, 감염병의 예방 및 관리에 관한 법률',
+      lead:'감염병이 의심되면 등교 전에 담임 선생님께 연락한 뒤 병원에 갑니다. 진단을 받으면 알리고 격리 치료를 합니다.',
+      blocks:[
+        {type:'table', h:'등교중지 기간', cols:['감염병','언제까지 쉬나요'],
+         intro:'학생 상태에 따라 기간은 달라질 수 있습니다.', items:[
+          '홍역 — 발진이 생긴 후 5일까지',
+          '수두 — 모든 발진이 딱지가 될 때까지',
+          '유행성이하선염 — 귀밑 부기가 가라앉을 때까지',
+          '인플루엔자 — 열이 내리고 이틀이 지날 때까지',
+          '결핵 — 약물치료를 시작한 후 2주까지',
+          '유행성결막염 — 증상이 사라진 후 2일까지'
+        ]},
+        {h:'출석으로 인정받으려면', type:'aid', items:[
+          '완치 후 진단명과 격리기간, 전염성이 없다는 의사 소견서나 진료 확인서를 학교에 제출합니다',
+          '해당 기간은 출석으로 인정됩니다'
+        ]},
+        {h:'평소 지킬 개인방역 5대 수칙', type:'do', items:[
+          '예방접종에 참여하기',
+          '사람이 많고 밀폐된 곳에서 마스크 쓰기',
+          '30초 비누 손 씻기, 기침은 옷소매에',
+          '하루 3회 이상 환기하고 자주 만지는 곳 소독하기',
+          '발열이나 호흡기 증상이 있으면 진료받고 집에 머물기'
+        ]}
+      ],
+      help:[{n:'질병관리청 상담',t:'1339'}]
+    },
+    {
+      q:'미세먼지 심한 날, 등교해도 되나요',
+      fig:`<svg viewBox="0 0 600 186" role="img" aria-label="초미세먼지 예보 등급">
+  <text x="0" y="24" font-size="19" fill="var(--mute)">초미세먼지(PM2.5) · ㎍/㎥</text>
+  <rect x="0" y="42" width="140" height="36" rx="6" fill="#3F8F6B"/>
+  <rect x="146" y="42" width="140" height="36" rx="6" fill="#3F52A3"/>
+  <rect x="292" y="42" width="140" height="36" rx="6" fill="#C08A2E"/>
+  <rect x="438" y="42" width="162" height="36" rx="6" fill="#B8433C"/>
+  <g font-family="sans-serif" font-size="21" font-weight="700" fill="#fff">
+    <text x="14" y="68">좋음</text><text x="160" y="68">보통</text>
+    <text x="306" y="68">나쁨</text><text x="452" y="68">매우나쁨</text>
+  </g>
+  <g font-size="19" fill="var(--mute)">
+    <text x="14" y="108">0~15</text><text x="160" y="108">16~35</text>
+    <text x="306" y="108">36~75</text><text x="452" y="108">76 이상</text>
+  </g>
+  <text x="0" y="150" font-size="18" fill="var(--mute)">나쁨부터 운동장 수업을 자제하고,</text>
+  <text x="0" y="176" font-size="18" fill="var(--mute)">주의보부터 실외수업을 단축하거나 하지 않습니다</text>
+</svg>`,
+      no:'B', title:'고농도 미세먼지 대응', freq:'참고',
+      law:'미세먼지 저감 및 관리에 관한 특별법, 학교보건법',
+      lead:'미세먼지 농도가 높은 날, 등교와 결석을 어떻게 해야 하는지 정리했습니다.',
+      blocks:[
+        {type:'steps', h:'민감군 학생이 결석하려면', intro:'천식·아토피·알레르기·호흡기·심혈관 질환처럼 의사 소견으로 인정된 기저질환이 있는 학생이 대상입니다.', items:[
+          '등교 시간대에 거주지나 학교 주변 농도가 나쁨 이상인지 확인합니다',
+          '학교에 미리 전화나 문자로 연락합니다',
+          '결석한 날부터 5일 이내에 결석계를 제출해 학교장의 승인을 받습니다',
+          '학기 초에 낸 진단서로 그 학기 증빙을 갈음할 수 있습니다'
+        ]},
+        {type:'table', h:'농도에 따른 학교의 대응', cols:['등급','학교는 이렇게 합니다'], items:[
+          '나쁨 — 운동장 수업을 자제하고 실내 공기질을 관리합니다',
+          '주의보 — 실외수업을 단축하거나 하지 않고 공기정화장치를 가동합니다',
+          '경보 — 체육활동·현장학습·운동회를 실내로 대체하고, 시간 조정이나 임시휴업을 검토합니다'
+        ]},
+        {h:'마스크를 씌우기 전에', type:'do', items:[
+          '착용 후 두통·호흡곤란·어지러움이 있으면 바로 벗깁니다',
+          '호흡기질환이나 심혈관질환이 있으면 반드시 의사와 상의한 뒤 착용합니다',
+          '어린이는 얼굴에 맞는 보건용 마스크를 씁니다'
+        ]},
+        {type:'table', h:'황사와 미세먼지는 다릅니다', cols:['구분','무엇인가'], items:[
+          '황사 — 바람에 실려 온 흙모래로, 칼슘·철분 같은 토양 성분이 주를 이룹니다',
+          '미세먼지 — 주로 연소 과정에서 생겨 황산염·금속화합물 같은 유해물질로 이루어집니다',
+          '위해성 — 입자가 매우 작아 코와 기관지에서 걸러지지 않고 몸속으로 들어옵니다'
+        ]}
+      ],
+      help:[]
+    },
+    {
+      q:'급식은 어떻게 운영되나요',
+      no:'C', title:'학교 급식 안내', freq:'참고',
+      law:'학교급식법',
+      lead:'궁금한 질문을 눌러 보세요. 세부 운영은 학교마다 다르므로 우리 학교 안내도 함께 확인해 주세요.',
+      blocks:[
+        {type:'faq', h:'자주 묻는 질문', items:[
+          '급식은 어떻게 운영되나요?||학교운영위원회 심의를 거쳐 수업일 점심시간에 제공합니다.',
+          '위생 관리는 어떻게 하나요?||HACCP 기준을 적용해 식단 계획부터 검수·조리·배식·소독까지 관리합니다.',
+          '영양은 어떻게 관리되나요?||학교급식법의 영양관리기준에 따라 식단을 구성하고, 매월 식단표와 영양표시로 공개합니다.',
+          '식재료 업체는 어떻게 정하나요?||공공급식전자조달시스템(NeaT) 입찰로 선정합니다.',
+          '원산지를 확인할 수 있나요?||축산물품질평가원 사이트에서 우리 학교에 납품되는 축산물 이력을 확인할 수 있습니다.',
+          '학부모가 직접 볼 수 있나요?||급식 모니터단이나 급식소위원으로 식재료 검수와 위생 점검에 참여할 수 있고, 급식의 날에는 참관과 시식이 가능합니다.',
+          '편식이나 비만 상담도 되나요?||영양 상담과 식품위생·식사예절 교육을 함께 운영합니다. 가정에서도 밥상머리 교육을 이어가 주세요.',
+          '저탄소 식단의 날은 무엇인가요?||탄소 배출을 줄이는 식재료로 구성한 식단을 월 1회 운영합니다. 운영 여부는 학교마다 다릅니다.',
+          '글로벌 데이는 무엇인가요?||여러 나라의 음식문화를 경험하는 식단을 월 1회 운영합니다. 운영 여부는 학교마다 다릅니다.'
+        ]}
+      ],
+      help:[]
+    },
+    {
+      q:'더 자세히 알아보려면',
+      no:'D', title:'믿을 수 있는 자료를 찾는 곳', freq:'참고',
+      law:'각 기관 공식 누리집',
+      lead:'국가기관이 무료로 제공하는 자료와 상담입니다. 이름을 누르면 바로 이동합니다.',
+      blocks:[
+        {type:'links', h:'학부모 교육과 폭력 예방', items:[
+          '학부모On누리||학부모를 위한 강좌와 자료를 모아 둔 국가 평생교육 누리집||https://www.parents.go.kr',
+          '도란도란||사이버폭력 예방교육 종합서비스||https://doran.edunet.net',
+          '학교폭력예방교육지원센터||사례와 지도 자료||https://www.stopbullying.re.kr',
+          '안전Dream||실종·학대·학교폭력 신고와 예방 정보||https://www.safe182.go.kr',
+          '예방교육통합관리||여성가족부 폭력 예방교육 콘텐츠||https://shp.mogef.go.kr'
+        ]},
+        {type:'links', h:'건강과 중독', items:[
+          '스마트쉼센터||과의존 진단과 무료 상담||https://www.iapc.or.kr',
+          '한국도박문제예방치유원||청소년 선별검사와 예방 자료||https://www.kcgp.or.kr',
+          '금연길라잡이||금연 상담과 정보||https://www.nosmokeguide.go.kr',
+          '한국마약퇴치운동본부||약물 예방교육과 재활 상담||https://www.drugfree.or.kr'
+        ]},
+        {type:'links', h:'인권·법률·청렴', items:[
+          '국가인권위원회 인권e||인권 사례와 교육 자료||https://case.humanrights.go.kr',
+          '찾기 쉬운 생활법령정보||일상에서 쓰는 법률 안내||https://easylaw.go.kr',
+          '법무부 이로운법||마약 예방 등 법교육 자료||https://www.lawnorder.go.kr',
+          '국민권익위 청렴포털||청탁금지법 안내와 신고||https://www.clean.go.kr',
+          '아동권리보장원||긍정양육과 아동학대 예방 자료||https://www.ncrc.or.kr'
+        ]}
+      ],
+      help:[]
+    }
+  ]
+};
+
+/* ── 상태 ─────────────────────────── */
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+const TOTAL = 16;
+const params = new URLSearchParams(location.search);
+const SCHOOL = (params.get('school') || '').trim();   // 링크에 학교명이 없으면 표시하지 않습니다
+const CODE = params.get('code') || '';
+const TEL = params.get('tel') || '';                  // 학교 대표번호를 링크에 넣으면 표시됩니다
+
+/* 학년도는 3월 1일에 바뀝니다. 1~2월은 직전 학년도로 계산합니다. */
+function academicYear(d){
+  return String(d.getMonth() + 1 < 3 ? d.getFullYear() - 1 : d.getFullYear());
+}
+const YEAR = params.get('year') || academicYear(new Date());
+
+/* 학기는 링크의 term 값으로 정합니다(1 또는 2). 값이 없으면 달로 판단합니다. */
+function currentTerm(d){
+  const m = d.getMonth() + 1;
+  return (m >= 3 && m <= 8) ? '1' : '2';
+}
+const TERM = (params.get('term') === '2' || params.get('term') === '1')
+  ? params.get('term') : currentTerm(new Date());
+const PERIOD = `${YEAR}학년도 ${TERM}학기`;
+
+document.getElementById('topline').textContent = '초등학교용 · ' + PERIOD;
+document.title = (SCHOOL ? SCHOOL + ' ' : '') + '학부모 법정 의무교육';
+
+if(TERM === '2'){
+  const t = document.createElement('p');
+  t.className = 'termnote';
+  t.textContent = '2학기 교육입니다. 1학기와 같은 내용을 한 번 더 확인해 주세요.';
+  document.querySelector('.subtitle').after(t);
+}
+
+const trustEl = document.getElementById('trust');
+if(TEL){
+  trustEl.innerHTML = `문의 <a href="tel:${TEL.replace(/[^0-9]/g,'')}">${esc(TEL)}</a>`;
+}else{
+  trustEl.remove();
+}
+
+const STORE_KEY = `parent-edu-${YEAR}-${TERM}`;   // 학기가 바뀌면 확인 기록도 새로 시작됩니다
+let done = new Set();
+try{
+  const saved = localStorage.getItem(STORE_KEY);
+  if(saved) done = new Set(JSON.parse(saved));
+}catch(e){ /* 저장이 막힌 환경에서는 이번 방문에만 기록됩니다 */ }
+function persist(){
+  try{ localStorage.setItem(STORE_KEY, JSON.stringify([...done])); }catch(e){}
+}
+
+/* ── 렌더링 ───────────────────────── */
+const order = [];
+GROUPS.forEach(g => g.items.forEach(it => order.push({no:it.no, accent:g.accent, title:it.title, q:it.q})));
+const SEQ = {};
+order.forEach((o, i) => { SEQ[o.no] = i + 1; });
+
+
+function quizHTML(q){
+  const opts = (q.kind === 'scale4' || q.kind === 'ox') ? q.options : ['예','아니오'];
+  return `
+  <div class="quiz" data-quiz="${q.id}" data-kind="${q.kind}">
+    <h5>${esc(q.title)}</h5>
+    <p class="qnote">${esc(q.note)}</p>
+    ${q.questions.map((t,i)=>`
+      <div class="qitem">
+        <p><b>${i+1}</b>${esc(typeof t === 'string' ? t : t.t)}</p>
+        <div class="opts">
+          ${opts.map((o,vi)=>`<button class="opt" type="button" data-q="${i}" data-v="${vi}" aria-pressed="false">${esc(o)}</button>`).join('')}
+        </div>
+        ${q.kind === 'ox' ? `<p class="qwhy" data-why="${i}" hidden></p>` : ''}
+      </div>`).join('')}
+    <div class="qresult" hidden></div>
+    <button class="qreset" type="button" hidden>다시 하기</button>
+  </div>`;
+}
+
+function itemHTML(it, opt){
+  const extra = opt && opt.extra;
+  function blockHTML(b){
+    const li = (b.items || []).map(x=>`<li>${esc(x)}</li>`).join('');
+    const intro = b.intro ? `<p class="bintro">${esc(b.intro)}</p>` : '';
+
+    const boxed = {
+      do:   ['do','실천'],
+      alert:['alert','주의'],
+      aid:  ['aid','도움'],
+      stat: ['stat','숫자']
+    }[b.type];
+    if(boxed){
+      return `
+    <div class="block">
+      <div class="boxed ${boxed[0]}">
+        <h4><span class="btag">${boxed[1]}</span>${esc(b.h)}</h4>
+        ${intro}
+        <ul>${li}</ul>
+      </div>
+    </div>`;
+    }
+    if(b.type === 'links'){
+      return `
+    <div class="block">
+      <h4>${esc(b.h)}</h4>
+      ${intro}
+      <div class="links">${b.items.map(x => {
+        const [name, desc, url] = x.split('||');
+        return `<a class="lnk" href="${esc(url)}" target="_blank" rel="noopener">
+          <span class="ln">${esc(name)}</span>
+          <span class="ld">${esc(desc)}</span>
+        </a>`;
+      }).join('')}</div>
+    </div>`;
+    }
+    if(b.type === 'faq'){
+      return `
+    <div class="block">
+      <h4>${esc(b.h)}</h4>
+      ${intro}
+      <div class="faq">${b.items.map(x => {
+        const [q, a] = x.split('||');
+        return `<details class="fq"><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`;
+      }).join('')}</div>
+    </div>`;
+    }
+    if(b.type === 'branch'){
+      return `
+    <div class="block">
+      <h4>${esc(b.h)}</h4>
+      ${intro}
+      <div class="branch">
+        <div class="btabs" role="tablist">
+          ${b.options.map((o, i) => `<button class="btab" type="button" role="tab" data-btab="${i}" aria-selected="${i === 0}">${esc(o.label)}</button>`).join('')}
+        </div>
+        ${b.options.map((o, i) => `<ul class="bpanel" data-bpanel="${i}"${i ? ' hidden' : ''}>${o.items.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`).join('')}
+      </div>
+    </div>`;
+    }
+    if(b.type === 'fig'){
+      return `
+    <div class="block">
+      <h4>${esc(b.h)}</h4>
+      ${intro}
+      <div class="figure">${b.svg}</div>
+    </div>`;
+    }
+    if(b.type === 'table'){
+      const sep = b.sep || ' — ';
+      const rows = b.items.map(x => {
+        const i = x.indexOf(sep);
+        return i < 0 ? [x, ''] : [x.slice(0, i), x.slice(i + sep.length)];
+      });
+      return `
+    <div class="block">
+      <h4>${esc(b.h)}</h4>
+      ${intro}
+      <table class="tbl">
+        <thead><tr><th>${esc(b.cols[0])}</th><th>${esc(b.cols[1])}</th></tr></thead>
+        <tbody>${rows.map(([a, c]) => `<tr><th scope="row">${esc(a)}</th><td>${esc(c)}</td></tr>`).join('')}</tbody>
+      </table>
+    </div>`;
+    }
+    if(b.type === 'pair'){
+      return `
+    <div class="block">
+      <h4>${esc(b.h)}</h4>
+      ${intro}
+      <div class="pairs">${b.items.map(x => {
+        const [bad, good] = x.split('||');
+        return `<div class="pair">
+          <p class="bad"><span aria-hidden="true">✕</span>${esc(bad)}</p>
+          <p class="good"><span aria-hidden="true">✓</span>${esc(good)}</p>
+        </div>`;
+      }).join('')}</div>
+    </div>`;
+    }
+    if(b.type === 'versus'){
+      const col = (o, cls) => `
+        <div class="vs-col ${cls}">
+          <h5>${esc(o.h)}</h5>
+          <ul>${o.items.map(x => `<li>${esc(x)}</li>`).join('')}</ul>
+        </div>`;
+      return `
+    <div class="block">
+      <h4>${esc(b.h)}</h4>
+      ${intro}
+      <div class="versus">${col(b.left, 'no')}${col(b.right, 'yes')}</div>
+    </div>`;
+    }
+    if(b.type === 'check'){
+      return `
+    <div class="block">
+      <h4>${esc(b.h)}</h4>
+      ${intro}
+      <div class="checklist" data-at="${b.at}"
+           data-m0="${esc(b.msg0)}" data-ml="${esc(b.msgLow)}" data-mh="${esc(b.msgHigh)}">
+        <p class="cl-hint">해당하는 것을 눌러 보세요</p>
+        ${b.items.map((x,i)=>`<button class="ck" type="button" data-ck="${i}" aria-pressed="false">
+          <span class="ckbox" aria-hidden="true"></span><span>${esc(x)}</span>
+        </button>`).join('')}
+        <p class="cl-result" role="status" aria-live="polite" hidden></p>
+      </div>
+    </div>`;
+    }
+    if(b.type === 'signs'){
+      return `
+    <div class="block">
+      <h4>${esc(b.h)}</h4>
+      ${intro}
+      <ul class="signs">${li}</ul>
+    </div>`;
+    }
+    if(b.type === 'steps'){
+      return `
+    <div class="block">
+      <h4>${esc(b.h)}</h4>
+      ${intro}
+      <ol class="steps">${li}</ol>
+    </div>`;
+    }
+    if(b.type === 'law'){
+      return `
+    <details class="lawbox">
+      <summary>${esc(b.h)}<span>법령 내용 보기</span></summary>
+      <ul>${li}</ul>
+    </details>`;
+    }
+    return `
+    <div class="block">
+      <h4>${esc(b.h)}</h4>
+      ${intro}
+      <ul>${li}</ul>
+    </div>`;
+  }
+
+  /* 갈래(part)가 있으면 갈래별로 접어서 보여 줍니다 */
+  const groupsOfBlocks = [];
+  it.blocks.forEach(b => {
+    const last = groupsOfBlocks[groupsOfBlocks.length - 1];
+    if(b.part && (!last || last.part !== b.part)) groupsOfBlocks.push({part:b.part, html:[]});
+    else if(!last) groupsOfBlocks.push({part:null, html:[]});
+    groupsOfBlocks[groupsOfBlocks.length - 1].html.push(blockHTML(b));
+  });
+  const blocks = groupsOfBlocks.map((g, i) => g.part
+    ? `<details class="partbox"${i === 0 ? ' open' : ''}>
+         <summary>${esc(g.part)}</summary>
+         <div class="partbody">${g.html.join('')}</div>
+       </details>`
+    : g.html.join('')).join('')
+  const help = it.help.length ? `<div class="help">${it.help.map(h => h.u
+    ? `<a href="${esc(h.u)}" target="_blank" rel="noopener">${esc(h.n)}<b>바로가기</b></a>`
+    : `<a href="tel:${h.t.replace(/[^0-9]/g,'')}">${esc(h.n)}<b>${esc(h.t)}</b></a>`).join('')}</div>` : '';
+  const story = it.story ? `<p class="story">${esc(it.story)}</p>` : '';
+  const fig = it.fig ? `<div class="figure">${it.fig}</div>` : '';
+  const grades = it.low ? `
+    <div class="grades">
+      <p><b>1~3학년이라면</b>${esc(it.low)}</p>
+      <p><b>4~6학년이라면</b>${esc(it.high)}</p>
+    </div>` : '';
+  const act = it.act ? `
+    <div class="act">
+      <h4>오늘 해볼 것</h4>
+      <p>${esc(it.act)}</p>
+    </div>` : '';
+  const detail = `${story}${fig}${blocks}${grades}${help}<p class="law">${extra ? '' : `법정 항목 ${it.no} · ${esc(it.freq)} · `}근거 ${esc(it.law)}</p>${act}`;
+
+  const body = extra
+    ? `<p class="lead">${esc(it.lead)}</p>${detail}`
+    : `<p class="lead">${esc(it.lead)}</p>
+       <ul class="key">${it.key.map(k=>`<li>${esc(k)}</li>`).join('')}</ul>
+       ${it.quiz ? quizHTML(it.quiz) : ''}
+       ${detail}
+       <div class="endmark" data-end="${it.no}" aria-hidden="true"></div>
+       <p class="checkhint">끝까지 읽으시면 확인 버튼이 나타납니다</p>
+       <button class="check" type="button" data-check="${it.no}" aria-pressed="false" hidden>
+         <span class="box" aria-hidden="true">✓</span>
+         <span class="check-label">이 항목을 확인했습니다</span>
+       </button>`;
+
+  return `
+  <div class="item" data-item="${it.no}">
+    <button class="item-head" type="button" aria-expanded="false" aria-controls="body-${it.no}">
+      <span class="item-mark${extra ? ' is-extra' : ''} mono" aria-hidden="true">${extra ? '＋' : SEQ[it.no]}</span>
+      <span class="item-headtext">
+        <span class="item-title">${esc(it.q || it.title)}</span>
+        <span class="item-formal">${esc(it.title)}</span>
+        ${(extra || it.quiz) ? `<span class="item-tags">
+          ${extra ? '<span class="tag">참고 안내</span>' : ''}
+          ${it.quiz ? '<span class="tag freq">자가진단</span>' : ''}
+        </span>` : ''}
+      </span>
+      <span class="item-open" aria-hidden="true">＋</span>
+    </button>
+    <div class="item-body" id="body-${it.no}" role="region">${body}</div>
+  </div>`;
+}
+
+document.getElementById('groups').innerHTML = GROUPS.map((g, gi) => `
+  <section class="group open" style="--gc:${g.accent}" data-group="${gi}">
+    <button class="group-head" type="button" aria-expanded="true" aria-controls="gbody-${gi}">
+      <div class="group-meta">
+        <span class="group-no mono">${esc(g.no)}</span>
+        <span class="dot"></span>
+        <span data-gcount="${gi}">${g.items.length}개 항목</span>
+      </div>
+      <div class="group-title serif">
+        <span>${esc(g.title)}</span>
+        <span class="chev" aria-hidden="true">▾</span>
+      </div>
+      <div class="group-sub">${esc(g.sub)}</div>
+    </button>
+    <div class="group-body" id="gbody-${gi}" role="region" aria-label="${esc(g.title)}">
+      ${g.items.map(it=>itemHTML(it)).join('')}
+    </div>
+  </section>
+`).join('');
+
+document.getElementById('extras').innerHTML = `
+  <section class="group" style="--gc:${EXTRAS.accent}">
+    <button class="group-head" type="button" aria-expanded="false" aria-controls="gbody-extra">
+      <div class="group-meta">
+        <span class="group-no mono">부록</span>
+        <span class="dot"></span>
+        <span>이수 항목에는 포함되지 않습니다</span>
+      </div>
+      <div class="group-title serif">
+        <span>${EXTRAS.title}</span>
+        <span class="chev" aria-hidden="true">▾</span>
+      </div>
+      <div class="group-sub">${EXTRAS.sub}</div>
+    </button>
+    <div class="group-body" id="gbody-extra" role="region" aria-label="${EXTRAS.title}">
+      ${EXTRAS.items.map(it=>itemHTML(it, {extra:true})).join('')}
+    </div>
+  </section>`;
+
+/* ── 목차 ──────────────────────────── */
+document.getElementById('toc').innerHTML = order.map(o => `
+  <li data-toc="${o.no}" style="--tc:${o.accent}">
+    <button type="button">
+      <span class="tocmark mono" aria-hidden="true">${SEQ[o.no]}</span>
+      <span class="tt">${esc(o.q || o.title)}<span class="tf">${esc(o.title)}</span></span>
+    </button>
+  </li>`).join('');
+
+function goToItem(no, focus){
+  const target = document.querySelector(`.item[data-item="${no}"]`);
+  if(!target) return;
+  const sec = target.closest('.group');
+  sec.classList.add('open');
+  sec.querySelector('.group-head').setAttribute('aria-expanded', true);
+  if(!target.classList.contains('open')){
+    target.classList.add('open');
+    const head = target.querySelector('.item-head');
+    head.setAttribute('aria-expanded', true);
+    head.querySelector('.item-open').textContent = '－';
+  }
+  setTimeout(() => {
+    target.scrollIntoView({block:'start', behavior:'smooth'});
+    if(focus) target.querySelector('.item-head').focus({preventScroll:true});
+  }, 60);
+}
+
+document.querySelectorAll('[data-toc]').forEach(li => {
+  li.querySelector('button').addEventListener('click', () => {
+    const sh = document.getElementById('tocSheet');
+    if(sh.classList.contains('open')) closeSheetEl(sh);
+    goToItem(li.dataset.toc, true);
+  });
+});
+
+/* ── 상호작용 ─────────────────────── */
+document.querySelectorAll('.group-head').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const sec = btn.closest('.group');
+    const open = sec.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+});
+
+document.querySelectorAll('.item-head').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.item');
+    const open = item.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    btn.querySelector('.item-open').textContent = open ? '－' : '＋';
+  });
+});
+
+/* 항목 끝까지 스크롤하면 확인 버튼이 나타납니다 */
+const endObserver = new IntersectionObserver(entries => {
+  let changed = false;
+  entries.forEach(e => {
+    if(!e.isIntersecting) return;
+    const item = e.target.closest('.item');
+    if(item && !item.classList.contains('read')){ item.classList.add('read'); changed = true; }
+    endObserver.unobserve(e.target);
+  });
+  if(changed) render();
+}, {threshold:0});
+document.querySelectorAll('.endmark').forEach(el => endObserver.observe(el));
+
+/* 자가진단 */
+const quizState = {};
+document.addEventListener('click', e => {
+  const opt = e.target.closest('.opt');
+  if(opt) return answerQuiz(opt);
+  const reset = e.target.closest('.qreset');
+  if(reset) return resetQuiz(reset.closest('.quiz'));
+  const ck = e.target.closest('.ck');
+  if(ck){
+    const on = ck.getAttribute('aria-pressed') !== 'true';
+    ck.setAttribute('aria-pressed', on);
+    const box = ck.closest('.checklist');
+    const n = box.querySelectorAll('.ck[aria-pressed="true"]').length;
+    const at = Number(box.dataset.at);
+    const out = box.querySelector('.cl-result');
+    if(n === 0){
+      out.className = 'cl-result';
+      out.textContent = box.dataset.m0;
+    }else{
+      const high = n >= at;
+      out.className = 'cl-result ' + (high ? 'high' : 'low');
+      out.textContent = `${n}개 해당 · ` + (high ? box.dataset.mh : box.dataset.ml);
+    }
+    out.hidden = false;
+    return;
+  }
+  const tab = e.target.closest('.btab');
+  if(tab){
+    const box = tab.closest('.branch');
+    box.querySelectorAll('.btab').forEach(t => t.setAttribute('aria-selected', t === tab));
+    box.querySelectorAll('.bpanel').forEach(pl => { pl.hidden = pl.dataset.bpanel !== tab.dataset.btab; });
+  }
+});
+
+function quizDef(id){
+  let found = null;
+  GROUPS.forEach(g => g.items.forEach(i => { if(i.quiz && i.quiz.id === id) found = i.quiz; }));
+  return found;
+}
+
+function answerQuiz(btn){
+  const box = btn.closest('.quiz');
+  const id = box.dataset.quiz;
+  const q = Number(btn.dataset.q), v = Number(btn.dataset.v);
+  box.querySelectorAll(`.opt[data-q="${q}"]`).forEach(o => o.setAttribute('aria-pressed', o === btn));
+  quizState[id] = quizState[id] || {};
+  quizState[id][q] = v;
+
+  const def = quizDef(id);
+  if(def.kind === 'ox'){
+    const item = def.questions[q];
+    const ok = v === item.a;
+    const why = box.querySelector(`[data-why="${q}"]`);
+    why.hidden = false;
+    why.className = 'qwhy ' + (ok ? 'ok' : 'no');
+    why.textContent = (ok ? '맞습니다 · ' : '아닙니다 · ') + item.why;
+  }
+  scoreQuiz(box);
+}
+
+function scoreQuiz(box){
+  const id = box.dataset.quiz;
+  const def = quizDef(id);
+  const ans = quizState[id] || {};
+  if(Object.keys(ans).length < def.questions.length) return;
+
+  let total = 0;
+  def.questions.forEach((_, i) => {
+    const v = ans[i];
+    if(def.kind === 'scale4'){
+      const raw = v + 1;
+      total += def.reverse.includes(i) ? (5 - raw) : raw;
+    }else if(def.kind === 'ox'){
+      total += (v === def.questions[i].a ? 1 : 0);
+    }else{
+      total += (v === 0 ? 1 : 0);
+    }
+  });
+
+  const r = def.results.find(x => total <= x.max) || def.results[def.results.length-1];
+  const unit = def.kind === 'scale4' ? `총 ${total}점`
+    : def.kind === 'ox' ? `${def.questions.length}문항 중 ${total}개 정답`
+    : `예 ${total}개 / ${def.questions.length}문항`;
+  const out = box.querySelector('.qresult');
+  out.innerHTML = `<div class="rl">${esc(r.label)}</div><div class="rs">${esc(unit)}</div><div class="rt">${esc(r.tip)}</div>`;
+  out.hidden = false;
+  box.querySelector('.qreset').hidden = false;
+  out.scrollIntoView({block:'nearest', behavior:'smooth'});
+
+  const d = new Date();
+  saveQuizLog(id, {
+    date: `${d.getFullYear()}. ${d.getMonth()+1}. ${d.getDate()}.`,
+    unit, label: r.label
+  });
+
+  const item = box.closest('.item');
+  const no = Number(item.dataset.item);
+  if(!done.has(no)){ done.add(no); persist(); render(); setTimeout(advance, 900); }
+}
+
+function resetQuiz(box){
+  const id = box.dataset.quiz;
+  quizState[id] = {};
+  box.querySelectorAll('.opt').forEach(o => o.setAttribute('aria-pressed','false'));
+  box.querySelectorAll('.qwhy').forEach(w => { w.hidden = true; w.textContent = ''; w.className = 'qwhy'; });
+  const out = box.querySelector('.qresult');
+  out.hidden = true; out.innerHTML = '';
+  box.querySelector('.qreset').hidden = true;
+}
+
+document.querySelectorAll('[data-check]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const no = Number(btn.dataset.check);
+    if(done.has(no)){ done.delete(no); persist(); render(); return; }
+    done.add(no);
+    persist();
+    render();
+    advance();
+  });
+});
+
+/* 확인한 뒤에는 다음 미확인 항목으로 이어집니다 */
+function nextUnconfirmed(){
+  return [...document.querySelectorAll('.item')].find(el => {
+    const n = Number(el.dataset.item);
+    return !Number.isNaN(n) && !done.has(n) && !el.classList.contains('hidden');
+  });
+}
+function advance(){
+  const n = done.size;
+  if(n >= TOTAL){ toast('16개 항목을 모두 확인했습니다'); return; }
+  toast(n === Math.ceil(TOTAL/2) ? `절반을 지나셨습니다 · ${n} / ${TOTAL}` : `${n} / ${TOTAL} 확인`);
+  const nx = nextUnconfirmed();
+  if(nx) goToItem(nx.dataset.item, false);
+}
+
+let barDismissed = false;
+function render(){
+  document.querySelectorAll('.item').forEach(el => {
+    const c = el.querySelector('[data-check]');
+    if(!c) return;                      // 부록 항목은 이수 집계에서 제외
+    const no = Number(el.dataset.item);
+    const on = done.has(no);
+    const read = on || el.classList.contains('read');
+    el.classList.toggle('done', on);
+    c.setAttribute('aria-pressed', on);
+    c.hidden = !read;
+    const hint = el.querySelector('.checkhint');
+    if(hint) hint.hidden = read;
+    c.querySelector('.check-label').textContent = on ? '확인 취소' : '이 항목을 확인했습니다';
+  });
+  document.querySelectorAll('[data-toc]').forEach(li =>
+    li.classList.toggle('done', done.has(Number(li.dataset.toc))));
+
+  const n = done.size;
+  document.getElementById('mainCount').textContent = n;
+  document.getElementById('miniCount').textContent = n;
+
+  const C = 2 * Math.PI * 36;
+  const arc = document.getElementById('gaugeArc');
+  arc.style.strokeDasharray = C;
+  arc.style.strokeDashoffset = C * (1 - n / TOTAL);
+
+  document.querySelectorAll('[data-gcount]').forEach(el => {
+    const g = GROUPS[Number(el.dataset.gcount)];
+    const c = g.items.filter(i => done.has(i.no)).length;
+    el.textContent = c ? `${g.items.length}개 항목 · ${c}개 확인함` : `${g.items.length}개 항목`;
+  });
+
+  const nb = document.getElementById('nextBtn');
+  if(n >= TOTAL){ nb.textContent = '모두 확인했습니다'; nb.disabled = true; }
+  else { nb.textContent = '다음 미확인 항목 →'; nb.disabled = false; }
+
+  const bar = document.getElementById('doneBar');
+  const full = n >= TOTAL;
+  bar.classList.toggle('show', full && !barDismissed);
+  document.body.classList.toggle('donebar-on', full && !barDismissed);
+
+  const btn = document.getElementById('openFormBtn');
+  if(n >= TOTAL){
+    btn.disabled = false;
+    btn.textContent = '이수증 만들기';
+  }else{
+    btn.disabled = true;
+    btn.textContent = `${TOTAL - n}개 항목이 남았습니다`;
+  }
+}
+render();
+
+/* ── 검색 ──────────────────────────── */
+const HAY = {};
+/* 블록 모양(list·table·branch·fig·versus…)이 서로 달라도 안전하게 글자만 모읍니다.
+   svg 원본은 태그가 섞이므로 검색 대상에서 제외합니다. */
+function collectText(v, out){
+  if(v == null) return;
+  if(typeof v === 'string'){ out.push(v); return; }
+  if(typeof v === 'number'){ return; }
+  if(Array.isArray(v)){ v.forEach(x => collectText(x, out)); return; }
+  if(typeof v === 'object'){
+    for(const k in v){ if(k === 'svg') continue; collectText(v[k], out); }
+  }
+}
+[...GROUPS.map(g=>g.items).flat(), ...EXTRAS.items].forEach(it => {
+  const bag = [];
+  collectText(it, bag);
+  HAY[it.no] = bag.join(' ').toLowerCase();
+});
+
+const qInput = document.getElementById('q');
+const qClear = document.getElementById('qClear');
+const qInfo = document.getElementById('qInfo');
+
+let savedState = null;
+
+function captureState(){
+  savedState = {
+    items:[...document.querySelectorAll('.item')].map(el => [el, el.classList.contains('open')]),
+    groups:[...document.querySelectorAll('.group')].map(el => [el, el.classList.contains('open')]),
+    laws:[...document.querySelectorAll('.lawbox')].map(el => [el, el.open])
+  };
+}
+function restoreState(){
+  if(!savedState) return;
+  savedState.groups.forEach(([el, on]) => {
+    el.classList.toggle('open', on);
+    el.querySelector('.group-head').setAttribute('aria-expanded', on);
+  });
+  savedState.items.forEach(([el, on]) => {
+    el.classList.toggle('open', on);
+    const head = el.querySelector('.item-head');
+    head.setAttribute('aria-expanded', on);
+    head.querySelector('.item-open').textContent = on ? '－' : '＋';
+  });
+  savedState.laws.forEach(([el, on]) => { el.open = on; });
+  savedState = null;
+}
+
+function clearMarks(){
+  document.querySelectorAll('mark.hl').forEach(m => m.replaceWith(document.createTextNode(m.textContent)));
+  document.querySelectorAll('.item-body').forEach(el => el.normalize());
+}
+function markText(root, term){
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+    acceptNode(n){
+      if(!n.nodeValue.toLowerCase().includes(term)) return NodeFilter.FILTER_REJECT;
+      if(n.parentElement.closest('mark, .check, .checkhint, .act h4')) return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+  const nodes = [];
+  while(walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach(n => {
+    const text = n.nodeValue, low = text.toLowerCase();
+    const frag = document.createDocumentFragment();
+    let pos = 0, i;
+    while((i = low.indexOf(term, pos)) !== -1){
+      if(i > pos) frag.append(text.slice(pos, i));
+      const m = document.createElement('mark');
+      m.className = 'hl';
+      m.textContent = text.slice(i, i + term.length);
+      frag.append(m);
+      pos = i + term.length;
+    }
+    frag.append(text.slice(pos));
+    n.replaceWith(frag);
+  });
+}
+
+function runSearch(raw){
+  const term = raw.trim().toLowerCase();
+  qClear.hidden = !term;
+  const all = document.querySelectorAll('.item');
+
+  clearMarks();
+
+  if(!term){
+    all.forEach(el => el.classList.remove('hidden'));
+    document.querySelectorAll('.group').forEach(el => el.classList.remove('hidden'));
+    restoreState();
+    qInfo.classList.remove('on');
+    render();
+    return;
+  }
+  if(!savedState) captureState();
+
+  let hit = 0, first = null;
+  all.forEach(el => {
+    const no = el.dataset.item;
+    const match = (HAY[no] || HAY[Number(no)] || '').includes(term);
+    el.classList.toggle('hidden', !match);
+    if(match){
+      hit++;
+      el.classList.add('open');
+      const head = el.querySelector('.item-head');
+      head.setAttribute('aria-expanded', true);
+      head.querySelector('.item-open').textContent = '－';
+      el.querySelectorAll('details').forEach(d => d.open = true);
+      markText(el.querySelector('.item-body'), term);
+      if(!first) first = el;
+    }
+  });
+
+  document.querySelectorAll('.group').forEach(sec => {
+    const any = sec.querySelector('.item:not(.hidden)');
+    sec.classList.toggle('hidden', !any);
+    if(any){
+      sec.classList.add('open');
+      sec.querySelector('.group-head').setAttribute('aria-expanded', true);
+    }
+  });
+
+  qInfo.textContent = hit ? `${hit}개 항목에서 찾았습니다.` : '찾는 내용이 없습니다. 다른 낱말로 검색해 보세요.';
+  qInfo.classList.add('on');
+  render();
+  if(first) setTimeout(() => first.scrollIntoView({block:'start', behavior:'smooth'}), 60);
+}
+
+const qBtn = document.getElementById('qBtn');
+const searchRow = document.getElementById('searchRow');
+qBtn.addEventListener('click', () => {
+  const show = searchRow.hidden;
+  searchRow.hidden = !show;
+  qBtn.setAttribute('aria-expanded', show);
+  if(show){ qInput.focus(); }
+  else { qInput.value = ''; runSearch(''); }
+});
+
+let qTimer;
+qInput.addEventListener('input', () => {
+  clearTimeout(qTimer);
+  qTimer = setTimeout(() => runSearch(qInput.value), 220);
+});
+qClear.addEventListener('click', () => { qInput.value = ''; runSearch(''); qInput.focus(); });
+
+/* ── 다음 미확인 항목 ──────────────── */
+document.getElementById('nextBtn').addEventListener('click', () => {
+  const nx = nextUnconfirmed();
+  if(nx) goToItem(nx.dataset.item, false);
+});
+
+/* ── 완료 바 ───────────────────────── */
+const formSheet = () => document.getElementById('formSheet');
+function openForm(){
+  barDismissed = true;
+  document.getElementById('doneBar').classList.remove('show');
+  document.body.classList.remove('donebar-on');
+  openSheetEl(formSheet());
+  setTimeout(() => document.getElementById('grade').focus(), 260);
+}
+document.getElementById('doneGo').addEventListener('click', openForm);
+document.getElementById('openFormBtn').addEventListener('click', openForm);
+
+/* ── 진단 이력 ─────────────────────── */
+function quizLog(){
+  try{ return JSON.parse(localStorage.getItem('parent-edu-quiz') || '{}'); }catch(e){ return {}; }
+}
+function saveQuizLog(id, rec){
+  try{
+    const all = quizLog(); all[id] = rec;
+    localStorage.setItem('parent-edu-quiz', JSON.stringify(all));
+  }catch(e){}
+}
+function showQuizHistory(){
+  const all = quizLog();
+  document.querySelectorAll('.quiz').forEach(box => {
+    const rec = all[box.dataset.quiz];
+    if(!rec) return;
+    let el = box.querySelector('.qprev');
+    if(!el){
+      el = document.createElement('div');
+      el.className = 'qprev';
+      box.querySelector('.qnote').after(el);
+    }
+    el.textContent = `지난 진단 ${rec.date} · ${rec.unit} · ${rec.label}`;
+  });
+}
+showQuizHistory();
+
+/* ── 학년 필터 ─────────────────────── */
+const ORDERS = { all:[0,1,2,3,4], low:[1,2,0,3,4], high:[0,2,1,4,3] };
+const groupsBox = document.getElementById('groups');
+const groupEls = [...groupsBox.children];
+
+const FILTER_MSG = {
+  all:'전체 순서로 되돌렸습니다.',
+  low:'1~3학년에 가까운 묶음을 위로 올렸습니다.',
+  high:'4~6학년에 가까운 묶음을 위로 올렸습니다.'
+};
+document.querySelectorAll('[data-filter]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-filter]').forEach(b => b.setAttribute('aria-pressed', b === btn));
+    ORDERS[btn.dataset.filter].forEach(i => groupsBox.appendChild(groupEls[i]));
+    closeSheetEl(document.getElementById('setSheet'));
+    toast(FILTER_MSG[btn.dataset.filter]);
+    groupsBox.scrollIntoView({block:'start', behavior:'smooth'});
+  });
+});
+
+/* 짧은 안내 메시지 */
+const toastEl = document.createElement('div');
+toastEl.className = 'toast';
+toastEl.setAttribute('role','status');
+document.body.appendChild(toastEl);
+let toastTimer;
+function toast(msg){
+  toastEl.textContent = msg;
+  toastEl.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toastEl.classList.remove('show'), 2400);
+}
+
+/* ── 글자 크기 ─────────────────────── */
+const fsBtn = document.getElementById('fsBtn');
+function applyFs(on){
+  document.documentElement.dataset.fs = on ? 'lg' : '';
+  fsBtn.setAttribute('aria-pressed', on);
+  fsBtn.textContent = on ? '보통' : '크게';
+  try{ localStorage.setItem('parent-edu-fs', on ? '1' : '0'); }catch(e){}
+}
+let fsOn = false;
+try{ fsOn = localStorage.getItem('parent-edu-fs') === '1'; }catch(e){}
+applyFs(fsOn);
+fsBtn.addEventListener('click', () => {
+  fsOn = !fsOn; applyFs(fsOn);
+  toast(fsOn ? '글자를 크게 표시합니다.' : '글자를 보통 크기로 표시합니다.');
+});
+
+/* ── 시트 공통 ─────────────────────── */
+let lastFocus = null;
+let sheetPushed = false;
+
+function openSheetEl(el){
+  const wasOpen = !!document.querySelector('.sheet.open');
+  if(!wasOpen) lastFocus = document.activeElement;
+  el.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  const c = el.querySelector('.sheet-close'); if(c) c.focus();
+  /* 뒤로가기가 사이트를 벗어나지 않고 시트만 닫도록 상태를 하나 쌓습니다.
+     주소는 그대로 두므로 URL에 흔적이 남지 않습니다. */
+  if(!wasOpen && !sheetPushed){
+    try{ history.pushState({sheet:true}, '', location.href); sheetPushed = true; }catch(e){}
+  }
+}
+
+function closeSheetEl(el, fromPop){
+  el.classList.remove('open');
+  if(document.querySelector('.sheet.open')) return;
+  document.body.style.overflow = '';
+  if(lastFocus && lastFocus.isConnected){ lastFocus.focus(); lastFocus = null; }
+  if(sheetPushed){
+    sheetPushed = false;
+    if(!fromPop){ try{ history.back(); }catch(e){} }
+  }
+}
+
+addEventListener('popstate', () => {
+  const open = [...document.querySelectorAll('.sheet.open')];
+  if(open.length){
+    sheetPushed = false;
+    open.forEach(el => closeSheetEl(el, true));
+  }
+});
+
+/* 제목을 누르면 처음 화면으로 돌아옵니다 */
+document.getElementById('homeBtn').addEventListener('click', () => {
+  document.querySelectorAll('.sheet.open').forEach(el => closeSheetEl(el));
+  if(qInput.value){ qInput.value = ''; runSearch(''); }
+  if(!searchRow.hidden){ searchRow.hidden = true; qBtn.setAttribute('aria-expanded', false); }
+  scrollTo({top:0, behavior:'smooth'});
+});
+
+/* 시트가 열려 있는 동안에는 탭 이동이 시트 안에 머무릅니다 */
+addEventListener('keydown', e => {
+  if(e.key !== 'Tab') return;
+  const sh = document.querySelector('.sheet.open');
+  if(!sh) return;
+  const f = [...sh.querySelectorAll('a[href],button:not([disabled]),input,select,textarea,summary,[tabindex]:not([tabindex="-1"])')]
+    .filter(el => el.offsetParent !== null);
+  if(!f.length) return;
+  const first = f[0], last = f[f.length - 1];
+  if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+  else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+});
+document.querySelectorAll('[data-close]').forEach(b =>
+  b.addEventListener('click', () => closeSheetEl(document.getElementById(b.dataset.close))));
+document.querySelectorAll('.sheet').forEach(sh =>
+  sh.addEventListener('click', e => { if(e.target === sh) closeSheetEl(sh); }));
+addEventListener('keydown', e => {
+  if(e.key === 'Escape') document.querySelectorAll('.sheet.open').forEach(closeSheetEl);
+});
+
+const callSheet = document.getElementById('callSheet');
+const setSheet = document.getElementById('setSheet');
+document.getElementById('callsBtn').addEventListener('click', () => openSheetEl(callSheet));
+document.getElementById('setBtn').addEventListener('click', () => openSheetEl(setSheet));
+document.getElementById('tocBtn').addEventListener('click', () => openSheetEl(document.getElementById('tocSheet')));
+
+/* ── 바로가기 ──────────────────────── */
+document.querySelectorAll('[data-jump]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const t = btn.dataset.jump;
+    closeSheetEl(setSheet);
+    if(t === 'calls') return openSheetEl(callSheet);
+    const item = document.querySelector(`.item[data-item="${t}"]`);
+    if(!item) return;
+    const sec = item.closest('.group');
+    sec.classList.add('open');
+    sec.querySelector('.group-head').setAttribute('aria-expanded', true);
+    item.classList.add('open');
+    const head = item.querySelector('.item-head');
+    head.setAttribute('aria-expanded', true);
+    head.querySelector('.item-open').textContent = '－';
+    setTimeout(() => item.scrollIntoView({block:'start', behavior:'smooth'}), 80);
+  });
+});
+
+/* 상단 고정바 */
+const bar = document.getElementById('stickybar');
+const mast = document.querySelector('.masthead');
+addEventListener('scroll', () => {
+  bar.classList.toggle('show', scrollY > mast.offsetHeight - 40);
+}, {passive:true});
+
+/* 퀴즈 존에서 이수 항목을 넘겨받습니다 */
+window.markItemsDone = function(list){
+  let changed = false;
+  list.forEach(n => { if(!done.has(n)){ done.add(n); changed = true; } });
+  if(changed){ persist(); render(); }
+};
+
+/* ── 이수증 만들기 ─────────────────── */
+const cssVar = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const resolveColor = a => {
+  const m = String(a).match(/var\((--[\w-]+)\)/);
+  return m ? cssVar(m[1]) : a;
+};
+const SANS = "-apple-system, BlinkMacSystemFont, system-ui, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif";
+const SERIF = "'Gowun Batang', serif";
+const MONO = "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace";
+
+const sheet = document.getElementById('certSheet');
+const preview = document.getElementById('certPreview');
+const saveBtn = document.getElementById('certSave');
+const shareBtn = document.getElementById('certShare');
+let certBlob = null, certName = '이수증.png', certUrl = null;
+
+function maskName(n){
+  if(!n) return n;
+  const t = n.trim();
+  if(t.length <= 1) return t;
+  if(t.length === 2) return t[0] + '○';
+  return t[0] + '○'.repeat(t.length - 2) + t[t.length - 1];
+}
+
+function hashCode(str){
+  let h = 5381;
+  for(let i=0;i<str.length;i++) h = ((h*33) ^ str.charCodeAt(i)) >>> 0;
+  return h.toString(36).toUpperCase().padStart(7,'0').slice(-7);
+}
+
+function drawCertificate(data){
+  const W = 760, H = 964, S = 2;
+  const c = document.createElement('canvas');
+  c.width = W*S; c.height = H*S;
+  const x = c.getContext('2d');
+  x.scale(S,S);
+  x.textBaseline = 'alphabetic';
+
+  const ink = cssVar('--ink'), ink2 = cssVar('--ink-2');
+  const mute = cssVar('--mute'), line = cssVar('--line'), soft = cssVar('--line-soft');
+
+  x.fillStyle = '#FFFFFF';
+  x.fillRect(0,0,W,H);
+
+  /* 상단 16칸 스트립 — 읽은 항목 그대로 */
+  const tw = W/16;
+  order.forEach((o,i) => {
+    x.fillStyle = resolveColor(o.accent);
+    x.fillRect(i*tw, 0, tw-1.5, 11);
+  });
+
+  const cx = W/2;
+  x.textAlign = 'center';
+
+  if(data.school){
+    x.fillStyle = mute;
+    x.font = '500 14px ' + SANS;
+    x.fillText(data.school, cx, 62);
+  }
+
+  x.fillStyle = ink;
+  x.font = '700 34px ' + SERIF;
+  x.fillText('학부모 법정 의무교육 이수증', cx, 108);
+
+  x.fillStyle = mute;
+  x.font = '500 13px ' + MONO;
+  x.fillText(data.period + ' · 전 16개 항목', cx, 138);
+
+  x.strokeStyle = line; x.lineWidth = 1;
+  x.beginPath(); x.moveTo(48,168); x.lineTo(W-48,168); x.stroke();
+
+  /* 인적사항 */
+  const rows = [
+    ['학년 · 반', data.grade + '학년 ' + data.classNo + '반'],
+    ['학생 이름', data.student],
+    ['보호자 이름', data.guardian || '—']
+  ];
+  let y = 168;
+  rows.forEach(([label, value]) => {
+    y += 56;
+    x.textAlign = 'left';
+    x.fillStyle = mute; x.font = '500 14px ' + SANS;
+    x.fillText(label, 48, y);
+    x.textAlign = 'right';
+    x.fillStyle = ink; x.font = '600 19px ' + SANS;
+    x.fillText(value, W-48, y);
+    x.strokeStyle = soft;
+    x.beginPath(); x.moveTo(48, y+18); x.lineTo(W-48, y+18); x.stroke();
+  });
+
+  /* 확인 문구 */
+  x.textAlign = 'center';
+  x.fillStyle = ink2; x.font = '400 15.5px ' + SANS;
+  x.fillText('위 보호자는 ' + data.period + ' 학부모 법정 의무교육 16개 항목을', cx, 404);
+  x.fillText('모두 확인하였음을 스스로 기록하였습니다.', cx, 432);
+
+  /* 이수 항목 */
+  x.textAlign = 'left';
+  x.fillStyle = mute; x.font = '600 12px ' + MONO;
+  x.fillText('CONFIRMED ITEMS', 48, 486);
+  x.strokeStyle = line;
+  x.beginPath(); x.moveTo(48,498); x.lineTo(W-48,498); x.stroke();
+
+  let gy = 498;
+  GROUPS.forEach(g => {
+    gy += 40;
+    const col = resolveColor(g.accent);
+    x.fillStyle = col;
+    x.beginPath(); x.arc(54, gy-5, 4.5, 0, Math.PI*2); x.fill();
+    x.fillStyle = ink; x.font = '600 15px ' + SANS;
+    x.fillText(g.title, 70, gy);
+    x.textAlign = 'right';
+    x.fillStyle = mute; x.font = '500 13px ' + MONO;
+    x.fillText(g.items.map(i => String(i.no).padStart(2,'0')).join(' · '), W-48, gy);
+    x.textAlign = 'left';
+  });
+
+
+  /* 확인번호 — 추첨과 대조에 쓰이므로 크게 인쇄합니다 */
+  const snY = gy + 34, snH = 62;
+  x.fillStyle = 'rgba(21,35,59,.045)';
+  x.fillRect(48, snY, W - 96, snH);
+  x.strokeStyle = line; x.lineWidth = 1;
+  x.strokeRect(48.5, snY + 0.5, W - 97, snH - 1);
+
+  x.textAlign = 'left';
+  x.fillStyle = mute; x.font = '600 11.5px ' + MONO;
+  x.fillText('확인번호', 64, snY + 24);
+  x.fillStyle = ink; x.font = '700 30px ' + MONO;
+  x.fillText(data.serial, 64, snY + 50);
+
+  x.textAlign = 'right';
+  x.fillStyle = mute; x.font = '500 12px ' + MONO;
+  x.fillText('발급 ' + data.issued, W - 64, snY + 24);
+  x.font = '500 11.5px ' + SANS;
+  x.fillText(data.period, W - 64, snY + 46);
+
+  /* 긴급 도움 전화 — 사진첩에 남아 필요할 때 쓰입니다 */
+  const boxY = snY + snH + 22, boxH = 92;
+  x.strokeStyle = line; x.lineWidth = 1;
+  x.strokeRect(48.5, boxY + 0.5, W - 97, boxH);
+  x.textAlign = 'left';
+  x.fillStyle = mute; x.font = '600 11.5px ' + MONO;
+  x.fillText('긴급 도움 전화', 64, boxY + 24);
+
+  const calls = [
+    ['경찰·아동학대', '112'],
+    ['학교폭력', '117'],
+    ['자살예방', '109'],
+    ['청소년', '1388'],
+    ['여성긴급', '1366']
+  ];
+  const colW = (W - 128) / calls.length;
+  calls.forEach(([label, tel], i) => {
+    const bx = 64 + colW * i;
+    x.fillStyle = mute; x.font = '500 11px ' + SANS;
+    x.fillText(label, bx, boxY + 50);
+    x.fillStyle = ink; x.font = '700 17px ' + MONO;
+    x.fillText(tel, bx, boxY + 74);
+  });
+
+  x.textAlign = 'center';
+  x.fillStyle = mute; x.font = '400 12.5px ' + SANS;
+  x.fillText('이 이수증은 학부모가 직접 확인한 기록이며, 학교 제출용입니다.', cx, boxY + boxH + 30);
+
+  /* 테두리 */
+  x.strokeStyle = line; x.lineWidth = 1;
+  x.strokeRect(0.5, 0.5, W-1, H-1);
+
+  return c;
+}
+
+const openSheet  = () => openSheetEl(sheet);
+const closeSheet = () => closeSheetEl(sheet);
+
+document.getElementById('submitBtn').addEventListener('click', async () => {
+  const v = id => document.getElementById(id).value.trim();
+  if(!v('grade') || !v('classNo') || !v('student')){
+    alert('학년, 반, 학생 이름을 입력해 주세요.');
+    document.getElementById(!v('grade') ? 'grade' : (!v('classNo') ? 'classNo' : 'student')).focus();
+    return;
+  }
+  const now = new Date();
+  const pad = n => String(n).padStart(2,'0');
+  const issued = `${now.getFullYear()}.${pad(now.getMonth()+1)}.${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())}`;
+  const mask = document.getElementById('maskChk').checked;
+  const data = {
+    school: SCHOOL, year: YEAR, period: PERIOD,
+    grade: v('grade'), classNo: v('classNo'),
+    student: mask ? maskName(v('student')) : v('student'),
+    guardian: mask ? maskName(v('guardian')) : v('guardian'),
+    issued,
+    serial: hashCode([SCHOOL, CODE, YEAR, TERM, v('grade'), v('classNo'), v('student'), issued].join('|'))
+  };
+
+  try{ await document.fonts.ready; }catch(e){}
+  const canvas = drawCertificate(data);
+
+  certName = ['이수증', SCHOOL, `${YEAR}-${TERM}학기`, `${data.grade}-${data.classNo}`, data.student]
+    .filter(Boolean).join('_') + '.png';
+  canvas.toBlob(blob => {
+    if(certUrl) URL.revokeObjectURL(certUrl);
+    certBlob = blob;
+    certUrl = URL.createObjectURL(blob);
+    preview.src = certUrl;
+
+    if(navigator.canShare){
+      try{
+        const f = new File([blob], certName, {type:'image/png'});
+        shareBtn.hidden = !navigator.canShare({files:[f]});
+      }catch(e){ shareBtn.hidden = true; }
+    }
+    openSheet();
+    closeSheetEl(formSheet());
+  }, 'image/png');
+});
+
+saveBtn.addEventListener('click', () => {
+  if(!certUrl) return;
+  const a = document.createElement('a');
+  a.href = certUrl;
+  a.download = certName;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+});
+
+shareBtn.addEventListener('click', async () => {
+  if(!certBlob) return;
+  try{
+    const f = new File([certBlob], certName, {type:'image/png'});
+    await navigator.share({files:[f], title:'학부모 법정 의무교육 이수증'});
+  }catch(e){ /* 사용자가 취소한 경우 */ }
+});
+
+document.getElementById('certClose').addEventListener('click', closeSheet);
+document.getElementById('certBack').addEventListener('click', () => {
+  openForm();
+  closeSheet();
+});
+
+</script>
+<script>
+(function(){
+
+/* ═══════════════════════════════════════════
+   학교 관리자 설정
+   ─────────────────────────────────────────────
+   ① 링크로 학교명·회차를 넘깁니다.
+      quiz.html?school=행복초등학교&code=A1234&session=2026-1
+   ② 결과 수집은 구글 폼 사전 채움 링크를 쓰면 됩니다.
+      FORM 을 채우면 결과 화면에 [결과 제출하기] 버튼이 나타나고,
+      스프레드시트를 점수 내림차순으로 정렬하면 그대로 순위판이 됩니다.
+      비워 두면 참가번호를 접수처에서 수기로 받으시면 됩니다.
+   ③ COVER 에 적은 법정 항목 번호는 퀴즈 완주로 이수 처리됩니다.
+      본문(index.html)의 확인 기록에 자동으로 반영됩니다.
+   ④ 시험 삼아 다시 풀어 보시려면 주소 끝에 &reset=1 을 붙이세요.
+   ═══════════════════════════════════════════ */
+
+const FORM = {
+  base: '',   // 예: 'https://docs.google.com/forms/d/e/xxxx/viewform'
+  serial:'', grade:'', classNo:'', name:'', score:'', secs:'', correct:''
+  // 각 항목에 구글 폼의 entry.000000 값을 넣어 주세요.
+};
+
+const COVER = [8, 9, 16];      // 이 퀴즈로 이수 처리할 법정 항목 번호
+const PICK  = 10;              // 출제 문항 수
+const LIMIT = 15;              // 문항당 제한 시간(초)
+
+/* ═══════════════════════════════════════════
+   문항 은행 — PICK 개를 무작위로 뽑고 보기 순서도 섞습니다.
+   item: 관련 법정 항목 번호 · why: 해설 · src: 근거
+   ═══════════════════════════════════════════ */
+const BANK = [
+{
+  item:1, tag:'학교폭력', accent:'var(--g1)',
+  q:'아이가 학교폭력 피해를 털어놓았을 때, 부모가 가장 먼저 할 일은?',
+  opts:[
+    '아이를 탓하지 않고 끝까지 듣는다',
+    '상대 학생 부모에게 바로 연락한다',
+    '증거부터 모으라고 아이에게 시킨다',
+    '별일 아니라며 넘어가게 한다'
+  ],
+  a:0,
+  why:'말을 꺼내는 것 자체가 아이에게는 큰 결심입니다. 원인을 아이에게서 찾거나 부모가 먼저 흥분하면 아이는 다음부터 말하지 않습니다. 듣고 나서 담임 선생님께 알리는 것이 순서입니다.',
+  src:'학교폭력예방법 제20조 · 누구든지 학교폭력을 알게 되면 신고할 수 있습니다'
+},
+{
+  item:1, tag:'학교폭력', accent:'var(--g1)',
+  q:'학교폭력 신고 전화번호는?',
+  opts:['117','119','129','1388'],
+  a:0,
+  why:'117은 24시간 운영되며 문자 신고는 #117로 보냅니다. 긴급한 상황이면 112로 연락하시면 됩니다.',
+  src:'학교폭력 신고센터 117'
+},
+{
+  item:3, tag:'아동학대', accent:'var(--g2)',
+  q:'다음 중 아동학대에 해당하는 것은?',
+  opts:[
+    '아이가 보는 앞에서 배우자에게 폭력을 행사하는 것',
+    '위험한 행동을 멈추게 하려고 손을 잡는 것',
+    '잘못을 설명하고 스스로 정리하게 하는 것',
+    '약속한 규칙에 따라 게임 시간을 줄이는 것'
+  ],
+  a:0,
+  why:'아이를 직접 때리지 않아도, 폭력을 목격하게 하는 것은 정서적 학대입니다. 신체·정서·성적 학대와 방임이 모두 아동학대에 들어갑니다.',
+  src:'아동복지법 제3조 제7호 · 아동학대의 정의'
+},
+{
+  item:3, tag:'아동학대', accent:'var(--g2)',
+  q:'훈육과 학대를 가르는 기준으로 가장 알맞은 것은?',
+  opts:[
+    '아이가 무엇을 배웠는지, 두려움만 남았는지',
+    '체벌 도구를 썼는지 손을 썼는지',
+    '멍이 남았는지 남지 않았는지',
+    '부모가 화를 냈는지 참았는지'
+  ],
+  a:0,
+  why:'훈육은 아이가 무엇을 왜 고쳐야 하는지 알게 하는 과정입니다. 결과로 공포와 수치심만 남았다면 훈육이 아닙니다. 우리 법은 부모의 징계권 조항을 이미 삭제했습니다.',
+  src:'민법 제915조 징계권 삭제(2021) · 아동복지법 제5조'
+},
+{
+  item:5, tag:'디지털 성범죄', accent:'var(--g1)',
+  q:'친구 얼굴을 합성한 이른바 딥페이크 영상에 대해 맞는 설명은?',
+  opts:[
+    '만들지 않고 보기만 해도 처벌될 수 있다',
+    '퍼뜨리지 않으면 문제되지 않는다',
+    '장난으로 만든 것은 처벌하지 않는다',
+    '삭제하면 없던 일이 된다'
+  ],
+  a:0,
+  why:'제작과 유포는 물론, 소지하거나 시청하는 것도 처벌 대상입니다. 아이가 받은 영상을 지우지 말고 그대로 두고 신고하셔야 증거가 남습니다.',
+  src:'성폭력처벌법 제14조의2 · 허위영상물 등의 반포등'
+},
+{
+  item:5, tag:'온라인 그루밍', accent:'var(--g1)',
+  q:'온라인에서 아동·청소년에게 성적인 대화를 건 경우는?',
+  opts:[
+    '실제로 만나지 않아도 처벌된다',
+    '만나서 신체 접촉이 있어야 처벌된다',
+    '사진을 받았을 때부터 처벌된다',
+    '상대가 동의했다면 처벌되지 않는다'
+  ],
+  a:0,
+  why:'성적 목적으로 대화를 반복하거나 유인하는 행위 자체가 범죄입니다. 아이에게 접근하는 사람은 대개 선물과 관심으로 시작해 비밀을 만들고, 사진을 요구합니다.',
+  src:'청소년성보호법 제15조의2 · 아동·청소년에 대한 성착취 목적 대화 등'
+},
+{
+  item:6, tag:'성착취', accent:'var(--g1)',
+  q:'성매매에 연루된 아동·청소년을 우리 법은 어떻게 봅니까?',
+  opts:[
+    '처벌 대상이 아니라 보호와 지원의 대상으로 본다',
+    '스스로 동의했다면 함께 처벌한다',
+    '나이에 따라 처벌 여부가 갈린다',
+    '초범이면 훈방한다'
+  ],
+  a:0,
+  why:'아이가 먼저 나섰더라도 피해아동·청소년으로 보고 보호합니다. 아이가 처벌이 두려워 말하지 못하는 경우가 많은데, 그럴 일이 없다는 점을 알려 주셔야 합니다.',
+  src:'청소년성보호법 · 피해아동·청소년의 보호'
+},
+{
+  item:7, tag:'도박', accent:'var(--g3)',
+  q:'청소년 도박 문제를 상담할 수 있는 전화번호는?',
+  opts:['1336','1339','1372','1350'],
+  a:0,
+  why:'한국도박문제예방치유원 헬프라인 1336입니다. 청소년 상담 1388에서도 도움을 받을 수 있습니다. 용돈이 자주 부족해지고 휴대전화를 숨기기 시작하면 살펴보셔야 합니다.',
+  src:'도박문제 헬프라인 1336'
+},
+{
+  item:11, tag:'스마트폰', accent:'var(--g3)',
+  q:'스마트폰 과의존 상담을 무료로 받을 수 있는 곳은?',
+  opts:['스마트쉼센터','소비자원','건강보험공단','한국정보화진흥원 민원실'],
+  a:0,
+  why:'스마트쉼센터(1599-0075)에서 상담과 가정 방문 상담까지 무료로 지원합니다. 사용 시간을 줄이라고 말하기보다, 함께 규칙을 정하는 편이 오래 갑니다.',
+  src:'스마트쉼센터 1599-0075'
+},
+{
+  item:2, tag:'마음 건강', accent:'var(--g2)',
+  q:'24시간 이용할 수 있는 자살예방 상담 전화번호는?',
+  opts:['109','119','129','1577'],
+  a:0,
+  why:'2024년부터 자살예방 상담전화가 109로 통합되었습니다. 아이가 힘들다고 말할 때는 이유를 캐묻기보다 그 말을 그대로 받아 주는 것이 먼저입니다.',
+  src:'자살예방 상담전화 109'
+},
+{
+  item:13, tag:'아동 권리', accent:'var(--g4)',
+  q:'유엔아동권리협약이 정한 네 가지 기본 권리가 아닌 것은?',
+  opts:['소유권','생존권','보호권','참여권'],
+  a:0,
+  why:'생존권·보호권·발달권·참여권 네 가지입니다. 이 가운데 참여권은 집에서 가장 자주 잊히는 권리로, 아이에 관한 일을 정할 때 아이 의견을 묻는 것을 말합니다.',
+  src:'유엔아동권리협약 · 아동복지법 제4조'
+},
+{
+  item:14, tag:'장애 이해', accent:'var(--g4)',
+  q:'장애가 있는 사람을 가리킬 때 쓰지 않아야 할 표현은?',
+  opts:['장애우','장애인','장애 학생','시각장애인'],
+  a:0,
+  why:'장애우는 상대를 늘 도움받는 친구 자리에 두는 표현이라 당사자들이 쓰지 않기를 요청해 온 말입니다. 정확한 표현은 장애인이고, 반대말은 정상인이 아니라 비장애인입니다.',
+  src:'장애인차별금지법 · 국립국어원 권장 표현'
+},
+{
+  item:9, tag:'선행학습', accent:'var(--g5)',
+  q:'공교육정상화법에 따라 학교가 할 수 없는 것은?',
+  opts:[
+    '교육과정을 앞서가는 내용을 시험에 내는 것',
+    '방과후학교를 운영하는 것',
+    '학생 수준에 맞춰 보충 지도하는 것',
+    '진도에 맞춰 수행평가를 하는 것'
+  ],
+  a:0,
+  why:'배우지 않은 내용을 평가에 내는 것은 금지되어 있습니다. 학원 진도가 앞서야 유리하다는 말이 도는 이유가 여기서 사라집니다.',
+  src:'공교육 정상화 촉진 및 선행교육 규제에 관한 특별법'
+},
+{
+  item:8, tag:'교사 소통', accent:'var(--g5)',
+  q:'담임 선생님과 상담하려고 할 때 가장 알맞은 방법은?',
+  opts:[
+    '미리 약속을 잡고 근무 시간에 연락하거나 방문한다',
+    '급한 마음에 밤이나 주말에 개인 휴대전화로 연락한다',
+    '예고 없이 교실로 찾아간다',
+    '다른 학부모를 통해 뜻을 전한다'
+  ],
+  a:0,
+  why:'교사의 근무 시간 밖 연락은 교육활동 침해가 될 수 있고, 수업 중 방문은 다른 아이들의 수업을 멈추게 합니다. 학교 대표번호나 민원 서비스로 약속을 잡는 것이 가장 빠릅니다.',
+  src:'교원지위법 · 교육활동 보호'
+},
+{
+  item:16, tag:'청탁금지법', accent:'var(--g5)',
+  q:'스승의 날, 담임 선생님께 드려도 되는 것은?',
+  opts:[
+    '학생 대표가 공개적으로 전달하는 꽃',
+    '오천 원짜리 커피 기프티콘',
+    '반 학부모들이 조금씩 모아 산 케이크',
+    '손편지와 함께 건네는 작은 화장품'
+  ],
+  a:0,
+  why:'담임 선생님과 학생·학부모는 성적과 생활기록부라는 직접적인 이해관계가 있어, 금액이 아무리 작아도 예외가 적용되지 않습니다. 마음은 손편지로 전하시면 됩니다.',
+  src:'청탁금지법 제8조 · 국민권익위원회 유권해석'
+},
+{
+  item:15, tag:'약물', accent:'var(--g3)',
+  q:'액상형 전자담배에 대해 맞는 설명은?',
+  opts:[
+    '청소년에게 판매가 금지된 유해 제품이다',
+    '연기가 없어 유해물질이 나오지 않는다',
+    '금연 보조제로 허가되어 있다',
+    '향이 첨가된 제품은 담배가 아니다'
+  ],
+  a:0,
+  why:'과일 향이 나고 사탕처럼 생긴 제품이 많아 어른 눈에 잘 띄지 않습니다. 니코틴 중독은 물론 폐 손상 사례도 보고되어 있습니다.',
+  src:'청소년보호법 · 담배사업법'
+}
+];
+
+/* 회복 라운드 — 틀린 문제를 다시 풀어 되찾는 점수 */
+const RECOVER_PTS = 50;
+
+/* ═══════════════════════════════════════════ */
+
+const params = new URLSearchParams(location.search);
+const SCHOOL  = (params.get('school') || '').trim();
+const CODE    = params.get('code') || '';
+const SESSION = params.get('session') || 'live';
+const KEY = `parent-quiz-${CODE || 'x'}-${SESSION}`;
+
+if(params.get('reset') === '1'){ try{ localStorage.removeItem(KEY); }catch(e){} }
+
+function academicYear(d){ return d.getMonth() < 2 ? d.getFullYear() - 1 : d.getFullYear(); }
+const YEAR = params.get('year') || academicYear(new Date());
+const TERM = params.get('term') === '2' ? 2 : (params.get('term') === '1' ? 1 : (new Date().getMonth() + 1 >= 8 ? 2 : 1));
+
+const root = document.getElementById('qzRoot');
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+$('lobbyTop').textContent = [SCHOOL, `${YEAR}학년도 학교설명회`].filter(Boolean).join(' · ');
+
+/* ── 화면 전환 ── */
+function show(id){
+  root.querySelectorAll('.screen').forEach(s => s.classList.toggle('qz-on', s.id === id));
+  root.classList.toggle('stage', id === 'scPlay');
+  document.getElementById('qzClose').hidden = (id === 'scPlay');
+  root.scrollTop = 0;
+}
+let toastTimer;
+function toast(msg){
+  const t = $('toast');
+  t.textContent = msg; t.classList.add('qz-on');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('qz-on'), 2200);
+}
+
+/* ── 상태 ── */
+let quiz = null;          // {who, grade, classNo, qs, answers, score, secs, serial, forecast}
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(quiz)); }catch(e){} }
+function load(){ try{ return JSON.parse(localStorage.getItem(KEY) || 'null'); }catch(e){ return null; } }
+
+function shuffle(a){
+  const r = a.slice();
+  for(let i = r.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [r[i], r[j]] = [r[j], r[i]]; }
+  return r;
+}
+function hashCode(str){
+  let h = 5381;
+  for(let i = 0; i < str.length; i++) h = ((h * 33) ^ str.charCodeAt(i)) >>> 0;
+  return h.toString(36).toUpperCase().padStart(6, '0').slice(-6);
+}
+function maskName(n){
+  const t = (n || '').trim();
+  if(t.length <= 1) return t;
+  if(t.length === 2) return t[0] + '○';
+  return t[0] + '○'.repeat(t.length - 2) + t[t.length - 1];
+}
+
+/* ── 시작 ── */
+$('startBtn').addEventListener('click', () => {
+  const g = $('qzGrade').value.trim(), c = $('qzClassNo').value.trim(), w = $('who').value.trim();
+  if(!g || !c || !w){
+    toast('학년, 반, 이름을 모두 적어 주세요');
+    $(!g ? 'grade' : (!c ? 'classNo' : 'who')).focus();
+    return;
+  }
+  const picked = shuffle(BANK).slice(0, Math.min(PICK, BANK.length)).map(b => {
+    const idx = shuffle(b.opts.map((_, i) => i));
+    return {
+      item:b.item, tag:b.tag, accent:b.accent, q:b.q, why:b.why, src:b.src,
+      opts:idx.map(i => b.opts[i]),
+      a:idx.indexOf(b.a)
+    };
+  });
+  quiz = {
+    who:w, grade:g, classNo:c, qs:picked, answers:[], score:0, secs:0,
+    serial:hashCode([CODE, SESSION, g, c, w, Date.now()].join('|')),
+    forecast:null, stage:'play'
+  };
+  save();
+  countdown();
+});
+
+function countdown(){
+  const el = $('countdown'), num = $('cdNum');
+  let n = 3;
+  el.classList.add('qz-on'); num.textContent = n;
+  const t = setInterval(() => {
+    n--;
+    if(n === 0){
+      clearInterval(t);
+      el.classList.remove('qz-on');
+      show('scPlay');
+      startQuestion(0);
+      return;
+    }
+    num.textContent = n;
+    num.style.animation = 'none'; void num.offsetWidth; num.style.animation = '';
+  }, 800);
+}
+
+/* ── 진행 ── */
+let cur = 0, tick = null, qStart = 0, locked = false, mode = 'speed';
+
+/* 지금 풀고 있는 문항 목록 — 스피드전은 전체, 회복 라운드는 틀린 문제만 */
+function activeList(){
+  return mode === 'speed' ? quiz.qs : quiz.recover.order.map(i => quiz.qs[i]);
+}
+
+function startQuestion(i){
+  cur = i; locked = false;
+  const list = activeList();
+  const q = list[i];
+  root.style.setProperty('--gc', q.accent);
+
+  $('dots').innerHTML = list.map((_, k) =>
+    `<span class="qz-dot ${k < i ? 'past' : (k === i ? 'now' : '')}"></span>`).join('');
+  $('qno').textContent = mode === 'speed'
+    ? `${i + 1} / ${list.length}`
+    : `회복 ${i + 1} / ${list.length}`;
+  $('tagline').textContent = q.tag;
+  $('stem').textContent = q.q;
+  $('opts').innerHTML = q.opts.map((o, k) =>
+    `<button class="qz-opt" type="button" data-k="${k}">
+       <span class="ltr">${'①②③④'[k] || k + 1}</span><span>${esc(o)}</span>
+     </button>`).join('');
+  $('opts').querySelectorAll('.qz-opt').forEach(b =>
+    b.addEventListener('click', () => pick(Number(b.dataset.k), b)));
+
+  const fill = $('timefill'), bar = $('timebar');
+  bar.classList.remove('qz-low');
+  fill.style.transition = 'none';
+  fill.style.transform = 'scaleX(1)';
+  void fill.offsetWidth;
+  fill.style.transition = `transform ${LIMIT}s linear`;
+  fill.style.transform = 'scaleX(0)';
+
+  qStart = Date.now();
+  $('worthLabel').textContent = mode === 'speed' ? '지금 답하면' : '맞히면 회복';
+  $('worth').textContent = mode === 'speed' ? 100 + LIMIT * 5 : RECOVER_PTS;
+  clearInterval(tick);
+  tick = setInterval(() => {
+    const left = LIMIT - (Date.now() - qStart) / 1000;
+    if(left <= 4) bar.classList.add('qz-low');
+    if(left <= 0){ pick(-1, null); return; }
+    if(mode === 'speed') $('worth').textContent = 100 + Math.max(0, Math.floor(left)) * 5;
+  }, 100);
+}
+
+function pick(k, btn){
+  if(locked) return;
+  locked = true;
+  clearInterval(tick);
+
+  const list = activeList();
+  const q = list[cur];
+  const spent = Math.min((Date.now() - qStart) / 1000, LIMIT);
+  const left = Math.max(0, Math.floor(LIMIT - spent));
+  const ok = k === q.a;
+
+  if(mode === 'speed'){
+    const gained = ok ? 100 + left * 5 : 0;
+    quiz.answers.push({k, ok, gained, spent});
+    quiz.score += gained;
+    quiz.secs += spent;
+  }else{
+    const qi = quiz.recover.order[cur];
+    quiz.recover.results[qi] = {k, ok};
+    if(ok) quiz.recover.score += RECOVER_PTS;
+    quiz.secs += spent;
+  }
+  save();
+
+  if(btn) btn.classList.add('picked');
+  setTimeout(() => {
+    if(cur + 1 < list.length) startQuestion(cur + 1);
+    else if(mode === 'speed') finishRound1();
+    else finishRecover();
+  }, btn ? 180 : 0);
+}
+
+$('skipBtn').addEventListener('click', () => pick(-1, null));
+
+/* ── 스피드전 결과 ── */
+function finishRound1(){
+  quiz.stage = 'review'; save();
+  renderReview();
+  show('scReview');
+}
+
+function wrongIndexes(){
+  return quiz.qs.map((_, i) => i).filter(i => !(quiz.answers[i] && quiz.answers[i].ok));
+}
+function totalScore(){
+  return quiz.score + (quiz.recover ? quiz.recover.score : 0);
+}
+
+function renderReview(){
+  const rec = quiz.recover ? quiz.recover.results : {};
+  const right = quiz.answers.filter(a => a.ok).length;
+  const saved = Object.values(rec).filter(r => r.ok).length;
+
+  $('totalPts').textContent = totalScore().toLocaleString();
+  $('fCorrect').textContent = `${right} / ${quiz.qs.length}`;
+  $('fTime').textContent = `${Math.round(quiz.secs)}초`;
+  $('fSerial').textContent = quiz.serial;
+  $('recovered').innerHTML = saved ? `회복 +${saved * RECOVER_PTS}점` : '';
+  $('recovered').hidden = !saved;
+
+  const card = (q, i) => {
+    const a = quiz.answers[i] || {k:-1};
+    const r = rec[i];
+    const cls = a.ok ? 'right' : (r && r.ok ? 'saved' : 'wrong');
+    const mark = a.ok ? '맞음' : (r ? (r.ok ? '회복' : '다시 틀림') : '틀림');
+    return `
+    <div class="rev ${cls}">
+      <div class="top">
+        <p class="qs">${esc(q.q)}</p>
+        <span class="mark">${mark}</span>
+      </div>
+      <p class="ans">정답 <b>${esc(q.opts[q.a])}</b></p>
+      ${!a.ok && a.k >= 0 ? `<p class="ans mine">처음 고른 답 ${esc(q.opts[a.k])}</p>` : ''}
+      ${!a.ok && a.k < 0 ? `<p class="ans mine">답하지 않음</p>` : ''}
+      <p class="why">${esc(q.why)}</p>
+      ${r && r.ok ? `<p class="again">다시 풀어 ${RECOVER_PTS}점을 회복했습니다.</p>` : ''}
+      <p class="src">법정 항목 ${q.item} · ${esc(q.src)}</p>
+    </div>`;
+  };
+
+  const wrongs = [], rights = [];
+  quiz.qs.forEach((q, i) => {
+    ((quiz.answers[i] && quiz.answers[i].ok) ? rights : wrongs).push(card(q, i));
+  });
+
+  const hasWrong = wrongs.length > 0;
+  $('wrongLabel').hidden = !hasWrong;
+  $('wrongList').innerHTML = wrongs.join('');
+  $('rightList').innerHTML = rights.join('');
+
+  const done = !!quiz.recover;
+  if(!hasWrong){
+    $('reviewNotice').textContent = '모두 맞히셨습니다. 진행자와 함께 전체 해설을 봅니다.';
+    $('nextLabel').textContent = '다음 순서';
+    $('qzNextBtn').textContent = '확인증 받기';
+    $('nextNote').textContent = '진행자 안내에 맞춰 눌러 주세요.';
+  }else if(!done){
+    $('reviewNotice').textContent = '진행자가 전체 해설을 함께 봅니다. 아래 해설을 읽고 나면 틀린 문제를 한 번 더 풀 수 있습니다.';
+    $('nextLabel').textContent = '회복 라운드';
+    $('qzNextBtn').textContent = `틀린 문제 ${wrongs.length}개 다시 풀기`;
+    $('nextNote').textContent = `맞히면 한 문제당 ${RECOVER_PTS}점을 되찾습니다. 기회는 한 번뿐입니다.`;
+  }else{
+    $('reviewNotice').textContent = saved
+      ? `회복 라운드에서 ${saved}문제를 되찾았습니다.`
+      : '회복 라운드가 끝났습니다. 해설을 한 번 더 읽어 보세요.';
+    $('nextLabel').textContent = '다음 순서';
+    $('qzNextBtn').textContent = '확인증 받기';
+    $('nextNote').textContent = '진행자 안내에 맞춰 눌러 주세요.';
+  }
+}
+
+$('allBtn').addEventListener('click', () => {
+  const box = $('rightList'), on = box.hidden;
+  box.hidden = !on;
+  $('allBtn').textContent = on ? '맞힌 문제 접기' : '맞힌 문제도 모두 보기';
+});
+
+/* ── 회복 라운드 ── */
+function startRecover(){
+  const list = wrongIndexes();
+  quiz.recover = {order:list, results:{}, score:0};
+  quiz.stage = 'recover';
+  save();
+  mode = 'recover';
+  show('scPlay');
+  startQuestion(0);
+  toast('한 번만 더 기회가 있습니다');
+}
+function finishRecover(){
+  mode = 'speed';
+  quiz.stage = 'reviewed'; save();
+  renderReview();
+  show('scReview');
+  const saved = Object.values(quiz.recover.results).filter(r => r.ok).length;
+  toast(saved ? `${saved * RECOVER_PTS}점을 회복했습니다` : '회복하지 못했습니다');
+}
+
+$('qzNextBtn').addEventListener('click', () => {
+  if(!quiz.recover && wrongIndexes().length) startRecover();
+  else finish();
+});
+
+/* ── 최종 · 참가 확인증 ── */
+const cssVar = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const SANS = "-apple-system, BlinkMacSystemFont, system-ui, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif";
+const SERIF = "'Gowun Batang', serif";
+const MONO = "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace";
+let cardBlob = null, cardUrl = null, cardName = '퀴즈참가증.png';
+
+function drawCard(){
+  const W = 720, H = 900, S = 2;
+  const c = document.createElement('canvas');
+  c.width = W * S; c.height = H * S;
+  const x = c.getContext('2d');
+  if(!x) return c;
+  x.scale(S, S);
+  x.textBaseline = 'alphabetic';
+
+  const ink = cssVar('--ink'), mute = cssVar('--mute'), line = cssVar('--line'), ink2 = cssVar('--ink-2');
+  x.fillStyle = '#FFFFFF'; x.fillRect(0, 0, W, H);
+
+  const strip = ['--g1','--g2','--g3','--g4','--g5'];
+  strip.forEach((g, i) => { x.fillStyle = cssVar(g); x.fillRect(i * (W / 5), 0, W / 5 - 1.5, 10); });
+
+  const cx = W / 2;
+  x.textAlign = 'center';
+  if(SCHOOL){ x.fillStyle = mute; x.font = '500 14px ' + SANS; x.fillText(SCHOOL, cx, 60); }
+  x.fillStyle = ink; x.font = '700 32px ' + SERIF;
+  x.fillText('학부모 퀴즈 참가 확인증', cx, 104);
+  x.fillStyle = mute; x.font = '500 13px ' + MONO;
+  x.fillText(`${YEAR}학년도 학교설명회 · ${SESSION}`, cx, 132);
+
+  x.strokeStyle = line; x.lineWidth = 1;
+  x.beginPath(); x.moveTo(48, 160); x.lineTo(W - 48, 160); x.stroke();
+
+  const rows = [
+    ['학년 · 반', `${quiz.grade}학년 ${quiz.classNo}반`],
+    ['보호자', quiz.who],
+    ['맞힌 문제', `${quiz.answers.filter(a => a.ok).length} / ${quiz.qs.length}`],
+    ['걸린 시간', `${Math.round(quiz.secs)}초`]
+  ];
+  let y = 160;
+  rows.forEach(([k, v]) => {
+    y += 52;
+    x.textAlign = 'left'; x.fillStyle = mute; x.font = '500 14px ' + SANS; x.fillText(k, 48, y);
+    x.textAlign = 'right'; x.fillStyle = ink; x.font = '600 19px ' + SANS; x.fillText(v, W - 48, y);
+    x.strokeStyle = cssVar('--line-soft');
+    x.beginPath(); x.moveTo(48, y + 17); x.lineTo(W - 48, y + 17); x.stroke();
+  });
+
+  /* 점수 — 이 종이에서 가장 크게 */
+  const by = y + 52;
+  x.fillStyle = ink; x.fillRect(48, by, W - 96, 138);
+  x.textAlign = 'left'; x.fillStyle = '#8FA3C2'; x.font = '600 12px ' + MONO;
+  x.fillText('최종 점수', 70, by + 34);
+  x.fillStyle = '#FFFFFF'; x.font = '700 62px ' + MONO;
+  x.fillText(String(totalScore()), 70, by + 100);
+  x.textAlign = 'right'; x.fillStyle = '#8FA3C2'; x.font = '600 12px ' + MONO;
+  x.fillText('참가번호', W - 70, by + 34);
+  x.fillStyle = '#FFFFFF'; x.font = '700 30px ' + MONO;
+  x.fillText(quiz.serial, W - 70, by + 74);
+  x.fillStyle = '#8FA3C2'; x.font = '500 13px ' + SANS;
+  x.fillText(`스피드전 ${quiz.score}점`, W - 70, by + 106);
+
+  /* 회복 라운드 */
+  if(quiz.recover){
+    const saved = Object.values(quiz.recover.results).filter(r => r.ok).length;
+    let fy = by + 178;
+    x.textAlign = 'left'; x.fillStyle = mute; x.font = '600 12px ' + MONO;
+    x.fillText('회복 라운드', 48, fy);
+    x.strokeStyle = line; x.beginPath(); x.moveTo(48, fy + 12); x.lineTo(W - 48, fy + 12); x.stroke();
+    fy += 38;
+    x.fillStyle = ink2; x.font = '500 14px ' + SANS;
+    x.fillText(`틀린 문제 ${quiz.recover.order.length}개 중 ${saved}개를 다시 맞혔습니다`, 48, fy);
+    x.textAlign = 'right'; x.fillStyle = ink; x.font = '700 15px ' + MONO;
+    x.fillText(`+${saved * RECOVER_PTS}점`, W - 48, fy);
+    x.textAlign = 'left';
+  }
+
+  /* 이수 안내 */
+  if(COVER.length){
+    x.textAlign = 'center'; x.fillStyle = mute; x.font = '400 12.5px ' + SANS;
+    x.fillText(`이 퀴즈로 법정 의무교육 ${COVER.join(' · ')}번 항목을 이수했습니다.`, cx, H - 74);
+  }
+  x.textAlign = 'center'; x.fillStyle = mute; x.font = '400 12px ' + SANS;
+  x.fillText('시상과 본인 확인은 참가번호로 합니다. 접수처에 이 화면을 보여 주세요.', cx, H - 48);
+
+  x.strokeStyle = line; x.lineWidth = 1; x.strokeRect(.5, .5, W - 1, H - 1);
+  return c;
+}
+
+function markCovered(){
+  if(!COVER.length) return;
+  if(typeof window.markItemsDone === 'function') window.markItemsDone(COVER);
+}
+
+function formLink(){
+  if(!FORM.base) return '';
+  const p = new URLSearchParams();
+  const map = {
+    serial:quiz.serial, grade:quiz.grade, classNo:quiz.classNo, name:quiz.who,
+    score:totalScore(), secs:Math.round(quiz.secs), correct:quiz.answers.filter(a => a.ok).length
+  };
+  Object.entries(map).forEach(([k, v]) => { if(FORM[k]) p.set(FORM[k], v); });
+  return FORM.base + '?usp=pp_url&' + p.toString();
+}
+
+async function finish(){
+  quiz.stage = 'done'; save();
+  markCovered();
+  try{ await document.fonts.ready; }catch(e){}
+  const canvas = drawCard();
+  cardName = ['퀴즈참가증', SCHOOL, `${quiz.grade}-${quiz.classNo}`, quiz.who].filter(Boolean).join('_') + '.png';
+  canvas.toBlob(blob => {
+    if(cardUrl) URL.revokeObjectURL(cardUrl);
+    cardBlob = blob;
+    cardUrl = URL.createObjectURL(blob);
+    $('cardPreview').src = cardUrl;
+
+    if(navigator.canShare){
+      try{
+        const f = new File([blob], cardName, {type:'image/png'});
+        $('shareBtn').hidden = !navigator.canShare({files:[f]});
+      }catch(e){ $('shareBtn').hidden = true; }
+    }
+    const link = formLink();
+    $('sendBtn').hidden = !link;
+    $('doneNote').textContent = link
+      ? '결과를 제출하시면 순위판에 반영됩니다. 확인증은 사진첩에 저장해 두세요.'
+      : '확인증을 저장한 뒤 접수처에서 참가번호를 알려 주세요.';
+    show('scDone');
+  }, 'image/png');
+}
+
+$('saveBtn').addEventListener('click', () => {
+  if(!cardUrl) return;
+  const a = document.createElement('a');
+  a.href = cardUrl; a.download = cardName;
+  document.body.appendChild(a); a.click(); a.remove();
+  toast('사진첩을 확인해 주세요');
+});
+$('sendBtn').addEventListener('click', () => {
+  const link = formLink();
+  if(link) window.open(link, '_blank', 'noopener');
+});
+$('shareBtn').addEventListener('click', async () => {
+  if(!cardBlob) return;
+  try{
+    await navigator.share({files:[new File([cardBlob], cardName, {type:'image/png'})], title:'학부모 퀴즈 참가 확인증'});
+  }catch(e){}
+});
+
+/* ── 이어서 하기 · 재응시 차단 ── */
+(function resume(){
+  const saved = load();
+  if(!saved || !saved.qs) return;
+  quiz = saved;
+  if(quiz.stage === 'play'){
+    if(quiz.answers.length < quiz.qs.length){
+      show('scPlay'); startQuestion(quiz.answers.length); toast('이어서 진행합니다');
+    }else{
+      finishRound1();
+    }
+    return;
+  }
+  if(quiz.stage === 'recover'){
+    const left = quiz.recover.order.filter(i => !quiz.recover.results[i]);
+    if(left.length){
+      mode = 'recover';
+      show('scPlay');
+      startQuestion(quiz.recover.order.length - left.length);
+      toast('회복 라운드를 이어서 진행합니다');
+    }else{
+      finishRecover();
+    }
+    return;
+  }
+  if(quiz.stage === 'review' || quiz.stage === 'reviewed'){ renderReview(); show('scReview'); return; }
+  renderReview();
+  finish();
+  toast('이미 응시하셨습니다');
+})();
+
+
+/* ── 퀴즈 존 열고 닫기 ── */
+function openZone(){
+  root.hidden = false;
+  root.removeAttribute('aria-hidden');
+  document.body.classList.add('qz-open');
+  root.scrollTop = 0;
+}
+function closeZone(){
+  root.hidden = true;
+  root.setAttribute('aria-hidden', 'true');
+  root.classList.remove('stage');
+  document.body.classList.remove('qz-open');
+}
+document.getElementById('qzOpen').addEventListener('click', openZone);
+$('qzClose').addEventListener('click', () => {
+  if(quiz && quiz.stage === 'play'){
+    if(!confirm('퀴즈가 진행 중입니다. 닫아도 이어서 풀 수 있습니다. 닫을까요?')) return;
+  }
+  closeZone();
+});
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape' && !root.hidden && (!quiz || quiz.stage !== 'play')) closeZone();
+});
+/* QR로 바로 들어오는 경우 */
+if(params.get('quiz') === '1') openZone();
+
+})();
+</script>
+</body>
+</html>
