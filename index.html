@@ -784,6 +784,9 @@ footer{padding:18px 0 10px;}
 #qzRoot[hidden]{display:none;}
 #qzRoot.stage{background:var(--stage);color:#EEF3FA;}
 body.qz-open{overflow:hidden;}
+/* 퀴즈 존 안에서는 활성 화면 하나만 보입니다 */
+#qzRoot .screen{display:none;padding-bottom:44px;}
+#qzRoot .screen.qz-on{display:block;}
 .qz-close{
   position:fixed;top:12px;right:12px;z-index:9;
   border:1px solid var(--line);background:#fff;color:var(--ink);
