@@ -225,6 +225,8 @@ main{padding-top:26px;}
 
 /* ── 개별 항목 ──────────────────────── */
 .item{border-top:1px solid var(--line-soft);}
+/* 상단 고정바가 제목을 가리지 않도록, 이동해 온 자리 위에 여유를 둡니다 */
+.item,.group,#groups{scroll-margin-top:78px;}
 .item-head{
   width:100%;display:flex;gap:12px;align-items:flex-start;
   background:none;border:0;padding:15px 0;text-align:left;cursor:pointer;
